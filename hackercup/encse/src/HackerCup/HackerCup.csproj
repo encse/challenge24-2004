@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{345E2834-398A-454F-B03A-F952BAB2053A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HackerCup</RootNamespace>
+    <AssemblyName>HackerCup</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Y2013\QR\A\ABeautifulStringsSolver.cs" />
+    <Compile Include="Y2013\QR\B\BBalancedSmileysSolver.cs" />
+    <Compile Include="Y2013\QR\C\CFindTheMinSolver.cs" />
+    <Compile Include="Y2014\QR\A\ASquareDetectorSolver.cs" />
+    <Compile Include="Y2014\QR\B\BBasketballGameSolver.cs" />
+    <Compile Include="Y2014\QR\C\CTennisonSolver.cs" />
+    <Compile Include="Y2015\QR\A\ACookingSolver.cs" />
+    <Compile Include="Y2015\QR\B\BNewYearsSolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Y2015\QR\C\CLaserMazeSolver.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Y2015\R1\A\AHomeworkSolver.cs" />
+    <Compile Include="Y2015\R1\B\BAutocompleteSolver.cs" />
+    <Compile Include="Y2015\R1\C\CWinningAtSportsSolver.cs" />
+    <Compile Include="Y2015\R1\D\DCorporateGiftingSolver.cs" />
+    <Compile Include="Y2015\R2\A\ALazySortSolver.cs" />
+    <Compile Include="Y2015\R2\B\BAllCriticalSolver.cs" />
+    <Compile Include="Y2015\R2\C\CAutocompleteStrikesBackSolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cmn\Cmn.csproj">
+      <Project>{839bb210-4df4-4575-a3be-5cc38447b568}</Project>
+      <Name>Cmn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>cd $(SolutionDir)
+del src.zip
+..\7z.exe a src.zip -r -x!obj -x!bin -x!_ReSharper* -x!*.suo -x!*.user -x!.svn -x!data *  
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

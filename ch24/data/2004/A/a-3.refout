@@ -1,0 +1,124 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin2]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{tabularx}
+\usepackage{yfonts}
+\usepackage{alltt}
+\addtolength\textwidth{4cm}
+\addtolength\hoffset{-2cm}
+\addtolength\textheight{2cm}
+\newlength{\innerwidth}
+\newcommand{\mytitle}[2]
+{
+\setlength{\innerwidth}{\the\textwidth}
+\addtolength{\innerwidth}{-12pt}
+\noindent
+\fbox{
+  \parbox{\innerwidth}{\center {\Large \textbf{#1}} \medskip
+    
+Source file: {\tt #2.c, #2.cpp, #2.pas} \medskip
+  }
+}
+}
+
+
+\begin{document}
+
+\newlength{\colwidth}
+\setlength{\colwidth}{\linewidth}
+\addtolength{\colwidth}{-1cm}
+\setlength{\colwidth}{0.5\colwidth}
+
+\psfragscanon
+\mytitle{problem A: error Correction}{error}
+
+\subsection{Introduction}
+Captain Jean-Pierre Spock received an extremely important transmission
+via a sub-ether quantum hyperlink. Unfortunately, the sub-ether
+quantum hyperlink communication software is still under beta testing,
+some of the characters in the message were received incorrectly. Your
+task is to decode the garbled message. fortunately, we know the
+language of the message, and we have a dictionary of all the possible
+words that could appear in the original text.
+You have to decode the message by examining each word in the text, and
+determining what word it could have been originally.
+
+\subsection{Input}
+Each test case consists of two input files: the garbled message and
+the dictionary. In the message some of the characters are replaced by the
+character \texttt{'#'}, meaning that the character was received
+incorrectly (the character \texttt{'#'} does not appear in the
+original message). For some weird reason, the errors appeared only when the
+letters \texttt{'a'}-\texttt{'z'}, \texttt{'A'}-\texttt{'Z'} were
+transmitted, the other characters were always received correctly.
+
+The dictionary contains all the words that appear in the original
+message (it can contain words that do not appear in the message). A
+word is defined to be sequence of characters
+\texttt{'a'}-\texttt{'z'}, \texttt{'A'}-\texttt{'Z'} such that the
+character before and after the word is not a letter. Only the lower
+case version of the words appear in the dictionary (using only the
+letters \texttt{'a'}-\texttt{'z'}), but in the message any (or all)
+character of word can be in upper case. For example, if the word
+\texttt{'holodeck'} is present in the dictionary, then the message can
+contain \texttt{'holodeck'}, \texttt{'holodeck'}, \texttt{'HoloDeck'},
+or \texttt{'HoLODEcK'}. The words in the dictionary are separated by a
+new line character 10. (The last word is also followed by a new line character.)
+
+
+
+\subsection{Output}
+For each test case, you have to output the original version of the
+message. for each word in the input that contains the character
+\texttt{'#'}, you have to guess what was the word in the original
+message, and replace the missing characters with the correct
+letters. Always use lower case letters when replacing a
+\texttt{''}. It can be assumed that the problem is unambiguous: for
+each word in the message, there is only one correct possibility in the dictionary.
+Other than replacing the characters \texttt{'#'} with the correct
+letters, do not modify the text in any way. In particular, the end of
+line characters should appear in the output exactly as in the input.
+
+\bigskip \noindent
+\begin{minipage}[t]{\colwidth}
+\subsection{Sample input}
+Message:
+\begin{verbatim}
+one,o#e,f##r (th#ee t#o) #ix
+\end{verbatim}
+
+Dictionary:
+\begin{verbatim}
+one
+two
+three
+four
+five
+six
+\end{verbatim}
+
+\end{minipage}
+\begin{minipage}[t]{\colwidth}
+\subsection{Sample Output}
+Original message:
+\begin{verbatim}
+one,one,four (three two) six
+\end{verbatim}
+\end{minipage}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

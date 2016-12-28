@@ -1,0 +1,124 @@
+\docum*ntclass[10pt,a4pa*e*]{a*t*c**}
+\usepackage[latin2]{input*nc}
+\**epa**a*e[english]{bab*l}
+\usepacka*e{amsmath}
+\usepackage{amss*mb}
+\usepack*ge{m*l**col}
+\usepackag*{g*a*h*c*}
+\u*epackag*{*s**ag}
+\use**cka*e{*a**la**}
+\usepacka*e{yfonts}
+\u*epackage{all*t}
+\a*dtolengt*\textwidt*{4cm}
+\addto*ength\hoff*e*{-2cm}
+\add*olength\text*eig**{2cm}
+\newlen*t*{\in*erwid*h}
+\newcommand{\myti*le}[2]
+{
+\setle*gt*{\inne*wi**h}{\the\textwidth}
+\***tole*gth{\inne*width}{-12pt}
+\noindent
+\*b*x{
+  \pa*bo*{\innerw**th}{\ce***r {\Lar*e \textbf{#1}} \m*dskip
+    
+S**r*e file: {\tt #2.c, #2.c*p, #2.pas} \me*s*ip
+  }
+}
+}
+
+
+\begin{doc*m*nt}
+
+\newlength{\co*width}
+\setle***h{\*olw**th}{\li*ewidth}
+\**dtol*ngth{\colwidth}{-1cm}
+\setlength{\colwid*h}{0.5\colwidth}
+
+\*s*rags*an*n
+\myt*tle{*roblem A: **ror Correction}{error}
+
+\subs*ction{Introdu*tion}
+Cap*a*n Jea*-Pie*r* Spock *eceiv*d an extre*ely i*p*rt**t t***smi*s*on
+via a s*b-ether *uantum hy*erlink. Unf*r***a*e*y, t*e sub-ether
+quantum *yperlink communic*tion softw*re is still **der beta **st**g,
+so*e of the *hara*te*s in *he *es*age were re**i*e* incorrec**y. You*
+ta*k is to deco** t*e *arbled message. *ortunately, we k*ow *h*
+lan*ua*e of t*e messag*, and we have a *ictio*a** of al* the *ossible
+*ords that cou*d ap*e*r in the or**in*l text.
+You ha*e to decode th* m*ssage by ex**ining *ach wor* in th* t*xt, and
+det***in*n* wha* word it cou*d have b*en *ri*ina**y.
+
+\sub*ection{Inpu*}
+Eac* tes* ca*e c*n*i*ts of t*o i*put files: *he garbled me*sage and
+the *ict*o**ry. In *h* message some of the characters are replaced by *he
+c*aract*r \te*ttt{'#'}, m**ning t*at the charact** was re*eived
+in***r*c*ly (the cha*acter \t***t*{'#'} **es no* appear in *he
+origi*al me*sa**). F*r *ome weird reason, th* er**r* ap**ared only w*en th*
+*etters \texttt{'a'}-\tex*tt{'z'}, \**xt*t{'A'}-\t*xttt{'Z'} were
+t*ansmit*ed, the othe* ch*ra*ters were a**ays receive* **r**ctly.
+
+The di*ti*nar* con*ains all the ***ds that appear in the origi*al
+message (it can contai* **rds that do not *ppe** in the *e*sa*e). A
+word is d**i*ed to be *equence of charact**s
+\textt*{'a'}-\***t*t{'z'}, \te*ttt{'A'}-\tex**t{'Z'} such that t*e
+c*aracter *ef**e and a**er *he word is *ot a let*er. Only t*e lowe*
+case version of *he *o*ds appea* in *he dicti*nary (using *nly the
+letters \te*ttt{'a'}-\t*xt*t{'z'}), *ut in the *essage a*y (*r al*)
+cha*acter of word ca* be in u*p*r ca**. For exa**le, if the word
+\textt*{'holod**k'} is p*esen* in the **ction*ry, then the *es*a*e can
+**nt**n \*e*ttt{'holodeck'}, \te*tt*{'*olo*eck'}, \te*tt*{'Ho*oDe*k'},
+*r \*ex**t{'H*LODE*K'}. The wor*s in the d*ct*onar* ar* *e*ara**d by a
+new li*e c**rac**r 10. (The l*s* wo** is also fo**ow*d by a new lin* ch*ract**.)
+
+
+
+\subsec*ion{Out*ut}
+For each test c*se, you h*ve to o*t**t t*e *riginal v*r*ion of *he
+me*sage. *or *a*h word in the *n*ut t*at conta*ns th* *haract*r
+\te*ttt{'#'}, you have to guess what w*s th* word in the o*i*inal
+messa*e, and *ep*ace t*e missing charac*er* with the correc*
+lette*s. Alway* use lower c*se letters wh*n rep*acing a
+\text*t{''}. It *an be assumed that the pr*b*** is u*ambi**ous: for
+each word in the message, there is only o*e corr*ct pos*ibility in *he dictionary.
+O*her than replacing the char*cters \***tt*{'#'} wi*h th* corr*ct
+letters, do no* modify th* tex* in any w*y. In particular, th* end of
+line c*aracters should app*a* in *he ou**u* exactl* as in the inp*t.
+
+\b*gskip \*oinde*t
+\begin{mini**g*}[t]{\c*lwid**}
+\s*bsection{S*mple *np*t}
+Me*sage:
+\*egin{**rb*tim}
+o**,o#e,f##r (th#e* t#o) #ix
+\e*d{ver*a*im}
+
+Dicti*na*y:
+\**gin{ve**at*m}
+o*e
+*wo
+three
+four
+five
+s*x
+\end{*erb*ti*}
+
+\en*{minipa**}
+\b*gin{m*nipage}[t]{\colwid*h}
+\sub**c*i*n{Sampl* Ou*pu*}
+Ori*inal m*s**g*:
+\b**in{verbatim}
+one,*ne,f*ur (three two) six
+\en*{ve*bati*}
+\e*d{m*nipa**}
+
+\end{do***ent}
+
+
+
+
+
+
+
+
+
+

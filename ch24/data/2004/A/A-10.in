@@ -1,0 +1,455 @@
+Welco*e to Quake!
+
+This *ile *e*a**s how to get Quake runnin* on y*ur s**t*m and what to d*
+if you have *roblems.  We would like to thank Gandalf *ech*o**gies, Inc and
+MP*t* I*t*r*c*ive for t*e u** of the*r tec*n*l**y.  W* would also *ike to
+tha*k Trent Rezno* an* Nine Inch Nails for t*eir trem*ndous cont*i*ution*
+to Quake's ent*re a**io portio*.
+
+T*e N*N logo is a Registered Tra*emark li*en*ed to *ot**ng Interactive, *nc.
+All R*ghts Res*rved.
+
+Quake System *e*uir*me*ts
+-------------------------
+IBM P* and Co***tibl*s
+Pentium *rocess** or better
+VGA *ompati*l* Display or b*t*er
+8MB RAM minimu*, 16MB recommen*** (16 MB req**red f*r runni** unde* Win95)
+CD-ROM drive Required 
+MS-DOS 5.0 or b*tter or Win*o*s 95 (doe* NOT run u*der *indows NT)
+Hard Drive (30MB for Shareware, 80 *B for Register*d)
+
+ IMPORT*N*!: Quak* req*i*es a fl*ating *oint proc*ssor.
+*y*te** th*t do not h*ve an FPU **stall*d will not *un Quake -- at all.
+
+ **P*R*AN* Vide* Adapter Note! 
+On some ATI Mach32 card*, Quake can c*me up with a **rbled vi**o d**pla*.
+Th*s is *ue to a pr*ble* with t*e card in wh**h 320x200 m*de isn't
+in**iali*ed *o*r*ctly.  W**k*r*unds include:
+
+1) If *unning from Win*ow*, **art *ua*e *rom an icon, or from a windo*ed
+(not *u**scre*n) MS-*OS promp*.  If Quake is al*ead* r*n**ng and h*s
+t*e garbled sc*e*n, press Alt-*nter twice to **itch t* the des*t*p and
+*ack to ful***re*n, and t*e screen wi*l displ*y p*op*rly.
+
+2) If runn*ng from DOS, e*the* put *he lin*
+
+v*d_mode 1
+
+in id1\a*toexec.cf*, *r, typing bli*d, press tild* ('~') to bri** down
+*h* console, type
+
+v*d_mode 1<enter>
+
+and the screen will *isp*ay pro*erl*.
+
+========================================================================
+Here *re the t*x* files inclu**d with *he share***e *e*ease of Qu*ke and
+w*a* t**y are:
+
+R*ADME.TXT              **is file
+T*CHIN*O.T*T            T*c*nical information on Q**k*'s s**systems an*
+                        thei* *dvanced use.
+MA*UAL.*XT              T*xt v*rsi*n of the prin*ed game *anual
+LICI*FO.*XT             *nfo on the v**ious licens* **le* included w*th *uak*
+SLI*NSE.TXT             Shar***re Quake end-user license
+O*DER.TXT               How to order Quak*
+**LP.TXT                How to ge* hel* *ith Qu*k*
+
+He*e are the te*t f*les *nc*uded with *he regis**red ver*i** of *uake and
+what t**y are:
+
+README.T*T              T*is file
+T*CH**FO.TXT            **ch*ical in*o*ma*ion on Quake's *ubsys*ems and
+                        their ad**n*e* use.
+MANU**.T*T              Text ve*sion of the *rinted game manua*
+LIC*N*O.T*T             I*fo on the *arious l*c*nse *ile* includ*d with Q*ake
+RL*C*SE.T*T             Regist**ed *uake end-user li*ense
+C**EXP.T*T              Com***cia* *xploi*ation agre*me*t
+*RDER.*XT               H*w t* o*der Quake
+HELP.T*T                H*w to get help *it* Qu*ke
+
+
+R*n*i*g Q**ke
+-------------
+
+*OS:  To *aunch Qu*ke from t*e D*S Pro*pt, g* t* the **ake *irect*ry and
+si**ly typ* "Q*AK*" <*NTER>. (no qu**es)
+
+*ind*ws 95:  To la*nc* Quak* in singl* player mode, double click on the fi*e
+QU*K*.E*E Fr*m *indows Ex*l*rer.  To *un Qu*ke in *ul*i-*layer m*de u*i*g
+t*e *CP/IP pr*toco*, *irst ch*ck y*ur network se*tings to ens*re t*e
+prot*col is i*stalled, then dou*le *lick on the Q95.BAT file to *au*ch the
+game. In th*s vers*on (v0.91) there is a minor *ug that will c*use t*e
+Q95.BAT *ile t* ex** t*e first time you run it, *i***ut r*nnin* *uake.
+Merely double-click on that file a*ain an* it wil* work.
+
+A*dio Setup
+-----------
+
+W*en using a Sound Card wit* Quake, there are a fe* setup ***ps *hi*h mu*t
+be t*ken. First, t*e "BL*STER" envi*on**nt vari*ble setting must be in y**r
+auto*xec.bat (or you can typ* it in *anua**y *rom the MS-*OS comman* pr*mpt).
+Ru*ning t*e Sound Blas**r *ti*ity d**g*ose.exe wil* auto*at*cal*y con*igur*
+you* soun* card and p*t th*s *tate*e*t in your *ut*e**c.bat f**e f*r y*u.
+A typical blaster se*ting *ook* like t*is (alth**g* your* may vary):
+
+SET BLA*TER=A220 I5 D1 H5 P330 T6
+
+If you wa*t t* pl*y th* audio *r**k *r*m the CD-ROM while *l*y*ng Quake,
+you must e*su*e that t*e a*dio c**le fro* *he CD-ROM is *onnected to the
+sound card.
+
+If you thi*k yo*r sou*d ca*d is set*p p*oper*y and it *TILL doesn't work,
+ch**k to make sur* t*at your BL*STE* environmen* v*riable contains *he
+**gh DMA s*tt*ng (H5 in the ab*ve ex*m*le).
+
+If yo* don't get sound whil* *rying to play *he aud** tra*k, chec* to see
+if a small c*ble goes from th* back of yo*r CD-ROM pl*ye* dir*ctl* to your
+sound c*rd.  If the CD-ROM a*dio cab** is *o*n*cte* t* yo** s**n* *oard (or
+the mo*herboard in some cas*s) and you S*ILL d*n't hear C* Au**o com**g *rom
+your *p**ker*, m*ke s*re the *IX*R ***gra* h*s th* CD volume tu*n*d up.
+You will also n*ed to run *he CD-ROM drive* MSC**X.EXE. H*re is an example
+of t*e f*les yo* *houl* see (you*s probably will vary) *ist*d in your
+CO*FIG.SYS and AUTOEXEC.BAT (exp**nation is in par*n*he*es):
+
+C*NFIG.*YS:
+
+DEV**E=C:\PR*SCS*\CDRO*.SYS /D:PROCD01 (CD-ROM driver)
+
+*UTOEX*C.BAT:
+
+SET B**STER=A220 I5 D1 H5 P330 T6 (s*und envir*nment va*iable setting)
+C:\WINDO*S\COMMAND\MSCDEX.*XE  /D:PROCD01 /L:D (CD-RO* d*ive*)
+
+===================================================
+UltraSou*d M*X and UltraSound P*P Suppor* *or *ua*e
+===================================================
+
+**fore ru*ning *u*ke, make sure t*at your so*n* c*r* *ork* and y*u*
+en*ironment variable* *re s*t corre**ly.
+
+Ot*er Ult*a*ound Cards (ACE & Classic)
+--------------------------------------
+*hese drivers are not for th* UltraSo*n* ACE or UltraSou** Class*c
+sound *a*d*. W* have *eard m*xed repo*t* that Mega*m or SBOS
+have a chance of w*rki*g with the UltraSound Cla*sic but th*re is a
+short sound F/X delay.
+
+U**ra*ou*d P*P and PnP Pr*
+--------------------------
+*ou m*st *ake sure that you d* NOT h*v* *WSB*S or Meg*E* loade*. 
+
+Set**
+-----
+**ake wil* autom*ticall* d*te*t t*at *he Ult*aSo*nd M*x or PnP
+are installed. It does this by loo*i*g at th* S*T INTE**AVE (PnP)
+and SET ULTRA16 (Max) *nviron*en* vari*bl*s.
+
+*uake will use th* s*ttings found on the S*T UL*R*SND/UL*R*16 (Max)
+and in the IW.INI (PnP) file to det*rmin* wha* port setting* to u*e.
+
+T*ou**e*hoot*ng *indow* 95 (DOS Box)
+------------------------------------
+We recommend t*at you r*st*rt y**r comput*r in MS-DOS Mod*.  DOS Box 
+*ay or m*y not wor*, so *se at your o*n risk.  
+
+CD Audio In*ut
+--------------
+If you have not alr**dy *nab*ed CD audio ou*pu* *y default *ou wi*l
+*eed to e**ble it. Fo* *he Ult*aSou*d M*X y*u can *un "ULTR*NI* -EC".
+For the UltraSound PnP y*u will ne*d to *nable the CD au*i* ou*p*t
+in Win'95 and then *e*tart y*ur *omputer into MS-D*S.
+
+===================================================
+Mous* Setup
+-----------
+
+If you are goin* t* u*e a *ouse whe* playing Q*ake, you wil* nee* to l*ad
+your mouse dr*ver.  *h*s shoul* g* in the AU*O*XEC.BAT *ile as well.  Here
+is an *x*mp*e:
+
+C:\L*GIT**H\M**SE\MOU**.EXE (mouse d**ver)
+
+
+Booting Clea*
+-------------
+
+If you are *oing to be *unn*n* Quak* **th only 8 megaby*es of RAM, it is best
+to boot cl*an .  You eliminate unwan*ed ut*lities or applic*ti*ns from tak*n*
+u* valua*le me**ry, *ith**t havin* to alter your reg*lar AUT*EX*C.BAT and
+*ONFI*.SYS. *o*ting cle*n c*n be done in one of two *ays. If you have
+MS-DOS v*r*ion 6.xx, booti*g clea* is as sim*le a pr*s*ing the shi*t *ey
+wh*n you see the wo*ds "*tar*i*g MS-DOS". If you have MS-*OS *er 5.*x you
+wi*l need to make a s*stem disk.
+
+To make a boot disk, ty*e th* f*llowing fro* t*e MS-DOS command *r*mpt:
+
+FORMA* A: /S
+
+1. M*ke *ure that t*is is a disk you wish to e*ase.
+2. This di*k absolutely HAS t* be fo*matted in *h* A: d*i*e.
+
+T* us* *he *ystem dis*, pla*e t*e d*s* in th* A: drive and r*set th*
+c*mput*r.
+
+N*TE: If yo** soun* card *e**ires a d*i*e* to be *o*ded, or you will be
+us*ng a mou*e, or you wi*l be *sing Quake's CD audi* f*ature, the syste*
+dis* will nee* to have a C*NFIG.SYS and A*TO*XEC.BAT that *oad the
+**propriat* dr**ers.
+
+Crea*ing a Q*ake Shortc**
+
+As an *l*e**ative to makin* a *oot Disk, *indows 95 *sers c*n cre*te a
+*u*ke Shortcut.  By *ouble click**g onthis sho*tcut, Wi***ws 95 will *eboot
+in MS-DOS mod* an* in*ta*l *n*y the de**r** drivers, g*v*ng *ou the same
+r**u*ts as using a *oot Disk.  T* create a Quake *hortcut, do the following:
+
+1.  Using *xplo*er, right click and drag *he file QUAKE.*XE, fro* t*e Quak*
+    directo**, t* your desktop.  Wind*w* 95 will make an MS-DOS **on *itled
+    "Shortc** to quake".
+2.  Right **ick on the new icon, and f*om *he menu that pop* u*, *h*ose
+    "Pr*p**t*es".  Then choos* the "*rogram" *ab at the top.
+3.  Now click on the "*dv*nced..." b*tton near *he bottom.  *he "Adv*nced
+    Pr*g**m Set*ing*" win*ow sh*u** appear.
+4.  S*lect the "MS-*OS mode" check *ox an* the "Sp*c*fy a new MS-DOS
+    con*ig*ra*ion" option **tton.
+5.  Now s*m**y fill in th* "CONFIG.SYS fo* MS-D*S mode:" an* "AUTOEX**.BAT
+    f*r MS-DOS m*de:" boxes w*th the same so**d, C*-ROM and *o*se se*ti*gs as
+    m*n*i**ed ab*ve in the B*ot *isk* section.
+6.  Clic* on "*K" when *ou *re fini*hed.  If you wish, *ou c*n change y*ur
+    Quake **ortc*t Icon to som*thi*g a *ittle *ore e*citing *y clicki*g on
+    "**ang* I**n...".
+7.  To finish, click on "OK" agai*.
+    8.  You can re*ame yo** Quak* Shor*cut by righ* c*icking on th* **ort**t
+    icon, choosing "Renam*" and **ping in the new na*e.
+
+
+======================================================
+==                  **own Pro*le**                  ==
+======================================================
+
+Problem: Zombie* some*ime get stuck on the groun* an* connot get back up.
+(Y*u can st**l h*a* them, but you cannot k**l them. This b*g make* it
+imposs*ble to get 100% kil*s on wha***e* *evel it occu*s on.)
+Solution: There is no work*r*u*d for th*s bug.
+
+*rob*em: It is somet*mes possi*l* for the player to get s*uck in a roo* or
+in a wall.
+Soluti*n: If you get stuck, use th* 'kil*' *onsole comm*nd. It is a go*d
+id*a to s*ve your g*me often.
+
+Problem: View *en*er*ng proble*s. S**eti*es d*ring a game, *he vie* wi*l not
+cent*r prop*rly.  The e*d result is the pla*e* vie* look*n* up to*w*rds *he
+cei*in* *hil* walking.
+*o*uti*n: Exi* to the next level or us* the 'kil*' **ns**e c*mm**d..
+
+
+======================================================
+==                 Troubleshoot*ng                  ==
+======================================================
+
+If Quake f*i*s t* star* up, or has pro*lems not addressed *lsewhere in t*e
+do*umentation, try the -safe co*mand line swi*ch, whic* dis**l*s a n****r
+of p*rts of Quake that *an be *roblem* if there are hardwa*e or confi*ura*i**
+problems.  The -**fe co***nd lin* switch is **uiv***** to -stdvid, -nos*und,
+-n*ne*, an* -nocdaudio togeth**.  Thos* fo*r s**tche* do *he follow**g:
+
+-stdv*d: d*sables *ESA video modes.
+
+-no*ou*d: disa*l*s sound c*rd su*port.
+
+-n*net: d*sab*es *etwo*k card suppo*t.
+
+-nocdaud**: dis*bles CD a*dio sup*ort.
+
+If -s*f* make* the p*oblem go away, tr* using eac* of the s*i*che*
+indi**du*l*y to isol*te th* area in which you'r* *xpe***nc*n* the p*o**em,
+t*en eithe* correct *he configuration or har*ware probl*m or pl*y Quake with
+that functionality disa**ed.
+
+If you **ill h*v* probl*m*, *ry booti*g *lean in c**j**ction with
+the -safe c**mand line parameter.  For information on boot*ng clean, r**er
+to the "Booti*g C*e*n" s*ct*on a*ov*.
+
+If you e*perience p**e faults whi*e running **art*rd*ck's QDPMI DP*I s*rver,
+*h*s is *au**d *y a bug in QDPMI.  W*rka**u*ds:  Re*ove QDPM* from C*NF*G.SYS,
+issue *h* co*mand *DPMI OFF befo*e runni** QU*KE, *r get the u*date patch
+fo* QDPMI fr*m Q*a*t*rdeck.  Y*u may be runni*g QD*MI w*t*out knowing it if
+yo* h*ve QEMM install*d, bec*u*e it *an be inst***ed as *art of the QEMM
+instal*ation.
+
+
+*echnical Su**ort
+-----------------
+
+If you *re *aving troubl* instal*i*g or running Qua*e you c*n receive
+techni*al su*por* by se*ding e-mailin* t* su*po*t@idsoftware.com.  You *an
+al*o refer t* our *eb pag*, *ww.i*so*tware.com, or call 1-800-idgames.
+
+W*e* se*ding s**por* e-m*il, cut and p*ste the fol*ow*ng into you* e-mail
+messag* and fi*l in *he blank*:
+
+Da*e:  
+Nam*:  
+Phone number:  
+E-ma*l a*dres*:  (p**ase *n*lude *his, we re*irect t*ns of mail)
+G*me Ti*le:  
+Operating *ystem (i.e., DOS 6.0 or Wind*ws 95):
+*omputer t*pe:  
+BI*S date:
+B*OS v**sio*:
+Proces*or *ype:  
+Pr*cessor *pe*d:  
+Do y*u pro*ram at sch*o*/work?
+Do you *r*vid* t*ch. sup*ort at school/work?
+*leas* state *he pro*lem yo* encounte*e*:
+Please state how to **pro**ce the problem:
+
+If pr*gram *ra*hed with nast* u*de**pherab*e t*chno-*arb*g*, ple**e
+lo*k for th* ei*ht-digi* he* nu*be* which comes after "eip="
+and w*ite it **w* here:
+
+ *OTE:  If y*u ar* sending a *ug report, PL*ASE *ef*r t* the TECH**FO.TXT
+file for *he **rrect form and procedure*.
+
+
+======================================================
+==                 *e*sion History                  ==
+======================================================
+v1.04 -- B*gs f*xed
+------------------------------------------------------
+ *ad to remov* on* *mb***t track f*om CD for r*tail
+ **w**te "*lease *egist*r" te*t on st**t.map
+------------------------------------------------------
+v1.01 -- Bugs fixed
+------------------------------------------------------
+ Fix*d modem cod*
+ Fi*ed *raglim*t & timel*mit
+ *dded NOE*** cv*r (s* no one can *x*t a level)
+------------------------------------------------------
+v1.00 -- *ugs fix*d
+------------------------------------------------------
+ Gravis U*tra*o*nd aud*o sup*ort (**ill has b*gs)
+ *ore deathmatc* sta*t s*ots on E1M6 and END
+ Print server *er**on and PROG CRC on conn**t
+ -de*icat*d starts **a*t.*ap if nothing else *pec***ed
+ fixed l*oksprin* f*n*tion *uring net g**e
+ f**ed rare cr*sh **r*ng lo*g *unning ***ica*ed server
+------------------------------------------------------
+v0.94 -- Bugs fix*d / Features added -- LIMITED **TA VE**I*N
+------------------------------------------------------
+ T*tal*y rew**t*en m*nus
+ New li*hti*g mo*el w*th *ver*righ*i*g
+ Parse* lowercas* B*ASTE* pa*ms
+ Better Sound Blas*er *hutdo*n code
+ R*w*ote B**STE* in*tiali*at*o*
+ F*xed DMA chann*l 0 b*gs
+ Adde* SBP*o 8 ste*e* setup
+ *ix delayed s**n* on 8 bit S**nd Bla*te*s
+ Fixed spe*d k*y affecting angle-*urning from key*oard
+ Fixed "no s**h Al*as f**me" bugs
+ Fixed *ombie not getting up bug
+ C**c*ed for ve*y hig* joystic* val*es, s*gnalli*g a **iled read
+ *nst*ck **mping F*en** an* *p*wn
+ F*xed la*ge BMod*l* blinking out in co**lex **eas
+ Fixed s_l*c*lsound *ith no sou*d started
+ Saved *pawn parm* in savegame
+ F*xed scre**shot save *ocat***
+ Bin* with no *****ents no lo*ger clears value
+ *l**w ****ole in *nterm*ssi*n / fi*ale
+ Full-screen *AB s*ore*oard in *eat*Match
+ Fixed "+pl*yd*mo <d*mo>" from *om*and l*ne
+ Trapped overfl*w in s**ebuf me*sages
+ Moveu* / m*v*d**n in water!
+ Fi*ed-up Talk com*a*d
+ A*ded un****ort*d cro**hair op**on ("cros**a** 1" f*om console)
+ Colore* chat m*ss*ges *ith notify so*nd
+ Fixed "connect durin* int*rmission" bug
+ **angelevel whi*e demos *un*i*g no lon*e* cras*es
+ Fixed ch*ngelevel with no map l*ft up loa**ng screen
+ Fixed **ng names entered *rom *he consol* causi*g *rash
+ Stoppe* *emos changing whi*e in the menus
+
+ F*x*d modem initializatio* *rom me*u
+ Fixed seria* r*l*ab*e strea* gett*ng *talled
+ S*rial/*od*m code fixes
+	16550a lost t*an*m*t b*ff*r em*ty inte*rupts
+	fixed *ometimes proces**ng i*terrupts fr*m com1 when *sing com2
+	ad*ed c*m3/c*m4 suppo*t from menus
+	fixed first *ha*a*ter of *odem *nit not get*ing *ent
+	**ved serial/mo*em s*t*ings in con*ig.*fg
+ Fixed nam* an* c**ors not **wa*s sen* to server at star*u*
+ A*ded s**ver's TCP/IP and IPX *ddr*s*es (if availa*le) to st**us comma*d
+
+ In 0.92, an a**ition*l c*eck for a u*able VESA video mode wa* adde*;
+the *ump*g** field was verified to be **e*ter than 0, and no m*de was
+su*ported t*at had nu*pa*** s*t to 0 (whi*h in*icates t*at there's not
+enough vi*eo *em*ry *or that m*de).  ATI's V*SA dri*er, m64vbe,
+repor*s 0 for num*ag*s, so VESA vid*o modes th*t were *vaila*le in 0.91
+w*re no lon*er available in 0.92.  This *x*ra num*age* check has
+be*n removed.
+
+-----------------------------------------------------------------------
+v0.93 -- Ne*er off*cia*l* release*; internal testing *nly.
+-----------------------------------------------------------------------
+v0.92 -- Bugs fi*ed
+-----------------------------------------------------------------------
+*yping lo*g s*r*n*s in th* *ostnam* or m**em ini* fie*d in the me**s caus*d
+cr**hes.
+
+Un*e* Win95 I*X w*s d*tected but not f*nct**nal, res*lt*n* in the ga*e
+*xitin* to *OS.
+
+If -*os*und, got "S_LocalSound: can't cac*e" on every k*ypr**s in the m*nu.
+
+When vid_nopa**f*ip was set to 1 in VESA modes, going u**erwa*** **sul*ed in
+only *he upper *eft *or*er of *he d*awi*g a*ea bein* up**ted.
+
+Th* *i*g*e pl*yer sco*eboard (tab) pri**ed t*x* i*cor*ect*y in all m*d*s
+greater than 320 *ix*ls wid*.
+
+On network c*nne**i*** t*at *ropped packet*, t*e re*iab*e me*sa*e *tream
+could get s*op**d up, resu*t*ng in frag c*unts an* talk me**ages no *o*ger
+bein* **l**er*d, altho*gh game movem*nt continued.
+
+T*e co* port se**ings from the me*u wer* get*ing saved & r*stored but
+not used.
+
+Direct s*rial co*ne*tion* did not *ork w*th sl*st.
+
+*uake now check* the ves* in*o*mation for ha*dware i*caba*le of page-f*ipping.
+
+Menu s*und so*eti*es didn't pl**.
+
+Q95 (*lau*ch.exe) freq*ently faile* to e*ecute on the first a**empt.
+
+Q95 (q*ak*udp.dll) was ru*ning out of buf*er* w**n runnin* a server.
+
+T*a*s were not be*ng s*t according t* pants c*lors.
+
+
+Joys**ck n*tes
+--------------
+Yo** joys*ick *ust be *lugged in when Quak* is l*unched.
+
+If you h*ve a j*ysti*k pl*gged in, but don't w*nt t* us* it in *uake
+(it s*ows *he game *own a f*w perc*n*), or you hav* w*i*d *ar*w**e t*at
+d*es*'t like being t*st*d as a joysti*k add "-*ojo*" to yo*r Q*ake
+c*mman* line.
+
+Yo* can *urn **f j*ystick re*d*ng d*ring the g*m* *y typin* "*oystick 0" at
+the Quak* *o*m*nd console.
+
+If you* joystic* *r interfac* ca*d i*properly s*ts *he th*rd or fourth
+joystick b*ttons, type "joybu*ton* 2" at the q*a** console or in yo*r
+.CFG file.
+
+The "sideste*" buttom com*and *ork* on j*yst*cks as with mi** and keyboa*d
+move*ent.
+
+T*e "*loo*" butt*n comma** now lets the jo*stick as well as the mouse contro*
+pi**h angles.
+
+The "invert mouse up/do*n" men* **tion als* i**erts th* j*ystick pitch
+*irec*ion.

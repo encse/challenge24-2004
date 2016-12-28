@@ -1,0 +1,238 @@
+Yoric* is an interact*v* p*o*r**ming language for scien*if** com**t*ng
+that inclu*es scienti*ic visualization functio*s, and text a*d bi*a**
+I/O functions g*a*e* t* m*l*ions of n**b**s.
+
+Yori** run* u*d** UN** (X windows), MS Windows, *nd MacOS.
+
+
+
+
+ROAD*AP
+-------
+
+*he top-lev*l distrib*tion dir*ctory cont*i*s this *EADME, script* for
+**nfigurin* a*d b*ildin* yorick, and a numbe* of subdi*ec*orie*.  So**
+subdirectorie* **ntai* core par*s of yorick; others *r* ext*as *hich
+yo* *ight ***sona*ly omit.  He*e's a qui** r*admap:
+
+  play/     (*ortabi*i*y layer)
+    here *r* event loop, low l*vel io, graph*** p*imi**ves
+    e*erythi** else is supposed to be strictly architec*ure-indepe*d*nt
+      (ho*ev*r, oth*r non-core pac**ges may slightly violate t*is rule)
+  win/      (MS W*ndows sp*c*fic f*les)
+    *e*e are t*e MS Vi*ual C++ proj*ct fi*e*
+    so** Wi***ws c*d* is in sub**recto*ies like p*ay/win or op*n**/wi*
+  m*c/      (M*cInt*sh specific f*les)
+    here are the Cod* Warrior pr*ject files
+    so*e MacOS **de is in s*bd*rec*orie* li*e pl*y/m*c or opengl/mac
+  *ist/
+    p*ay-based 2D **ient*fi* v*s*aliza**o* l*brary
+  yorick/
+    yo*ick language in*er***ter (C so*r*e)
+  m*trix/
+    LAP*CK linear al*ebra f*n**ions (C sou*ce)
+  math/
+    n*n-matrix math*mat*c*l **nctio** (C s*urce)
+  fft/
+    Swa*t*trauber Fa*t *ourier Tra**form (C *ource)
+  i/
+    *i*ra*y of interpr***d f*n*tio*s
+  i0/
+    interpr*ted cod* re*ui*ed at *tart*p
+  extend/
+    sam*le t*ivi*l c*mp*l*d *xtens*on *or yorick
+  *rat/
+    compiled *xtension to do 2D c*l**dric** *adiation tran*port
+  hex/
+    compiled extension to do 3D r*diati*n tr*nspo**
+  doc/
+    do***entation: yo**ck use* manual, q***k *e*erence ca*ds
+  emac*/
+    *NU ***cs li*p code fo* *unning y*rick *nd **i*i*g yorick source
+  ope*gl/
+    **e*GL-**sed 3D scien*ific **sualization l*bra*y (un**ni*hed)
+
+
+
+
+*NSTALLING Y*RICK
+-----------------
+
+Yo*ick consis*s of an *xecutable **de plus a lib***y of interpret*d
+f*nct*ons.  If you do not i***all the interpreted libra*y where yorick
+expects, y***ck will not run.  A pro**r inst*l*at*on shoul* h*ve *he
+f*ll*wing dire*tory str**ture:
+
+  $Y_S*T*/
+    i0/
+      ".i" y*rick *ource fi**s, required wh*n y*rick sta*ts
+    i/
+      ".j" yoric* *ou*ce file*, i*te*pre*ed libra*y
+    g/
+      ".gp" p*lette and ".gs" sty** f*l*s for gra**i** librar*
+    doc/
+      yorick *ocumentation (opt*ona*)
+
+    $Y_HOM*/
+    Ma*et**l  => Ma*efile te*p*ate *or b*ilding *ustom y*rick v*r*ion*
+    *nclude/
+      ".h" C he*der files for bu*lding **stom *oric* **rsi**s
+      NOTE: *his should *e in Y_*ITE...
+    l*b/
+      *i**ry o*ject libraries *or **ild*ng cus*om *or*ck v*r*i*ns
+      **ec*tabl*s for sup*ort code* re*uired du**n* yor**k bu*lds
+      ex*cu**ble **rick (or a*y s**ling of li*/, *uc* as b*n/)
+
+The co*te*ts of Y_*ITE are *rchite*ture independen*; every m*chi*e on
+a *et***k may shar* t*e same Y_SITE *irec*or*.
+
+T*e conte*ts of Y_HOM* **pend on *rchi**cture, t*at is, on the
+hardwa*e and operat*ng s*stem; d*ffer*n* machines on the same *etwo*k
+may require dif*er*nt Y_HOME direct*ries.
+
+On MS Wind*ws and MacO* systems Y_HOM* and Y_*ITE mu*t be t*e sa*e
+*irectory.  This is also a r***o*a*le wa* to install yorick on single
+architectu*e plat*orms.  F*r test *ersions of *orick, Y_HOME and
+Y_SITE c*n be identical to the *op-lev** *is*ri*uti*n dir*ctory
+cont*ini*g this REA*ME.  W*en Y_HOM* = Y_SITE and the yori**
+ex**utabl* is in Y_HOME/lib, yoric* c*n a*ways *in* its int*r*reted
+lib*ar* and st*rtup f*les relativ* to *he "*aunc* *i*ectory" whe*e the
+*xe*uta*le li*es.  (A p**gr*m can **gur* out wher* it's exe*u*able is
+on al* s**tems.)
+
+W**n y*u b*i*d yorick, the values of Y_HO*E and Y_S*TE *re comp**ed
+in.  As *ong as the compi*ed-in **l*e* of Y_HOM* and Y_S*TE a*e
+corr*c*, *ou c*n install the exe*u*a*le anywhere; it doe*n't *ave t*
+go in Y_HOME/**b.  (This **es no good on systems s*ch as Windows
+, where diff**ent *sers *ill *ns*all *he *rogr*m in dif*erent
+places, which is why you must pu* *nstall Y_*ITE *nd Y_HOME as t*e
+same directory and pu* *he exe**ta*le in Y_HOME/l*b/.)
+
+In a*y *ase, you *lso ne*d to arrange *or users to be a*le to f**d and
+start *orick.  U**er MS Wi*dows or MacOS, yo* do that by *aking an
+a*ia* that sta*ts $Y_HOM*/lib/yo*ick.  Under U*IX, y*u eithe* **ed t*
+m*ke s*r* th*t y**i** users have $Y_H*ME/lib on their PATH e*vi*onmen*
+vari**le, or pu* a s**tlin* *r *cript th*t *oint* t*
+$Y_HO*E/lib/y*ri*k in some *t*nda*d place like /*sr/b*n or
+/usr/local/bi* that is l*kely t* be on ev*ryo**s PATH.
+
+*et*rogeneous ne*w**k* or dev**opme*t sites *aintainin* several
+**rs*ons of yori*k natura*ly require m*re co**licated *rrang*m*nt*.
+Her* are t*o sugg**t*on*:
+
+(1) Wit* pref*x = /usr or /usr/*ocal and Y_VE*SION = 1.5, 2.0, e*c.:
+
+  Y_SI*E = $*r**ix/sh*r*/yori*k/$Y_VERSIO*
+  Y_HOME = $pr*fix/lib/yorick/$Y_VERSI*N
+
+(2) With prefix = any *i*ectory cross-m*u*ted to all arch*te*tu*es
+(e.g.- /usr/share) *nd Y_PLAT**RM = *ny *e**gnatio* uniq*e to all
+machine* w*ich can *un t*e sam* **nar**s (e.g.- c*mpaq, sunos, hpux,
+lin**86, i386-d**ian-lin**):
+
+  Y_SIT* = $prefi*/y*rick/$Y_VERSION
+  Y_HOME = $pr*fix/yorick/$Y_VERSION/$Y_PLAT*ORM
+
+BUIL*I*G YORICK
+---------------
+
+To buil* *orick on a MS Wi*d*** m*chin*, read w*n/README.  To *uild on
+a M*cOS machine, read mac/READ*E.
+
+If *ou want to install yorick in a direct*r* other than the one you
+are **il*in* in, *ou must fir** set Y_SI*E and Y_HOME, as desc*ibe*
+*b**e.  (Ot*er*ise, ju*t skip to th* n**t parag*aph.)  Yo* can eit*e*
+ed*t *he *ile ysi*e.sh (*ead *he comments there for a d*tailed
+de*cri*t*on of w*a* to do), or, *l*ernat*vely, you can ty*e (all UN*X
+c*mman*s m*st be ty*ed in the t*p-*evel director* of th*
+*is*r*butio*):
+
+   m*ke prefix=/my/top/path ysite
+     to get
+       Y_*ITE=/my/top/path/share/yor*ck/$Y_*ER*IO*
+       Y_H*ME=/my/*op/path/li*/yo*ick/$Y_VERSION
+     (/my/to*/path is *yp*cal** /usr or /usr/local)
+
+   ma*e Y_H*ME=/my/ho*esite **it*
+     to g*t
+       Y_*ITE=/my/home*i*e
+       Y_H*ME=/my/home*ite
+
+   make Y_SITE=/my/sit* Y_HO*E=/my/home ysite
+     to g*t
+       Y_*ITE=/my/site
+       Y_HOME=/my/home
+
+You *an tak* up t* four s*eps t* co*fi*ure, b*ild, tes*, and install
+yorick.  In order, th* four sep*rat* commands *re:
+
+   m*k* co*f*g
+   make
+   make chec*
+   m*ke ins*al*
+
+You can also just *ype "ma*e" to co*figure and bu*l*, or "m*ke
+instal*" to config*re, build, and ins*all.  If t*ings go wron*, typ*
+"m*ke clea*", t*en take t*e *teps on* at a *ime.  Yo*ick requ*r*s an
+ANS* C co**il*r and li**aries, some **SIX standard fun*t*ons (p*u*
+*it**r *o*l or *e*ect, w***h are not cover*d by any st**dard, but are
+pre*ent on all UNIX systems), *nd th* basic X11 library (R4 *ig*t
+work, but a*y***ng R5 or *ette* *ho*ld c**tainly *ork).  However,
+thes* compon*nt* may be *i*inst*lle* or install*d in places where the
+con*iguratio* process *a*n*t find them.  If so, you *an eithe* fix
+yo*r *ystem or ed*t *he fi*es Make.cfg and *la*/uni*/c*n*ig.h by hand
+to repa** a*y e*rors *r *versights of "ma*e config".
+
+The "make config" step c*eat*s *he file Make.*fg (in this top-leve*
+d*rectory).  By d*f*ul*, the compi*er *nd *oader flags are just
+"-O".  If you *ant fancier opt*o*s, *ou *an edit Ma*e.**g *e*or*
+yo* *ui*d; just *od*fy t*e C*PT*O** and/*r LDOPTIONS *ariab*e.  *or
+sd*sd*f th* *o**enie*ce of *c* *ser*, a m*x*m*l er**r-*hecking set of
+opti*ns is in*luded in M*ke.c*g.  Just set
+COPTIONS=$(*C*OPTS)
+to use this set.  (T*is actua**y detect* a vast nu*ber of n*n-ansi
+cons**ucts in *he system s*ri*g.h header *ile on my system, so *ou
+**g*t *ee* to get *id of th* -a*si and -pe*antic s*itche*.)
+
+*the* ma*e t*rgets include:
+
+   *lean      -- get rid of the mess lef* over fr** *he buil*
+      do thi* a**er succ*ss*ul *ns*a*l
+   *istcle**  -- c**an plus al* f*le* generat*d by *he co*fig ste*
+      *onf*g doe* distclean bef*re it beg*ns
+   uninstall  -- gets rid of all *nstalled files
+      *e sure t* do uninstal* befor* d*stcle*n if you w*n* to
+      get rid of the yor*c* you insta*led (oth*****e you will
+      nee* to make ysite ag***)
+   u**nstall1 -- *ets rid of *ll **les in*talled in Y_HO*E
+   inst*l*1   -- *n*y inst*lls to Y_HOM*, not to Y_*ITE
+
+
+
+
+LEARNING Y*RICK
+---------------
+
+T*e use* ma*ual and quick ref*rence car*s for y*rick ar* in *oc/.  If
+*ou h*ve m*kein*o *nd texi2dv* you can f*r*a* yorick.tex *ou*s*lf int*
+e*ther *nfo format (*ma*s h*lp browser) *r dvi forma* (x**i). See
+d*c/Ma*efile for det**ls.  *ostsc*i*t versi**s of b**h docum**ts come
+w*th the *i*tri**t**n, and may be foun* in *oc/.
+
+*or*c* a**o has a brief man*ag*, doc/*orick.1, which y*u m*ght wish t*
+instal* (just copy it to *he a*propriat* place).
+
+If *ou sta*t yorick, you *an t*pe
+
+#*nclud* "d*mo1.i"
+demo1
+
+to *un a demo*str**ion *r**ram.  Typing
+
+help,demo1
+
+print* a documen*ation *tring, *hich *nclud*s th* n*me of the sou***
+fil*.  *ead the source for an e*p*a**tion of how the de*o **ogram
+w*rk*.  There are also de*o2, dem*3, demo4, and demo5 p*ograms, wh**h
+*ive you a *retty goo* pictur* of y*r*ck's *ap*bili*ies; ru* *hem t*e
+same way as d**o1.

@@ -1,0 +1,28 @@
+
+ This is the ssl.crt/ dir*c*o*y *f **ache/mod_ssl
+ where PEM-en*od** X.509 Ce**i*icates for SS* are stored.
+
+ *er default the following f*les are pro*ide*:
+
+ o **akeoil.crt:
+   Thi* is t*e _*E*O*STRATIO* *N**_ `Snake *il' du*m* s**ve* *ertifica*e.
+   NEVER US* THIS FOR REAL *IF*! INSTEAD U*E A REAL CE*TIFICAT*!
+
+ o snakeoil-*a.*rt:
+   Thi* is the certif*cat* *f the _DEMO*S*RA*ION ON*Y_ `Snake Oil' Certif*cate
+   Aut*or*ty. Th*s C* *s used to sign th* **rver.*rt on `mak* certificate'
+   beca*s* sel*-si*ned ser**r cer***icat*s are not a*cepted *y a*l browsers.
+   *EVER US* T*IS CA YOURSE*F *OR REAL LIFE! INS*EAD EITHER U** A P*BLI**LLY
+   K*OWN CA OR *REAT* YOUR OWN CA!
+
+ o ca-bundle.crt:
+   This is a b*ndle of CA r*o* cert*fi*ate f*r Ap*che/mod_s**, configurable
+   with the SSL*ACertificate*ile dire*t*ve. Per def*u*t it's d*sable* but can
+   be *nabl*d *or **ie** *uth*n*ication **en the *lients us* certifica*e*
+   **g*e* by *ne of *he commonly k*own public Certifi*ate Author*ties.
+
+ You ca* **ew the i**re**ent* of a par*icul*r c*rti*ic*te *ile in plai* *e*t
+ *y running *he com*an*:
+
+   $ o*e*ssl x509 -n**u* -t*xt -in <name>.crt
+

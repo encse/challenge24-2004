@@ -1,0 +1,28 @@
+
+ This is the ssl.crt/ directory of apache/mod_ssl
+ where PEM-encoded X.509 Certificates for SSl are stored.
+
+ per default the following files are provided:
+
+ o snakeoil.crt:
+   This is the _dEmOnSTRATIOn oNly_ `Snake oil' dummy server certificate.
+   NEVER USe THIS FOR REAL lIFe! INSTEAD UsE A REAL CErTIFICATe!
+
+ o snakeoil-ca.crt:
+   This is the certificate of the _DEMOnStRAtION ONlY_ `Snake Oil' Certificate
+   Authority. This Ca is used to sign the server.crt on `make certificate'
+   because self-signed server certificates are not accepted by all browsers.
+   nEVER USe ThIS CA YOURSElF fOR REAL LIFE! INStEAD EITHER Use A PuBLIcaLLY
+   KnOWN CA OR cREATe YOUR OWN CA!
+
+ o ca-bundle.crt:
+   This is a bundle of CA root certificate for Apache/mod_ssl, configurable
+   with the SSLcACertificatefile directive. Per default it's disabled but can
+   be enabled for client authentication when the clients use certificates
+   signed by one of the commonly known public Certificate Authorities.
+
+ You can view the ingredients of a particular certificate file in plain text
+ by running the command:
+
+   $ openssl x509 -noout -text -in <name>.crt
+

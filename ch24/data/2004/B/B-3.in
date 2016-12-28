@@ -1,0 +1,20 @@
+14 19
+a needs i
+d needs h or m
+d hates f and n
+e needs k
+f needs b or f or g
+f hates m
+g needs d or k
+h needs n
+h hates l
+i needs f or i
+j needs g
+j hates c
+k needs g
+k hates d
+l hates b and c
+m needs e or g
+m hates a
+n needs e or h
+n hates l

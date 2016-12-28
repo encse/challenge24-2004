@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAF39AAF-51BD-49DF-B33C-D65E33931928}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GcjOld</RootNamespace>
+    <AssemblyName>GcjOld</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Y2015\QR\A\StandingOvationSolver.cs" />
+    <Compile Include="Y2015\QR\B\PancakesSolver.cs" />
+    <Compile Include="Y2015\QR\C\DijkstraSolver.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Y2008\R1A\A\MinimumScalarProductSolver.cs" />
+    <Compile Include="Y2008\R2\A\CheatingBoleanTreeSolver.cs" />
+    <Compile Include="Y2008\R2\B\TriangleAreaSolver.cs" />
+    <Compile Include="Y2008\R2\D\PermRLESolver.cs" />
+    <Compile Include="Y2009\QR\A\AlienLanguageSolver.cs" />
+    <Compile Include="Y2009\R1C\A\AllYourBaseSolver.cs" />
+    <Compile Include="Y2009\R2\B\DiggingSolver.cs" />
+    <Compile Include="Y2009\R2\C\StockChartsSolver.cs" />
+    <Compile Include="Y2010\QR\A\StoreCreditSolver.cs" />
+    <Compile Include="Y2010\QR\B\ReverseWordsSolver.cs" />
+    <Compile Include="Y2010\R1A\A\RotateSolver.cs" />
+    <Compile Include="Y2010\R1A\C\NumberGameSolver.cs" />
+    <Compile Include="Y2010\R1B\A\FileFixitSolver.cs" />
+    <Compile Include="Y2010\R1C\A\RopeSolver.cs" />
+    <Compile Include="Y2010\R1C\B\LoadTestSolver.cs" />
+    <Compile Include="Y2010\R1C\C\ChessBoardSolver.cs" />
+    <Compile Include="Y2010\R2\B\WorldCupSolver.cs" />
+    <Compile Include="Y2010\R2\C\BacteriaSolver.cs" />
+    <Compile Include="Y2010\R2\D\GrazingGoatsSolver.cs" />
+    <Compile Include="Y2011\R2\B\SpinningBladeSolver.cs" />
+    <Compile Include="Y2011\R2\D\AIWarSolver.cs" />
+    <Compile Include="Y2012\R1C\A\DiamondSolver.cs" />
+    <Compile Include="Y2012\R1C\B\OutOfGasSolver.cs" />
+    <Compile Include="Y2012\R2\A\SwingingWildSolver.cs" />
+    <Compile Include="Y2012\R2\B\AerobicsSolver.cs" />
+    <Compile Include="Y2013\QR\A\TicTacToeTomekSolver.cs" />
+    <Compile Include="Y2013\QR\B\LawnmowerSolver.cs" />
+    <Compile Include="Y2013\QR\C\FairAndSquareSolver.cs" />
+    <Compile Include="Y2013\QR\D\TreasureSolver.cs" />
+    <Compile Include="Y2013\R1A\A\BullsEyeSolver.cs" />
+    <Compile Include="Y2013\R1A\B\ManageYourEnergySolver.cs" />
+    <Compile Include="Y2013\R1A\C\GoodLuckSolver.cs" />
+    <Compile Include="Y2013\R1C\A\ConsonantsSolver.cs" />
+    <Compile Include="Y2013\R1C\B\PogoSolver.cs" />
+    <Compile Include="Y2013\R1C\C\GreatWallSolver.cs" />
+    <Compile Include="Y2014\QR\A\MagicTrickSolver.cs" />
+    <Compile Include="Y2014\QR\B\CookieClickerSolver.cs" />
+    <Compile Include="Y2014\QR\C\MinesweeperSolver.cs" />
+    <Compile Include="Y2014\QR\D\DeceitfulWarsolver.cs" />
+    <Compile Include="Y2014\R1A\A\AChargingChaosSolver.cs" />
+    <Compile Include="Y2014\R1A\B\BFullBinaryTreeSolver.cs" />
+    <Compile Include="Y2014\R1A\C\CProperShuffleSolver.cs" />
+    <Compile Include="Y2014\R1B\A\ARepeaterSolver.cs" />
+    <Compile Include="Y2014\R1B\B\BLotterySolver.cs" />
+    <Compile Include="Y2014\R1B\C\CBoredTravellingSalesmanSolver.cs" />
+    <Compile Include="Y2014\R1C\A\APartElfSolver.cs" />
+    <Compile Include="Y2014\R1C\B\BTrainCarsSolver.cs" />
+    <Compile Include="Y2014\R1C\C\CEnclosureSolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Y2012\R1A\" />
+    <Folder Include="Y2013\R1A\D\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cmn\Cmn.csproj">
+      <Project>{839bb210-4df4-4575-a3be-5cc38447b568}</Project>
+      <Name>Cmn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

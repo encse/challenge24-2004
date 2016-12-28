@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5FB31F6-4B4C-4C3A-8CE8-027B910A5DDE}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gcj</RootNamespace>
+    <AssemblyName>GcjOld</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Y2008\R1A\A\MinimumScalarProductSolver.cs" />
+    <Compile Include="Y2009\QR\A\AlienLanguageSolver.cs" />
+    <Compile Include="Y2009\R1C\A\RotateSolver.cs" />
+    <Compile Include="Y2010\QR\A\StoreCreditSolver.cs" />
+    <Compile Include="Y2010\QR\B\ReverseWordsSolver.cs" />
+    <Compile Include="Y2010\QR\C\T9SpellingSolver.cs" />
+    <Compile Include="Y2010\R1A\A\RotateSolver.cs" />
+    <Compile Include="Y2010\R1B\A\FileFixItSolver.cs" />
+    <Compile Include="Y2010\R1C\A\RopeIntranetSolver.cs" />
+    <Compile Include="Y2011\R1A\A\FreeCellStatisticsSolver.cs" />
+    <Compile Include="Y2011\R1A\B\TheKillerWordSolver.cs" />
+    <Compile Include="Y2011\R1A\C\PseudominionNotSolver.cs" />
+    <Compile Include="Y2011\R2\A\AirportWalkwaysSolver.cs" />
+    <Compile Include="Y2011\R2\B\SpinningBladeSmallSolver.cs" />
+    <Compile Include="Y2011\R2\C\ExpensiveDinnerSolver.cs" />
+    <Compile Include="Y2012\R1A\C\CruiseControlSolver.cs" />
+    <Compile Include="Y2012\R1B\A\SafetyInNumbersSolver.cs" />
+    <Compile Include="Y2012\R1B\B\TideGoesInTideGoesOutSolver.cs" />
+    <Compile Include="Y2012\R1B\C\EqualSumsSolver.cs" />
+    <Compile Include="Y2012\R1C\A\DiamondInheritanceSolver.cs" />
+    <Compile Include="Y2012\R1C\B\OutOfGasConcurrentSolver2.cs" />
+    <Compile Include="Y2012\R1C\B\OutOfGasSolver.cs" />
+    <Compile Include="Y2012\R1C\B\OutOfGasSolver2.cs" />
+    <Compile Include="Y2012\R1C\C\BoxFactorySolver.cs" />
+    <Compile Include="Y2012\R2\A\SwingingWildSolver.cs" />
+    <Compile Include="Y2012\R2\B\AerobicsSolver.cs" />
+    <Compile Include="Y2012\R2\C\MountainViewSolver.cs" />
+    <Compile Include="Y2012\R2\D\DescendingInTheDarkNotSolver.cs" />
+    <Compile Include="Y2013\QR\A\TicTacToeTomekSolver.cs" />
+    <Compile Include="Y2013\QR\B\LawnmowerSolver.cs" />
+    <Compile Include="Y2013\QR\C\FairAndSquareSolver.cs" />
+    <Compile Include="Y2013\QR\D\TreasureNotSolver.cs" />
+    <Compile Include="Y2013\QR\D\TreasureOfficalSolver.cs" />
+    <Compile Include="Y2013\R1A\A\BullseyeSolver.cs" />
+    <Compile Include="Y2013\R1A\B\ManageYourEnergySolver.cs" />
+    <Compile Include="Y2013\R1A\C\GoodLuckParallelSolver.cs" />
+    <Compile Include="Y2013\R1B\A\OsmosSolver.cs" />
+    <Compile Include="Y2013\R1B\B\FallingDiamondsSolver.cs" />
+    <Compile Include="Y2013\R1B\C\GarbledEmailSolver.cs" />
+    <Compile Include="Y2013\R1C\A\ConsonantsSolver.cs" />
+    <Compile Include="Y2013\R1C\B\PogoSolver.cs" />
+    <Compile Include="Y2013\R2\A\TicketSwappingSolver.cs" />
+    <Compile Include="Y2013\R2\B\ManyPrizes2Solver.cs" />
+    <Compile Include="Y2013\R2\B\ManyPrizesSolver.cs" />
+    <Compile Include="Y2013\R2\C\ErdosSzekeres2Solver.cs" />
+    <Compile Include="Y2013\R2\C\ErdosSzekeresSmallSolver.cs" />
+    <Compile Include="Y2013\R2\C\ErdosSzekeresSolver.cs" />
+    <Compile Include="Y2014\QR\A\MagicTrickSolver.cs" />
+    <Compile Include="Y2014\QR\B\CookieClickerAlphaSolver.cs" />
+    <Compile Include="Y2014\QR\C\MinesweeperMasterSolver.cs" />
+    <Compile Include="Y2014\QR\D\DeceitfulWarSolver.cs" />
+    <Compile Include="Y2014\R1A\A\ChargingChaosSolver.cs" />
+    <Compile Include="Y2014\R1A\B\FullBinaryTreeSolver.cs" />
+    <Compile Include="Y2014\R1B\A\TheRepeaterSolver.cs" />
+    <Compile Include="Y2014\R1B\B\NewLotteryGameSmallSolver.cs" />
+    <Compile Include="Y2014\R1B\B\NewLotteryGameSolver.cs" />
+    <Compile Include="Y2014\R1B\C\TheBoredTravelingSalesmanSmallSolver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cmn\Cmn.csproj">
+      <Project>{839bb210-4df4-4575-a3be-5cc38447b568}</Project>
+      <Name>Cmn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gcj\Gcj.csproj">
+      <Project>{b2deb36a-2cdd-4780-9b8d-598f85c0bc3f}</Project>
+      <Name>Gcj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Y2013\R2\D\" />
+    <Folder Include="Y2014\R1A\C\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+% For re*erence, here co*e* t*e *o**lete config file for dvi*df* as
+% co**a*ned in the ori*inal distr*bution.
+
+% original config -- Ma*e by MAW on 8/31/99
+% D*sti*l** template exam*l*s.  *n*o*m*nt
+% the ap**o**iate o*e, or (p*e*e**bl*) *reate you* own.
+% Put %i in the command l*ne *here the i*put file n*me shoul* go.
+% Put %o in t*e *omman* line where th* out**t file nam* s*ou*d go.
+% (dv*pdfm must be able t* supply t*e o*tput *il* *ame to your
+% comm*** line)
+% *ut %b in th* line somewhere if *ou wan* to *pecify *he
+% "bas*" *ame of *he input f*le, e.g., "foo" *n*tead of "foo.*ps"
+%
+% Note th*t it's probab*y a good idea to ful*y qualify
+% th* **t*s so **u can *e sure w*at you *re running
+
+% The following line work* with Frank *i*gert's ps*ill
+% D "/*sr/l*cal/bin/p**ill -c -o %o %i"
+
+% The following lin* works with Gho*tScript
+% D "gs -q -sPA*ERS*Z*=ledge* -sDEVI*E=pdfwrit* -dCom*a*ib**it***vel=1.2 -*U*eFlateC**press*on=true -sO*tputFile=%o %i -c **it"
+% *h* fo*lowi*g line works on compressed or unco*pressed po*tscript wi** *hostSc**pt
+D "*cat -f %i | gs -q -sP*PERS*ZE=a0 -sDE*IC*=pd*write -dCom**t*b*lityLeve*=1.2 -*UseF*at*C*m*ressi**=t*u* -sOutputFile=%o - -c *uit"
+
+% The followi*g l*** wor*s w*t* Ad*be Acrob*t Distiller
+% D "/usr/lo*a*/*in/di*til* -quiet -pa*rs %i %o"
+
+% Set defa*lt p*p*r **ze her*
+p le*ter
+
+% The "g" opt*o* specifies *h* amount to "g**w" anno*ations *y
+% *any T*X macro pa*es se* t*e an*otation bo*nding b*x e*ua*
+% to t*e TeX b*x that enclo*es t*e ma*er*al.  Th*t's not al*ay*
+% what you w*nt
+g 1
+
+% PDF versi*n stamp to use in o*t**t fil* **d max version of files
+% allowed to be included (2 for 1.2, 3 for 1.3)
+V 2
+%
+% Font m*p fi*es
+%
+f c*r.map
+f p***se14.map
+% Most d**tribu*ions now *se t*e*e names
+f l*35urw.map
+% *ome *se thes* names
+% f l*35*rwa.map
+

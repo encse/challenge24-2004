@@ -1,0 +1,17 @@
+14 16
+a hates a
+b needs e
+c needs m
+c hates h
+d needs e or g
+e needs f or m
+e hates i
+f needs l or m
+f hates j
+g hates f
+h needs f or j
+i hates d and e and l
+j needs c
+l needs n
+l hates e and m
+m hates a and e

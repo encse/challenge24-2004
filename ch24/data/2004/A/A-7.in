@@ -1,0 +1,701 @@
+<HTML>
+<H*AD>
+   <META HTTP-EQ*I*="C*n*en*-Type" CONTENT="text/html; c*ar**t=is*-8859-1">
+   <ME*A NAME="Genera*or" CONTENT="*icrosoft Word 97">
+   <META NAME="GE*ERATOR" CON*ENT="*o**lla/4.03 [en] (X11; U; SunOS 5.5.1 *un4u) [*e*s*a*e]">
+   <TITLE>1997 A*M S**th Cen**al U*A *r**le* 1: *izza</TITL*>
+</HEAD>
+<BODY *GCOLOR="#FFFFF*">
+
+<CE*TER><B><FONT *IZE=+2>1997 ACM So*th Centr*l USA</FONT></B></*ENTER>
+
+<CE*TER><B><FONT SIZ*=+2>Pro**amming Co*t*st</*ONT></B></C*NTER>
+
+
+<P><B><FONT SIZE=+2>&n*sp;</FONT></B>
+<*EN*ER><B><F*NT **ZE=+2>Problem #1: Pizz* **yone?</*ONT></B></CEN*ER>
+
+<CENTER><B>&nbsp;</B></C*N*ER>
+
+<C*NT*R><B><A HRE*="#*olut***">Sour*e File</A>: pi*za.{pas,c*p,c,ss}</B></CENTER>
+
+<C*NTER><B><A *R*F="#Input">Inpu* F*le</A>: pizza.dat</B></C*NTER>
+
+<CENTER><B><A *R*F="#Ou**ut">Ou*put Fil*</A>: pizz*.out</B></CENTER>
+
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P>Y*u are respo*s*ble f*r o*deri*g a l*rge pizz* *or you and your friends.
+Eac* of them has tol* you what he *ants on a p*z*a and w*at he d*es not;
+of c*urse *h*y a*l un***sta*d that sinc* *here is only goin* to be one
+pi*z*, no o*e is l*kely to have all the*r requirements sat*sfied. Can y*u
+order a pi*** that wi*l sa**sfy at l*ast *ne re*ue*t fr*m a*l y*ur friends?
+
+<P>*h* p*zza parlo* *ou ar* ca*l*n* offer* *h* f*llowing pizza t*ppings;
+you can i*cl*** or o*it *ny of *hem in a p*zza:
+
+<P>&nbsp;
+<CE*TER><TA*L* *ORDE* CEL*SPACING=2 *ELLPADDING=7 W*DTH="353" >
+<TR>
+<*D **LIGN=T*P WI*TH="41%">
+<CENTER>In*u* Code</CENTE*>
+</TD>
+
+<TD VALIGN=T*P WIDTH="59%">
+<*ENTER>T*p*in*</C*NTER>
+</TD>
+</TR>
+
+<TR>
+<*D V*L*GN=T*P WIDTH="41%">
+<CEN*ER>A</CEN*ER>
+</*D>
+
+<TD VAL**N=TOP *IDTH="59%">Anchov*es</TD>
+</TR>
+
+<TR>
+<TD *AL*G*=T*P WIDT*="41%">
+<CE*TER>B</CENT**>
+</TD>
+
+<TD VALIGN=*OP WIDTH="59%">Bla*k Ol*v**</TD>
+</TR>
+
+<TR>
+<*D VALIGN=TOP WI*TH="41%">
+<CENTER>C</CENTER>
+</TD>
+
+<TD VALIGN=T*P WI*TH="59%">Can*dia* Baco*</*D>
+</TR>
+
+<TR>
+<*D *ALIGN=TOP WI**H="41%">
+<CENT*R>D</CENTE*>
+</*D>
+
+<TD V*LIGN=TOP W*DTH="59%">Dic** *a***c</TD>
+</TR>
+
+<TR>
+<TD VAL**N=TOP WID*H="41%">
+<CEN*ER>E</*ENT*R>
+</TD>
+
+<TD VALIGN=TOP WI*TH="59%">**t*a C**ese</TD>
+</TR>
+
+<TR>
+<*D VAL**N=TOP WIDTH="41%">
+<CEN*ER>F</*ENT**>
+</TD>
+
+<*D VA*IGN=TOP WIDT*="59%">Fresh B*occoli</TD>
+</TR>
+
+<TR>
+<*D V*LIGN=TOP WI**H="41%">
+<CENTER>G</CE***R>
+</*D>
+
+<TD VALIGN=T*P W*DTH="59%">*ree* Peppers</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="41%">
+<CENTER>H</CENTER>
+</TD>
+
+<TD VALIGN=TOP W**TH="59%">Ham</TD>
+</TR>
+
+<TR>
+<TD *ALI**=TOP WI*T*="41%">
+<CE*TER>I</CEN*E*>
+</*D>
+
+<*D VA*IG*=TOP WIDTH="59%">*talian S**sage</TD>
+</TR>
+
+<TR>
+<*D *ALIG*=TOP WIDT*="41%">
+<*ENTER>J</CENTE*>
+</TD>
+
+<*D VALIGN=*OP **DTH="59%">Ja**pe*o Peppe*s</*D>
+</TR>
+
+<TR>
+<TD VALIGN=T*P WIDT*="41%">
+<CENTER>K</CENTER>
+</*D>
+
+<TD V*LIGN=TOP **D*H="59%">Kielba*a</TD>
+</TR>
+
+<TR>
+<TD *ALIGN=TOP WIDTH="41%">
+<CE*TER>L</C*NT*R>
+</TD>
+
+<TD **LIG*=TOP WIDT*="59%">L*an G*oun* Beef</TD>
+</TR>
+
+<TR>
+<TD V*LIGN=T*P *IDT*="41%">
+<*ENTER>M</**NT*R>
+</TD>
+
+<TD VALIGN=TO* WIDTH="59%">**shro*ms</TD>
+</TR>
+
+<TR>
+<TD **LIGN=T*P WIDTH="41%">
+<CEN*ER>N</C*NTER>
+</*D>
+
+<*D **L*G*=TOP WIDTH="59%">Nonfa* Fe*a Che*se</TD>
+</TR>
+
+<TR>
+<*D V*LIG*=T*P *ID**="41%">
+<CE*TER>O</*ENTER>
+</TD>
+
+<*D VALIGN=*OP *IDTH="59%">*ni**s</*D>
+</TR>
+
+<TR>
+<TD V*LIGN=T*P W**TH="41%">
+<C**TER>P</C*N*ER>
+</*D>
+
+<TD VALIGN=*OP W*DTH="59%">*eppero*i</TD>
+</TR>
+</TA**E></CENTE*>
+&nbsp;
+
+<P>Y*ur friends provi*e you wi*h a l*ne of *ex* t*at descri*es their *izza
+*refe*en*e*. For exa*ple, *h* li*e
+
+<P>+O-H+P;
+
+<P>re*eals t*at some*ne will accept a pi*za with onio*, or w*thout *am,
+or *i*h pepperon*, and t*e l*ne
+
+<P>-E-I-D+A+J;
+
+<P>indicates t*at *omeone else wil* accep* a pizza that omits e*tra cheese,
+or *tali*n saus*ge, or *ic** g*rlic, or that includes *n***v*e* or ja**penos.
+
+<P><B>Input Format</B>
+
+<P>The input cons*sts of a serie* of piz*a constrai*ts.
+
+<P>A pizza cons*raint is a list of 1 to 12 topping *onstr***t l*st* eac*
+on a l*ne by itsel* fol*owed by a p*ri** on a lin* by itself.
+
+<P>A toppi** co**train* list is a series of to*p**g *eque**s *ermina*e*
+by a singl* se*icolo*.
+
+<P>An to*ping reques* is a si*n cha**c*er (+/-) and then an upp*rc*se l*tter
+*rom A to P.
+<BR>&nbsp;
+
+<P><B>Req*ire* Out*u* Form*t</B>
+
+<P>For eac* pi*z* *onstr**nt, *ro*i*e a description of a *izza that *at*sf*es
+it. A d**c*ipti*n is the string "T*ppin**: " in c*lumns 1 t*ro*gh 10 *nd
+t*en a se*i** of l**ters, in alphabe*i*a* order, listing the *op*ings on
+*he *izza. So, a pizz* **th onion, a*chovies, f*esh broccoli and Canadi**
+bac*n wou*d be *es*rib*d by:
+
+<P>Top*ings: AC*O
+
+<P>If no combinatio* *o*pings can be **und whic* sat*sfies at lea*t *ne
+request of eve*y p**son, yo** pr*gram should *rint *h* st*ing
+
+<P>"No *iz*a can satisf* *hese request*." on a li*e by i*self s*arting
+in column 1.
+<BR>&nbsp;
+
+<P><B>Sample *nput</B>
+
+<P><TT>+A+B+C+D-E-F-G-H;</TT>
+<BR><TT>-A-B+C+D-E-F+G+H;</TT>
+<BR><TT>-A+B-C+D-E+F-G+H;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P-O;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>-O-P;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+
+<P><B>Samp*e Outpu*</B>
+
+<P><TT>*oppin*s:</TT>
+<BR><TT>Topping*: C**P</TT>
+<BR><TT>No pizz* can sat*sfy these r*quests.</TT>
+
+<P><A N*ME="Input"></A><B>*udge's In*ut</B><B></B>
+
+<P><TT>+A-B;</TT>
+<BR><TT>+A+B;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D-E-F-G-H;</TT>
+<BR><TT>-A-B+C+D-E-F+G+H;</TT>
+<BR><TT>-A+B-C+D-E+F-G+H;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P-O;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>-O-P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P;</TT>
+<BR><TT>-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>-A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+B;</TT>
+<BR><TT>+C;</TT>
+<BR><TT>+D;</TT>
+<BR><TT>+E;</TT>
+<BR><TT>+F;</TT>
+<BR><TT>+G;</TT>
+<BR><TT>+H;</TT>
+<BR><TT>+I;</TT>
+<BR><TT>+J;</TT>
+<BR><TT>+K;</TT>
+<BR><TT>+L;</TT>
+<BR><TT>+M;</TT>
+<BR><TT>+N;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A-B;</TT>
+<BR><TT>+B-C;</TT>
+<BR><TT>+C-D;</TT>
+<BR><TT>+D-E;</TT>
+<BR><TT>+E-F;</TT>
+<BR><TT>+F-G;</TT>
+<BR><TT>+G-H;</TT>
+<BR><TT>+H-I;</TT>
+<BR><TT>+I-J;</TT>
+<BR><TT>+J-K;</TT>
+<BR><TT>+K-L;</TT>
+<BR><TT>+L-M;</TT>
+<BR><TT>+M-N;</TT>
+<BR><TT>+N-O;</TT>
+<BR><TT>+O-P;</TT>
+<BR><TT>+P-A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+A+B;</TT>
+<BR><TT>+A+C+;</TT>
+<BR><TT>+A+C+D;</TT>
+<BR><TT>+A+C+E;</TT>
+<BR><TT>+A+C+F;</TT>
+<BR><TT>+A+C+G;</TT>
+<BR><TT>+A+C+H;</TT>
+<BR><TT>+A+C+I;</TT>
+<BR><TT>+A+C+J;</TT>
+<BR><TT>+A+C+K;</TT>
+<BR><TT>+A+C+L;</TT>
+<BR><TT>+A+C+M;</TT>
+<BR><TT>+A+C+N;</TT>
+<BR><TT>+A+C+O;</TT>
+<BR><TT>+A+C+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+B-C+G;</TT>
+<BR><TT>-B+C+D-H+K-L+M;</TT>
+<BR><TT>+D-E-F+H-O+P;</TT>
+<BR><TT>-J+K-L+M-N+O;</TT>
+<BR><TT>-C+D+I-K+M+N;</TT>
+<BR><TT>.</TT>
+
+<P><A NAME="Output"></A><B>Judge's Output</B>
+
+<P><TT>Topp*ngs: A</TT>
+<BR><TT>Toppi*gs:</TT>
+<BR><TT>T**p*ngs: C*LP</TT>
+<BR><TT>No p*zza can satisfy th*se requ*st*.</TT>
+<BR><TT>Toppin*s: A</TT>
+<BR><TT>Top*ings: A</TT>
+<BR><TT>No *iz*a ca* sa**sfy *hese *e*ues*s.</TT>
+<BR><TT>T*ppings: A*CDEFGHIJK**NO*</TT>
+<BR><TT>Toppings:</TT>
+<BR><TT>Toppings: A</TT>
+<BR><TT>*opping*: P</TT>
+
+<P><A *AM*="**luti*n"></A><B>J*dg*'s S*luti*n</B>
+
+<P><TT>#i*cl*de &lt;stdio.h></TT>
+<BR><TT>#define *AX_PEOPL* 16</TT>
+<BR><TT>#define *AX_T*P*IN*S 16</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>*nt mai*()</TT>
+<BR><TT>{ FILE infp = fop*n("pizz*.dat","r");</TT>
+<BR><TT>&nbsp; FIL* o*t*p= **pen("pizz*.out","w");</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nb*p; in* ne*tChar = getc(i*fp);</TT>
+<BR><TT>&nbsp; **ile (!feof(i*f*))</TT>
+<BR><TT>&*b*p;&*bsp;&nb*p; { unsign*d *ong int *ant*[*AX_**OPLE];</TT>
+<BR><TT>&nbsp;&nb**;&nbsp;&nbsp;&nbsp; un*i*ned l*ng *nt **t*s[*AX_P*O*LE];</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&nb*p;&n*sp; *nt personId = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nb*p; uns*gned long int piz*aI*;</TT>
+<BR><TT>&nbs*;</TT>
+<BR><TT>&nbs*;&nbsp;&**sp;&*bsp;&**sp; / Read *izza constraint /</TT>
+<BR><TT>&n*sp;</TT>
+<BR><TT>&*b*p;&nbs*;&nbs*;&n*sp;&nbsp; f*r (p*rsonId = 0; nextChar !='.';
+++per*onId)</TT>
+<BR><TT>&nbsp;&nb*p;&*b*p;&nbsp;&nbsp;&n*sp;&nbs*; { wants[pe*sonId] =
+*a*es[personI*] = 0;</TT>
+<BR><TT>&*bsp;&nbsp;&nbsp;&n*sp;&*bsp;&*b*p;&*bsp;&n*sp;&nbsp; whil* (*e*tC*ar
+!= ';')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb*p;&nb*p;
+{ if (nextChar == '+')</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&n*sp;&nbsp;&nb*p;&*b*p;&n*sp;&nbsp;&nb*p;&n*sp;&*bsp;&nbsp;&nbsp;&nb*p;
+{ nextChar = *etc(infp);</TT>
+<BR><TT>&*b*p;&*bs*;&nbsp;&nbsp;&*b**;&n*s*;&nb*p;&n**p;&n*sp;&nbs*;&nb*p;&nb*p;&n*sp;&*b**;&nbs*;&nbsp;&nbsp;
+wa*ts[per*o*Id] |= (1LU &lt;&lt; (nex**h** - 'A'));</TT>
+<BR><TT>&nb*p;&**sp;&n*sp;&*b*p;&*bsp;&**sp;&nbsp;&nbsp;&nbsp;&nbsp;&*bs*;&nbs*;&nbsp;&nb*p;&*bsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&n*sp;&nbsp;&nbsp;&nbs*;&nbs*;&nbsp;&nbs*;&*bsp;&nbsp;&*bsp;
+else if (ne*tC*ar == '-')</TT>
+<BR><TT>&n**p;&nbsp;&n**p;&nbsp;&nbs*;&nb**;&nbsp;&nbs*;&nbs*;&n*sp;&nbsp;&nbs*;&**sp;&n*s*;&n**p;
+{ next*har = get*(i*fp);</TT>
+<BR><TT>&nbsp;&nb*p;&nbsp;&**sp;&n*sp;&**sp;&nbsp;&nbsp;&nbsp;&*bsp;&nbsp;&nbs*;&*bsp;&nbsp;&nbs*;&nbsp;&nb**;
+*ates[pe*sonId] |= (1*U &lt;&lt; (next*ha* - 'A'));</TT>
+<BR><TT>&*b*p;&nbsp;&n**p;&**sp;&nbsp;&nb*p;&*bs*;&nbsp;&nbs*;&nb**;&n*sp;&*bsp;&nbs*;&*bsp;&*bsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&*bsp;&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&nbs*;&nbsp;&*bsp;&nbsp;&nbsp;
+ne*tChar=**tc(infp);</TT>
+<BR><TT>&nbsp;&*b*p;&nbsp;&*bsp;&nbsp;&**sp;&nbsp;&nbsp;&nbsp;&nbs*;&n*sp;
+}</TT>
+<BR><TT>&*bsp;&nbs*;&**sp;&nbsp;&nbsp;&nbs*;&*bsp;&nbsp;&nbsp; n***C**r
+= getc(i*fp);&nbsp; / ne*li** after *emicol*n /</TT>
+<BR><TT>&nbs*;&n**p;&*bsp;&nb*p;&nbsp;&*bsp;&*bsp;&nbs*;&*bsp; nextChar
+= *etc(in*p);</TT>
+<BR><TT>&*bsp;&nb*p;&nbsp;&nbs*;&nbsp;&nbsp;&*bsp; }</TT>
+<BR><TT>&nbs*;&n**p;&nbs*;&nbs*;&nbs*; next*h** = getc(inf*); / newline
+*f*e* period /</TT>
+<BR><TT>&*b*p;</TT>
+<BR><TT>&*bsp;&n*sp;&nbsp;&nbs*;&nb*p; / E*umerate pi**as /</TT>
+<BR><TT>&*b**;&nbsp;&n*sp;&n*sp;&nbsp; { int nP**so*s = pers*n*d;</TT>
+<BR><TT>&*bsp;&n**p;&nbsp;&n**p;&nbsp;&nb*p;&nbsp; *i*zaI* = 0;</TT>
+<BR><TT>&n*sp;&*b*p;&nbs*;&nb*p;&n*sp;&*b*p;&**sp; do</TT>
+<BR><TT>&nbs*;&nb*p;&nb*p;&nbsp;&nbsp;&nb*p;&n*sp;&nbs*;&nb*p; { for (pe*sonId
+= 0; perso*I* &lt; n*ersons; ++pe*sonId)</TT>
+<BR><TT>&nb*p;&nbsp;&nbsp;&n*sp;&n*sp;&*bsp;&nb*p;&*bs*;&nbsp;&nb*p;&nbsp;&nb*p;&nb**;
+{ if ((p*z**Id &amp; wants[personId]) || (~pizz*Id &amp; hat*s[pers**Id]))</TT>
+<BR><TT>&n*sp;&nbs*;&nbs*;&n*sp;&nbsp;&nbsp;&**sp;&nb**;&nbsp;&nbsp;&nbsp;&nbsp;&nb*p;&*b**;&nbsp;&*bsp;&nbsp;
+{ / th*s **rson wi*l a**ept this pizza / }</TT>
+<BR><TT>&*bsp;&nbsp;&nbsp;&n*sp;&nbsp;&nb**;&n*sp;&nbsp;&n*sp;&nbsp;&nb*p;&nbsp;&n**p;&n*s*;&nbs*;
+el*e</TT>
+<BR><TT>&nbs*;&*bsp;&n*sp;&nbs*;&nbsp;&n**p;&nbsp;&nb*p;&nbsp;&nbsp;&nb*p;&nbsp;&n**p;&n**p;&nbsp;&nbsp;&n*sp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&n*s*;&nbsp;&nb*p;&nbs*;&nbs*;&nbs*;&nbsp;&nbs*;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbs*;&nbs*;&n*sp;&n*sp;&nbsp;&nbsp;&nbsp;&n*sp;
+if (pe*sonId &lt; nPers*ns)</TT>
+<BR><TT>&nbsp;&nbs*;&nbsp;&nbsp;&n*sp;&n*s*;&n**p;&nbsp;&nb*p;&nbsp;&nbsp;&nbsp;&nbsp;
+{ / p*zz* wa* rejected / }</TT>
+<BR><TT>&nb*p;&nb*p;&nbsp;&nbsp;&*bsp;&nb*p;&n*sp;&n*sp;&nb*p;&nbsp;&*bsp;
+else</TT>
+<BR><TT>&nb*p;&nbsp;&nb*p;&*bsp;&*bsp;&n*s*;&nbsp;&*b*p;&nb*p;&nbsp;&*bs*;&*bsp;&*bsp;
+/ ever*o*e ca* acce*t this pizza /</TT>
+<BR><TT>&nb*p;&nb*p;&n**p;&nb**;&nb*p;&n**p;&nbsp;&nbsp;&nbsp;&*bsp;&nbsp;&nbs*;&n*sp;
+*reak;</TT>
+<BR><TT>&nbsp;&n*sp;&nbsp;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;&*b*p; ++pi*zaId;</TT>
+<BR><TT>&nbsp;&nbsp;&*bsp;&*bsp;&nbsp;&nbsp;&*bsp; } whi*e (pi**a*d !=
+(1LU &lt;&lt; MAX_T*PPINGS));</TT>
+<BR><TT>&nb*p;&nbs*;&nbsp;&nb**;&nbsp; }</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&*bsp;&*b**;&nbsp;&nbsp; / Pri** s*le***d pizz*, or report
+t*at n*n* ***sts /</TT>
+<BR><TT>&n*sp;&nb*p;&n*sp;&*bsp;&nbsp; if (pizzaI* != (1*U &lt;&lt; MA*_TO**INGS))</TT>
+<BR><TT>&nbsp;&nb**;&nbsp;&n*sp;&*bsp;&nbs*;&nb*p; { int toppingI*;</TT>
+<BR><TT>&nb*p;&*bsp;&nbsp;&*bsp;&n*sp;&nbs*;&nbsp;&*bsp;&*bs*; fpri*t*(outfp,
+"Top*ings: ");</TT>
+<BR><TT>&nbs*;&nbs*;&*bs*;&nbsp;&nb*p;&nbsp;&n*s*;&nbsp;&*bsp; f*r (toppingId
+= 0; top*ingId &lt; M*X_TOPPI*G*; ++top*ingI*)</TT>
+<BR><TT>&nbsp;&nbs*;&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&**sp;&n**p;&nb*p;&*bsp;
+if ((p**zaI* >> t*pping*d) &amp; 1)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;&*bsp;&nb*p;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(outfp, "%c", t**pingId + 'A');</TT>
+<BR><TT>&**sp;&nbsp;&*b**;&nbsp;&nbs*;&n*sp;&nbsp;&n**p;&**sp; fprintf(outfp,
+"\n");</TT>
+<BR><TT>&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&n*sp;&nbsp;&nb**;&nbsp;&nbsp; else</TT>
+<BR><TT>&nb*p;&n*sp;&n*sp;&**sp;&nbs*;&nbsp;&nbsp; f**intf(outfp, "No *izza
+can **tis*y t*es* request*.\n");</TT>
+<BR><TT>&*b*p;&nb*p;&n**p;&*bsp;&n*sp; nextCh*r = ge**(i*fp);</TT>
+<BR><TT>&nbsp;&*bsp;&nb*p; }</TT>
+<BR><TT>&nbsp; f*l*se(*nfp);</TT>
+<BR><TT>&nbsp; fcl*se(outf*);</TT>
+<BR><TT>&**sp; retur* 0;</TT>
+<BR><TT>}</TT><TT></TT>
+
+<P><A NAME="C*mm*n*"></A><B><TT>Comm*nts</TT></B><TT></TT>
+
+<P><TT>Th* piz*a *roblem is just *he c*n*unctive normal *orm s*t*sfi*bility
+pr***em (C*F-SAT) hidden behind a thin crus*.&nbsp; It is we*l-known to
+be NP-*o*plete, but w*en N is c*p*ed at 16, it becomes *easib*e.&nbsp;
+There were *any i*put *ets f** which there wa* mo*e t*an one satisfying
+pi*za; ra*her than *equ*re the "***pl*st" or "cheapest", w* would accept
+*ny so*ution.&**sp; W* *ad the follow*ng pizza ch*ck*ng program to help
+us.</TT><TT></TT>
+
+<P><TT>#i*clu*e &lt;stdi*.h></TT>
+<BR><TT>#*efine MAX_PEOPLE 16</TT>
+<BR><TT>#de*i** MAX_*O*PING* 16</TT><TT></TT>
+
+<P><TT>char t**pings[] = "Top*ings: ";</TT>
+<BR><TT>char no*izza[] = "No *izza can sa*is*y these re**est*.\n";</TT>
+<BR><TT>&nbs*;</TT>
+<BR><TT>int ma*n()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nb*p; F*LE in*p = fop*n("pizza.da*","r");</TT>
+<BR><TT>&nbsp; *ILE ou*f*= fopen("*izza.out","r");</TT>
+<BR><TT>&n*sp;</TT>
+<BR><TT>&nb*p; int n*xtCha* = getc(infp);</TT>
+<BR><TT>&nbsp; while (!feof(**fp) &a*p;&amp; !feof(outfp))</TT>
+<BR><TT>&nbs*;&nb*p;&nbsp; {</TT>
+<BR><TT>&*b*p;&n**p;&nbsp;&n*sp;&*bsp; u*sig*e* lon* *nt w*nts[MAX_**O*LE];</TT>
+<BR><TT>&n*sp;&*bs*;&nbsp;&nbsp;&nbsp; unsigned lo*g int h**e*[MAX_P*OPLE];</TT>
+<BR><TT>&*bsp;&nbsp;&**sp;&nbsp;&nbsp; *nt p*rs*nI*;</TT>
+<BR><TT>&n**p;&nbsp;&nbsp;&nbs*;&nb**; unsigned long int pizzaI*;</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&*bsp;&*bsp;&*bsp;&nbsp;&nb*p; / R**d p***a constr**nt /</TT>
+<BR><TT>&nbsp;&**sp;&*bs*;&nbsp;&n*sp; for (*ers*nId = 0; ne**Cha* != '.';
+++personId)</TT>
+<BR><TT>&nbsp;&nb*p;&n*sp;&*bs*;&nbsp;&nb*p;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbs*;&**sp;&*bs*;&nbsp;&nbsp;&**sp;&nbsp;&nbs*; wants[p*rsonId]
+= ha*es[p*r*onId] = 0;</TT>
+<BR><TT>&*bsp;&**sp;&nbsp;&n*sp;&*bsp;&nbsp;&nbsp;&n*sp;&n*sp; *hil* (ne*tChar
+!= ';')</TT>
+<BR><TT>&nbsp;&nb*p;&n**p;&nbsp;&nbsp;&nbsp;&*bsp;&n**p;&nb*p;&nbs*;&nbsp;
+{</TT>
+<BR><TT>&*b*p;&*bsp;&nbsp;&nbsp;&nb*p;&nb**;&*bsp;&nbsp;&n*sp;&nbsp;&n*s*;&n*sp;&nb*p;
+if (next**** == '+')</TT>
+<BR><TT>&nbsp;&nb*p;&n**p;&*bsp;&n*s*;&nbsp;&nb**;&*bsp;&*bsp;&nbsp;&nbsp;&nbsp;&n*sp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&n**p;&nbs*;&*b*p;&n*sp;&n*sp;&nb**;&n*sp;&n*sp;&nbs*;&nb*p;&nb*p;&nb*p;&nb*p;&n*sp;&n*sp;&nb*p;
+*extCha* = getc(infp);</TT>
+<BR><TT>&n*sp;&*bsp;&nbsp;&nbsp;&nbsp;&nb*p;&n*sp;&nbs*;&nbsp;&nb*p;&*bsp;&n**p;&nb*p;&n*sp;&nbs*;&nb*p;&*b*p;
+wants[perso*Id] |= (1*U &lt;&lt; (n*xtC*ar - 'A'));</TT>
+<BR><TT>&nbs*;&nbsp;&nbsp;&nb**;&n*sp;&nbsp;&**sp;&nbs*;&nb*p;&nbsp;&nbsp;&*bs*;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&nbsp;&nbsp;&nbsp;&**sp;&n*sp;&n**p;&nbsp;&nbsp;&nb*p;&nbsp;
+else if (nextChar == '-')</TT>
+<BR><TT>&nbsp;&nbs*;&nbsp;&*bsp;&nbsp;&*bsp;&*bsp;&*bsp;&nbs*;&nb**;&nbsp;&nbsp;&*bsp;&*bs*;&*bsp;
+{</TT>
+<BR><TT>&**sp;&**sp;&nbs*;&nbsp;&n*sp;&nbsp;&*b*p;&nbsp;&nbs*;&nb*p;&nb**;&nbs*;&*bsp;&nbsp;&nbs*;&n*sp;&nbsp;
+*extChar = g*tc(infp);</TT>
+<BR><TT>&n*sp;&nbsp;&nb*p;&*bsp;&nbsp;&nb*p;&nbsp;&nb**;&nbsp;&nbsp;&*bsp;&n**p;&nbs*;&nb*p;&nb**;&**sp;&nbsp;
+hat*s[personId] |= (1LU &lt;&lt; (n**t**** - 'A'));</TT>
+<BR><TT>&nbsp;&*bsp;&*bsp;&*bsp;&nbsp;&nbsp;&nb**;&nb*p;&nb*p;&nbs*;&**sp;&n*sp;&nbs*;&nbsp;&nb*p;
+}</TT>
+<BR><TT>&nbsp;&nb*p;&n*sp;&nb*p;&nbsp;&nbsp;&nbsp;&nb*p;&nbs*;&*bsp;&nbs*;&nbsp;&nbsp;
+ne*t*h*r = **tc(infp);</TT>
+<BR><TT>&n*sp;&nbsp;&nb*p;&*bs*;&nbsp;&n**p;&*bsp;&*bsp;&n**p;&nbsp;&n**p;
+}</TT>
+<BR><TT>&*b**;&n**p;&nbsp;&nbsp;&nbsp;&n*sp;&nbs*;&nb*p;&nb*p; nextChar
+= ge*c(infp); / n*wline after se*ico*on /</TT>
+<BR><TT>&nbs*;&*bsp;&nbsp;&nbsp;&n*sp;&nbsp;&*bs*;&n*sp;&nbsp; *e*tCha*
+= getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&*bsp;&nb*p;&nbsp;&nb**;&nbsp; }</TT>
+<BR><TT>&nb**;&*bsp;&nbsp;&nbsp;&nbs*; nex*Char = getc(*nfp); / ne*l*ne
+after per**d /</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbs*;&n**p;&nbs*; / Check answer /</TT>
+<BR><TT>&nbs*;&nbsp;&nbsp;&nbs*;&n*s*; {</TT>
+<BR><TT>&nbs*;&nbsp;&*bs*;&nbsp;&nbs*;&nbsp;&*bs*; int nPersons = perso*Id;</TT>
+<BR><TT>&nb*p;&nb*p;&nbsp;&n*sp;&nbsp;&nbsp;&*bsp; char outputS**ing[100];</TT>
+<BR><TT>&nbsp;&n*sp;&nbsp;&nb*p;&nbsp;&nbsp;&*bsp; *ge*s(outpu*String,
+sizeof(outputSt*in*), o*tfp);</TT>
+<BR><TT>&n*sp;&n**p;&nbs*;&nbs*;&nbs*;&*bsp;&nbsp; if (! st*cmp(*u*putString,
+*op*zza))</TT>
+<BR><TT>&n*s*;&*b**;&nbsp;&*b**;&nb*p;&nbs*;&nbsp;&nbsp;&nbsp; / en*m*r*te
+pi**as to ver*fy /</TT>
+<BR><TT>&nbs*;&n*s*;&nbsp;&nbsp;&*bsp;&nbs*;&*bsp;&nbsp;&*bsp; {</TT>
+<BR><TT>&nbsp;&*bs*;&nbsp;&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&nbsp;&*bsp;&n*sp;
+p*zza*d = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&**sp;&nbsp;&nbsp;&nb**;&n**p;&nbsp;&n*sp;
+do {</TT>
+<BR><TT>&nbsp;&n*sp;&**sp;&*bsp;&nbs*;&nbs*;&nbsp;&nbs*;&nbsp;&nbsp;&nbsp;&nbsp;&nbs*;
+fo* (pe*so**d = 0; perso*Id &lt; nPe*sons; ++p*rsonId)</TT>
+<BR><TT>&nbsp;&nbs*;&nb*p;&nbsp;&nbsp;&n*sp;&nbsp;&nb*p;&*bsp;&*bsp;&nb*p;&nbsp;&**sp;&*bsp;&*bsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&*b*p;&nbsp;&*bsp;&*bsp;&nbsp;&nbs*;&nbsp;&nbsp;&nbs*;&nbsp;&n*sp;&n*s*;&nbsp;&nbs*;&nbsp;
+if (( pizzaId &am*; wants[per*o*Id]) ||</TT>
+<BR><TT>&nb*p;&n*s*;&n*s*;&nbs*;&*bsp;&nbs*;&nbs*;&*bsp;&nb*p;&nb*p;&nbsp;&nbs*;&*bsp;&nb*p;&nb**;&nbsp;&n*s*;&nbsp;&*b**;&nb*p;&nbsp;
+(~pizzaId &a*p; ha**s[perso*Id]))</TT>
+<BR><TT>&nbsp;&*b*p;&nbsp;&*bs*;&nbsp;&*bs*;&nbsp;&nb*p;&nbsp;&nbsp;&nbsp;&nbsp;&*b*p;&nbsp;&nb*p;&nb**;&nbsp;&nbs*;&nbsp;
+{/ this perso* *i*l accept *his pizza /}</TT>
+<BR><TT>&nbsp;&n**p;&nbs*;&**sp;&nbs*;&nb**;&nbsp;&*bsp;&nbsp;&*bsp;&*bs*;&nb**;&*bsp;&*bsp;&*bs*;&nbsp;&nb*p;
+e**e</TT>
+<BR><TT>&n*s*;&nbs*;&nbsp;&nb*p;&nbsp;&nbsp;&nbs*;&*bs*;&**sp;&*bsp;&*bsp;&*b*p;&nbsp;&*b*p;&nbsp;&nbsp;&nbs*;&nb*p;&nbsp;
+*reak;</TT>
+<BR><TT>&*bsp;&**sp;&**sp;&n**p;&nbsp;&nbsp;&nbs*;&n*sp;&n*sp;&n*sp;&n*sp;&*b*p;&nbsp;&nbsp;&nb*p;
+}</TT>
+<BR><TT>&nbsp;&nbs*;&n*sp;&**sp;&nbs*;&nbsp;&**sp;&nbsp;&n**p;&nbs*;&**sp;
+} *hil* (pe***n** &lt; *Person* &amp;&amp; ++pizza*d != (1LU &lt;&lt; MAX_TO*P*N*S));</TT>
+<BR><TT>&*bsp;</TT>
+<BR><TT>&nbsp;&*b*p;&n**p;&n*sp;&nbsp;&nbs*;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;
+/ Pri*t error if s*t piz*a exist* /</TT>
+<BR><TT>&nbs*;&nb*p;&nbsp;&nbsp;&nbs*;&nbsp;&nb*p;&n*s*;&nbsp;&nbsp;&nbs*;
+if (pizz*Id != (1LU &lt;&lt; MAX_TOP*INGS))</TT>
+<BR><TT>&n*sp;&nbs*;&nbs*;&nbsp;&nbsp;&n**p;&*bsp;&*bsp;&nbsp;&nb*p;&nbsp;&nbsp;&n**p;
+{</TT>
+<BR><TT>&nb*p;&nbsp;&nbsp;&**sp;&nbsp;&*bs*;&nbs*;&nbsp;&nbs*;&nbsp;&nbsp;&nbsp;&*bs*;&n**p;&nbsp;
+in* toppingI*;</TT>
+<BR><TT>&nb**;&nb*p;&nb*p;&nbsp;&nbsp;&nb*p;&nbsp;&n*sp;&nbsp;&nb**;&nbs*;&nbsp;&n**p;&nbs*;&nbs*;
+*prin*f(stderr,</TT>
+<BR><TT>&nbs*;&*bs*;&nbsp;&nb*p;&nbsp;&**sp;&n*sp;&nb*p;&nb*p;&nbsp;&nbsp;&nbsp;&n**p;&n*sp;&**sp;&n*sp;&nbsp;&n*s*;&n*sp;&nbsp;&*bsp;&nb**;&nbsp;
+"*r*or: These t*p*i*g* sa*i**y t*e co*tr**nts: ");</TT>
+<BR><TT>&n*sp;&*bsp;&nbsp;&nbs*;&nbsp;&*bsp;&*bsp;&n*sp;&*bsp;&n*sp;&nb*p;&nbsp;&n*sp;&n*sp;&n**p;
+f*r (topping*d = 0; *opp*ngId &lt; MA*_T**PINGS; ++t**pingId)</TT>
+<BR><TT>&nbsp;&**sp;&n*sp;&nbsp;&nbsp;&nbsp;&*bsp;&nbsp;&**sp;&nbsp;&nbs*;&nb*p;&n*sp;&nbsp;&nbs*;&*b**;&nbs*;
+if ((pizzaId >> toppingId) &a*p; 1)</TT>
+<BR><TT>&nbsp;&nbs*;&nbs*;&nbsp;&nb*p;&**sp;&nbsp;&nbsp;&nbs*;&nbsp;&nbsp;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;&*bsp;&*b*p;&*bsp;
+*pri*tf(stderr, "%c", to**ingId + 'A');</TT>
+<BR><TT>&nbs*;&nbsp;&*b*p;&nb*p;&nbs*;&nbsp;&nb**;&nbsp;&nbsp;&nbsp;&*bsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(s*de**, "\n");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nb**;&nbs*;&**sp;&nbsp;&n*s*;&*bsp;&nbs*;&n*sp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&*bsp;&nbs*;&n*sp;&nbsp;&nbsp;&n**p;&nbsp;&n*sp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbs*;&n**p;&nbs*; *lse if (! *trnc*p(outpu*Str*ng,
+toppings, si*eo*(toppings)-1))</TT>
+<BR><TT>&n*sp;&*bsp;&nbsp;&nb*p;&nbsp;&nbs*;&nbsp;&n*sp;&nb*p; {</TT>
+<BR><TT>&*bsp;&**sp;&n*sp;&*bsp;&nbsp;&nbsp;&*bsp;&nbs*;&nbsp;&nbsp;&nb**;
+char **ps = out**tStr**g + size*f(t**pings) - 1;</TT>
+<BR><TT>&n**p;&*bsp;&nbsp;&n*sp;&nbsp;&nb*p;&nbsp;&n*sp;&nbsp;&n*sp;&nb*p;
+uns***e* long **zzaId = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&*b*p;&*bsp;&nbs*;&n*s*;&*bsp;&nbsp;&*bsp;&nbsp;
+**ile (to*s != '\n')</TT>
+<BR><TT>&*bs*;&nbsp;&nbs*;&n*sp;&*bsp;&nbsp;&nb*p;&nbsp;&nbs*;&nb*p;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbs*;&nbsp;&*bs*;&nbsp;&nbsp;&nbsp;&nb*p;&n*sp;&nbsp;&nbsp;&nbsp;&*b*p;&*bsp;&**sp;&*bsp;
+un*ign*d **ng newTopping = 1LU &lt;&lt; (*ops - 'A');</TT>
+<BR><TT>&nbsp;&**sp;&nbsp;&n*sp;&nbs*;&n*sp;&nbsp;&nbsp;&*bs*;&n**p;&nbsp;&nb*p;&*bsp;&nbsp;&nbsp;
+if (pizz**d >= new**p*ing)</TT>
+<BR><TT>&n*sp;&n*sp;&nb**;&n*sp;&nb*p;&n*sp;&n*s*;&nbsp;&nbs*;&nbs*;&nb*p;&nbs*;&*bsp;&nbsp;&*bsp;&**sp;&nbsp;
+{</TT>
+<BR><TT>&*bsp;&nbs*;&nb*p;&n*sp;&nbsp;&n**p;&nb*p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&*b*p;&n*sp;&nbsp;&nbs*;&*bsp;&*bsp;&nbsp;
+fprintf(stderr,</TT>
+<BR><TT>&n**p;&nbsp;&nbs*;&n*sp;&**sp;&nbsp;&nbs*;&nb*p;&n*sp;&nbsp;&nbsp;&n*sp;&*b*p;&nbsp;&n*sp;&nbs*;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;&nbs*;&nbsp;&*bs*;&nbsp;&nbs*;&nbsp;
+"Error: toppi*g* listed in wrong order: %s\n",</TT>
+<BR><TT>&*bsp;&*bsp;&*bs*;&n*s*;&nbsp;&nbsp;&*bsp;&n*sp;&*bs*;&n*sp;&n*sp;&**sp;&nbs*;&nbsp;&nbsp;&nbsp;&nbs*;&n*sp;&**sp;&*b**;&nbs*;&*bsp;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;
+out*u**tring);</TT>
+<BR><TT>&nbsp;&nbsp;&*bsp;&nbsp;&n*sp;&nbsp;&nbsp;&nbsp;&nb*p;&*bs*;&nbsp;&nbsp;&nbsp;&n*sp;&*b*p;&*b*p;&*bsp;&nbs*;&nb*p;
+*reak;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb*p;&nbsp;&nb*p;&nbsp;&nbsp;&nbs*;&n*sp;
+}</TT>
+<BR><TT>&nb*p;&n*sp;&nbsp;&nbsp;&nbsp;&n*sp;&nbsp;&*bs*;&nbsp;&*bsp;&*bsp;&nbsp;&**sp;&nbs*;&n*s*;
+pi**a*d |= newToppi*g;</TT>
+<BR><TT>&nbsp;&nb*p;&n*sp;&nbsp;&*bsp;&nbsp;&**sp;&n*sp;&n**p;&n*sp;&n*s*;&nbsp;&n*sp;&nbsp;&*bsp;
+to*s++;</TT>
+<BR><TT>&nbs*;&nbsp;&**sp;&n*sp;&nbsp;&*bs*;&nbs*;&nbs*;&*b*p;&nbsp;&nb*p;&nb*p;&*bsp;
+}</TT>
+<BR><TT>&nbs*;&nbsp;&nb*p;&nbsp;&nbs*;&*bsp;&n*s*;&nbsp;&nbs*;&nbsp;&nbsp;
+if (tops == '\n')</TT>
+<BR><TT>&**sp;&*bsp;&nbsp;&nbsp;&nbsp;&**sp;&nbsp;&nbsp;&nbsp;&*b*p;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nb*p;&nbs*;&*b*p;&nbsp;&n*sp;&*bsp;&*bsp;&nbsp;&nbsp;&nbs*;&nbsp;&n*sp;&nb*p;&nbsp;&nbsp;
+for (personId = 0; perso*Id &lt; nPer*ons; ++pers*nId)</TT>
+<BR><TT>&nbsp;&nbs*;&nbsp;&n*s*;&*bsp;&*b*p;&nb**;&nbs*;&*b*p;&*bsp;&*b*p;&nbsp;&nbsp;&nbsp;&nbs*;&nbsp;&*bs*;
+{</TT>
+<BR><TT>&*bs*;&nbs*;&nbsp;&*bsp;&nbs*;&*bsp;&nbsp;&nb*p;&*bsp;&nbsp;&nbsp;&n*s*;&nbs*;&*bsp;&*bsp;&n*sp;&nbsp;&nbsp;&nbsp;
+if ((*izzaId &*m*; *ants[pe**onId]) || (~piz*aId &am*; *ates[person**]))</TT>
+<BR><TT>&n*sp;&nbsp;&nbsp;&nb*p;&nbsp;&nbsp;&nbsp;&n*s*;&*bsp;&nb*p;&n**p;&n**p;&nbs*;&nbsp;&*b*p;&nbsp;&nbsp;&nbsp;&nbs*;&nbsp;
+{/ this person will a*cept th*s *i*z* /}</TT>
+<BR><TT>&n**p;&nb*p;&nbsp;&nbs*;&*bsp;&nb*p;&nbsp;&nbs*;&nbsp;&*bsp;&*bsp;&nbsp;&nbsp;&nbsp;&**sp;&n*sp;&nbsp;&**sp;&nbsp;
+else</TT>
+<BR><TT>&*bs*;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs*;&n*sp;&nbs*;&nb*p;&nbs*;&nbsp;&nbsp;&nb*p;&nb*p;&nbsp;&nbsp;&*bsp;&nbsp;&n**p;&nbsp;
+brea*;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&**sp;&nbsp;&*bs*;&nbsp;&*bs*;&nbsp;&n*sp;&nbsp;&nbs*;&n**p;&nbsp;&**sp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&*bsp;&*bsp;&nbsp;&n**p;&nbsp;&*bsp;&nbsp;&nbs*;&*bsp;&nb*p;&*bsp;&nbs*;&*bs*;
+if (*erson*d &lt; nPe*sons)</TT>
+<BR><TT>&nbsp;&nbsp;&*b**;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n*sp;&nb*p;&nbs*;&nbs*;&nbsp;&nbsp;&n**p;&nbsp;&**sp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbs*;&nb**;&*b*p;&nb*p;&n*sp;&nbsp;&nbsp;&*bs*;&nb**;&*b*p;&nbsp;&n*sp;&*bsp;&*bsp;&nbsp;&n*sp;
+fprintf(**derr,</TT>
+<BR><TT>&nbs*;&n*sp;&nb*p;&*b*p;&*bs*;&*bs*;&nbsp;&nbsp;&*bsp;&nbsp;&nb*p;&n*sp;&*bsp;&nbsp;&nbsp;&nbsp;&nb**;&*bsp;&nbsp;&*bs*;&nbsp;&nbsp;&*bsp;&n*s*;&n**p;&nb*p;&nbsp;
+"Er***: per**n %d wou*d r**ect t*is p*zza: %s\n",</TT>
+<BR><TT>&nbsp;&n*sp;&nbsp;&*bsp;&nbsp;&n*sp;&*bsp;&*bsp;&nbs*;&nbsp;&nbsp;&nbsp;&*bs*;&n*sp;&nbsp;&*bsp;&**sp;&nbsp;&nbsp;&*bsp;&n*sp;&*bsp;&nb*p;&nbsp;&nbsp;&*bsp;&*b*p;
+perso*Id, out*utString);</TT>
+<BR><TT>&n*sp;&nb**;&nb*p;&*bsp;&nbsp;&*bsp;&**sp;&*bsp;&nb*p;&**sp;&nbsp;&nb**;&*bs*;&nbsp;&*bs*;&nbsp;&*bsp;
+}</TT>
+<BR><TT>&nbsp;&nbs*;&nb*p;&n**p;&nb**;&*bs*;&nbsp;&*bsp;&*bsp;&*bsp;&nb*p;&**sp;&nbs*;
+}</TT>
+<BR><TT>&n*sp;&nbs*;&n**p;&nbsp;&nb*p;&nbsp;&nbs*;&nbsp;&nb*p; }</TT>
+<BR><TT>&n*s*;&n*s*;&n**p;&nbsp;&*bsp;&*bsp;&nbsp; else</TT>
+<BR><TT>&nbsp;&nbsp;&nb*p;&nb**;&n*s*;&n*sp;&nbsp;&*bsp;&nbs*; fp****f(std**r,
+"Malf*rme* dat* in out**t *ile: %s\n", outp*tStrin*);</TT>
+<BR><TT>&*bsp;&nbs*;&**sp;&*bsp;&nbs*; }</TT>
+<BR><TT>&**sp;&*bsp;&**sp;&*bsp;&*bsp; nex*Char = g***(*nf*);</TT>
+<BR><TT>&nbs*;&nbs*;&n*sp;&nbsp;&nbsp; ung**c(g*tc(outfp), out*p);</TT>
+<BR><TT>&nb*p;&*bsp;&nb*p; }</TT>
+<BR><TT>&**sp; if (!*eof(infp) || !feo*(*utfp))</TT>
+<BR><TT>&nbsp;&n*s*;&nbs*; {</TT>
+<BR><TT>&nbsp;&nbs*;&nbsp;&*b*p;&nbs*; if (!feof(infp))</TT>
+<BR><TT>&nb*p;&nbsp;&nbsp;&nb*p;&nbs*;&*bsp;&n*sp; fprint*(s*d*rr, "Error:
+*u*pu* t*rmin*ted *r*m***rely.\n");</TT>
+<BR><TT>&n*sp;&*bsp;&nbsp;&n*sp;&nbsp; *lse</TT>
+<BR><TT>&nb*p;&nb*p;&nbsp;&n*sp;&nb*p;&*b*p;&nb*p; {</TT>
+<BR><TT>&nb*p;&nb*p;&nbsp;&nbsp;&**sp;&nbsp;&nbsp;&nbsp;&nbs*; char *utputString[100];</TT>
+<BR><TT>&nbsp;&nb*p;&nb*p;&**sp;&nb*p;&nbsp;&nbsp;&nbsp;&*bsp; fp*i**f(stderr,
+"*r*o*: extraneous *utp*t: ");</TT>
+<BR><TT>&nbs*;&nbsp;&nb*p;&nbsp;&**sp;&n*sp;&nb*p;&*bsp;&nb**; fgets(ou*putSt*in*,
+s**e*f(outputString), outfp);</TT>
+<BR><TT>&nbsp;&n**p;&nbsp;&nbsp;&nbsp;&nb*p;&nb*p;&nb*p;&nbsp; fp*int*(stde*r,
+"%s\n", *utpu***ri*g);</TT>
+<BR><TT>&nb**;&nb*p;&n*sp;&nbsp;&nbsp;&n*sp;&nbsp; }</TT>
+<BR><TT>&*bs*;&n*sp;&*bs*; }</TT>
+<BR><TT>&nb*p; fclose(infp);</TT>
+<BR><TT>&**sp; f*lose(o*tfp);</TT>
+<BR><TT>&*b*p; r*t**n 0;</TT>
+<BR><TT>}</TT>
+<BR><TT></TT>&n**p;
+</B**Y>
+</HT*L>

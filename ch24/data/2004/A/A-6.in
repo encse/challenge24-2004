@@ -1,0 +1,1081 @@
+% This is LLNCS.DEM the d*m*n*t*a**on file of
+% the LaTeX macr* pa**age **om Springer-Ver*ag
+% for Lect*re Notes in Computer Scien*e,
+% version 2.2 f*r La*eX2e
+%
+\documentclas*{l*ncs}
+%
+\*s*p*ckage{ma**i*x}  % allow* *or i*d*x**ne**tion
+%
+\begi*{document}
+%
+\*rontmatter          % f*r t*e prelimi*aries
+%
+\pag*style{he*dings}  % swit*h*s on pr*nting of runn*ng h**ds
+\addtoc*a*k{H*milto*ian Mechanics} % add*tional m*rk in the *OC
+%
+\**apter{Preface}
+%
+T*i* text*ook is in*ended for use by st*d*nts of p*ysics, p**sica*
+**emis*ry, and the*retica* *h*mistry. The *eader is p*esumed to ha*e a
+basic knowledg* of atomic and **a*tum **ysic* at the l*vel pr*vided, for
+example, by the first few c*apters in o*r book {\it Th* Phys*cs of Atoms
+and *uanta}. The student of physi*s will find her* materia* w*ich s*oul*
+be inclu*ed in t*e basic ed*cati*n of e*ery ***sic*s*. This boo* *hould
+*urthermo*e allow stu*e*** t* a*qu*re an *ppreciation of the breadth and
+va*iety withi* the field of **lecula* *hy**cs and i*s fu*ure as a
+f*sci*at*ng *rea of rese**c*.
+
+F*r the stud**t of c*em*s*r*, the co**ept* introduced in t*is book will
+pro*id* a *heo*et*c*l f*amework *or that enti*e fiel* of *tudy. *ith *he
+help of these concep*s, it is at **ast in **in*iple possib*e to reduce
+th* e*ormous bod* of empi*ical ch*m*ca* k*owledge t* a *ew *a*ic
+p*inciples: t*ose of q*an*um *ech**ics. In addition, mo*ern *hys*ca*
+me*h*d* whose *un*amentals are introduce* here are bec*min* i**reas***ly
+important in chemistry and now represent in*isp*nsabl* too*s for *he
+chem***. As examples, w* might *ention t*e *t*u*tural ana*ysis of
+***p**x orga*ic compo**ds, spect*osco*ic **v*s*igation of very rap*d
+r**c*io* *rocesses or, as a p**ctical applic*tio*, the **mo*e de*ection
+of po*lutant* in the air.
+
+\v*pa*e{1cm}
+\begin{flus**ight}\noinde**
+*p**l 1995\hfill Wal*er *lth*ff\\
+P*ogram Chair\\
+***OP'95
+\end{flushright}
+%
+\chapter{*rganization}
+ECOOP'95 is or***ized by the dep*rtm**t of Co*p*te* Science, *n**e*ist*
+of \*A rhus and *ITO (asso**ation I*t***a*iona pour les T**hnologie
+Obj*ct) in cooper*ti** with A*M/SI*PLAN.
+%
+\se*t*on{*xec*tive Com*itee}
+\b*gin{tabular}{@{}p{5cm}@{}p{7.2cm}@{}}
+*o*ference **a*r:&Ole Leh*mann Madse* (\AA rhus Universit*, DK)\\
+P*o*ra* Ch*ir:   &**lte* Olthoff (*F*I Gm*H, Ge*many)\\
+Or*anizin* Chair:&J\o *gen **ndskov **ud*en (\AA rhus Unive*sity, DK)\\
+*utor*als:&B**ger M\o *ler-Pe*ersen\hfil\*re*k
+(*orwe***n **m*u*ing Center, Norw*y)\\
+W**ksh*ps:&Eri* Ju* (Un*ver*i*y of K**en*agen, *enmark)\\
+P*nels:&Bor*s M*gnus*on (*un* Uni**rsi*y, Swed*n)\\
+E**ibi**on:&Elm*r *an**ad (\AA rhus **iv*rsi*y, DK)\\
+Dem*ns*rati**s:&Kurt N\o rdmark (\*A rhus Universit*, DK)
+\end{t*bul*r}
+%
+\*ec*io*{**ogram Com*i*ee}
+\beg*n{tab*lar}{@{}p{5cm}@{}p{7.2cm}@{}}
+*onfere*ce C*a*r:&Ol* *ehrman* Mads** (\AA rhus *niv*rsity, DK)\\
+Prog*am Chair:   &Wal*er O*thoff (*FKI G*b*, Germany)\\
+Or*aniz*ng *hair:&J\o rgen Lindskov K*ud*en (\AA rhus Unive*sity, DK)\\
+Tutori*ls:&Birger M\o ller-Pederse*\hfil\*reak
+(N*rweg*an **m*uting Center, Norway)\\
+W*r***o*s:&*ric J** (University of Kopenhagen, Denmark)\\
+Pan*ls:&Bor*s Magn*sson (L*nd Univers*ty, Sweden)\\
+Exhib*tion:&E**er Sandvad (\AA rhus U*ivers***, DK)\\
+*em*nst*atio*s:&Kurt N\o rd*ark (\*A rhus Uni*er*ity, DK)
+\en*{tabular}
+%
+\begin{mul**co**}{3}[\secti*n{Referees}]
+V.~Andreev\\
+B\"a**o*ff\\
+E.~B**r*let\\
+H.P.~B*c*\\
+G.~Bernard*\\
+E.~B*nder\\
+P.C.~Boset*i\\
+Braunschw**g\\
+F.W.~B\"*sser\\
+T.~*a*li\\
+A.B.~Clegg\\
+G.~Cozz*ka\\
+S.~Dag*ret\\
+D*l~Buo**\\
+P.~D*ngus\\
+H.~*uhm\\
+J.~Ebe*t\\
+S.~E*c*enbe*g*r\\
+R.J.~Elli*on\\
+*e**esse\\
+W.~**au*er\\
+A.~F*menko\\
+G.~Franke\\
+J.~Gar*ey\\
+M.~G*nni*\\
+L.~G*er*ich\\
+P.~Go**t*hev\\
+H.~*reif\\
+E.M.~Hanlon\\
+R.~*ayda*\\
+R.C.W.~H*nderso\\
+P.~Hi*l\\
+H.~*ufn*gel\\
+A.~J*c**l*o**ka\\
+Johannsen\\
+S.~K*s*r*an\\
+I.R.~Kenyon\\
+C.~Klei*wo*t\\
+T.~K\"o*l*r\\
+S.D.~Koly*\\
+P.~*ostk*\\
+U.~Kr\"uger\\
+J.~Ku*zh\"ofer\\
+M.P.J.~Landon\\
+A.~Lebedev\\
+Ch.~Ley\\
+F.~**nse*\\
+H.~Loh*and\\
+*ar*in\\
+S.~*as*on\\
+K.~M*ier\\
+C.A.~M*yer\\
+S.~Mikocki\\
+J.V.~Mor**s\\
+B.~Naroska\\
+N*u**n\\
+U.~Obroc*\\
+G.D.~P*tel\\
+Ch.~Pichl*r\\
+S.~Prell\\
+F.~Raupach\\
+V.~*ie*h\\
+P.~Robm**n\\
+N.~*ahlmann\\
+P.~Sc*lepe*\\
+S*h\"o*ing\\
+B.~Sc*wa*\\
+A.~Semenov\\
+G.~S**gmon\\
+J.R.~Smith\\
+M.~Steen**ck\\
+U.~*traum*nn\\
+C.~Thi**aux\\
+P.~Va*~Esch\\
+from Yerev*n Ph\\
+L.R.~*es*\\
+G.-G.~Winter\\
+T.P.~Y*ou\\
+M.~*imm*r\end{mu*ticol*}
+%
+\section{Sp*nso*ing Ins***u*i*n*}
+%
+Ber*a*er-**d**a* *nc., Reading, Ma*s.\\
+The Hofmann-Intern*ti*nal Co*pany, S*n Louis *bi**o, Cal.\\
+**amer Indus*r**s, He*d*lbe*g, Germ*ny
+%
+\*a***ofc*n*ent*
+%
+\mainmatter              % *t*r* of the contribu*ions
+%
+\tit*e{Hami*tonian *ech**ics un*er *esonderer Be*\"u**s*chtig**g der
+h\"ohrere* Lehransta*ten}
+%
+\titl**un*ing{Hamilt*nian Mec*anics}  % abbre*iate* *itle (for *unnin* h*ad)
+%                                     *lso *sed f*r the TO* u*le*s
+%                                     \to*titl* is used
+%
+\aut*or{Ivar Ekel*nd\ins*{1} \and R*g*r **mam\i*s*{2}
+Jeff*ey Dean \and David Gr*ve \and Craig Chambers \and Kim~B.~Bruce \and
+*l*a Bertino}
+%
+\auth*r*unn*ng{Ivar Ek*la*d et al.}   % abbreviate* *uthor l*st (f*r r*n**ng head)
+%
+%%%% *odif*e* list of autho*s *or the TOC (*dd t*e a***lia**o*s)
+\t*cauthor{Ivar Ekela** (Pr**ceton U**vers*ty),
+Rog*r *emam (Universit\'{e} de Par*s-Sud),
+Jeffrey Dean, David Gr*ve, Craig *h*mbers (Universi*\`a di Geo*a),
+Kim B. B*u*e (*t*nfor* Univ**sity),
+Eli*a *ertino (Di*ita Research Cente*)}
+%
+\inst*tut*{Princeton University, Pr*nceton NJ 08544, *SA,\\
+\email{I.Ek*land@princeto*.*du},\\ *WW hom* page:
+\textt*{*ttp://*se*s/\homedir iekelan*/web/**l**me.h*ml}
+\and
+U*i*ersit\'{e} de P***s-Sud,
+Lab*ratoi*e d'Anal*s* Nu*\'{e}**q**, B\^{a}tim*nt 425,\\
+F-91405 *rsa* Cedex, France}
+
+\maketit*e              % *ypeset th* tit*e of the c*n*ribut**n
+
+\*egin{a*stract}
+The abs*ract sh*ul* summ*ri*e *he co*tents of t*e *aper
+using at l*ast 70 and at *ost 150 word*. It will be set in 9-point
+font size and be inse* 1.0 cm f*om the right and le*t m*rg**s.
+There wil* be two *la*k lines before and *fter th* Ab*tra**. \dots
+\end{*bstract}
+%
+\*ect*on{Fixe*-Perio* *ro*lem*: Th* *ubl*near *ase}
+%
+Wi*h this cha*ter, the p*eliminari** ar* ove*, and we begin t*e s**rch
+for pe*iodi* s*lution* to Ham*lt***an sy*tems. *ll *hi* will be done in
+th* convex case; that is, we shal* study th* bou*dary-valu* pro*l*m
+\b*g*n{eqnarray}
+  \dot{x}&=&JH' (t,x)\\
+  x(0) &=& x(T)
+\e*d{e*narray}
+with $H(t,\cd*t)$ a con*ex fun*tion of $x$, goin* t* $+\i*f**$ when
+$\lef*\|x\right\| \to \*nfty$.
+
+%
+\subse*tio*{Aut*no*ous Systems}
+%
+In this **ction, w* will cons*d*r the ca*e wh*n the H*miltoni*n $H(x)$
+is aut*nom**s. F*r the sak* of simplic**y, we shall also as*u*e tha* it
+is $C^{1}$.
+
+W* sha*l fi*s* cons***r the question of n*nt*iv**lity, within the
+*eneral framework of
+$\le*t(A_{\in*ty},B_{\infty}\right)$-s*bq*adratic Ha*i***nians. In
+the **co*d su**ection, we shall look into *he spec*al *ase wh*n $H$ is
+$\le*t(0,b_{\i*f*y}\right)$-s*bq*adratic,
+and we shall *ry to deri*e additi*n*l *nformation.
+%
+\*ubsub*ection{T*e Gene*a* Case: Nontr*v*alit*.}
+%
+We assume that $H$ is
+$\*eft(A_{\i*f*y},B_{\in*ty}\right)$-sub\-*ua\-*ra\-*ic at *n*inity,
+for some c*nstant symmetric matrices $A_{\i*fty}$ and $B_{\infty}$,
+with $B_{\i*fty}-A_{\infty}$ posi*i*e definit*. S*t:
+\*eg*n{eqnarra*}
+\ga*ma :&=&{\rm smallest\ eige*value\ of}\ \ B_{\i*fty} - A_{\infty} \\
+  \lamb*a : &=& {\rm *ar*est\ negat*v*\ *i*e*va*ue\ of}\ \
+  J \f*ac{d}{dt} +A_{\in*ty}\ .
+\e*d{e*na*r**}
+
+The*rem~\ref{ghou:pre} tel*s us tha* if $\*amb** +\g**ma < 0$, th*
+boun*a**-val*e p*o*l*m:
+\be**n{*quation}
+\begin{arra*}{rc*}
+  \dot{x}&=&JH' (x)\\
+  x(0)&=&x (T)
+\en*{arr*y}
+\end{equation}
+has at l*ast one solutio*
+$\ove*line{x}$, wh**h is foun* by minim*zin* th* dual
+actio* *unctio**l:
+\begin{eq*at**n}
+  \psi (u) = \int_{o}^{T} \l*f*[\frac{1}{2}
+  \left(\L****a_{o}^{-1} u,u\ri**t) + N^{\ast} (-u)\right] dt
+\e*d{equati*n}
+on the *ange of $\*amb*a$, w**c* is a subspace $R (\*ambda)_{L}^{2}$
+with **nite codime*sion. He*e
+\*egin{eq*ation}
+  N(x) := H(x) - \frac{1}{2} \le*t(A_{\*nf*y} x,x\r*g*t)
+\end{eq**t**n}
+is a conv*x *un*tion, and
+\*eg**{e*ua*ion}
+  N(x) \l* \*rac{1}{2}
+  \*eft(\l*ft(B_{\infty} - A_{\inf*y}\right) x,x\right)
+  + c\ \ \ \forall x\ .
+\end{eq*atio*}
+
+%
+\begin{proposit*on}
+Ass**e $H'(0)=0$ and $ H(0)=0$. Set:
+\b*gin{eq*a*ion}
+  \de*ta := \limin*_{x\t* 0} 2 N (x) \left\|x\right\|^{-2}\ .
+  \lab*l{*q:one}
+\end{e*uation}
+
+If $\*a*ma < - \lambda < \del**$,
+the solution $\o***l**e{u}$ is non-zero:
+\begi*{eq**tion}
+  \o*erline{x} (t) \ne 0\ \ \ \f*rall t\ .
+\en*{*q*ation}
+\end{pro*osi*ion}
+%
+\beg**{proof}
+Condit*on (\ref{*q:one}) *eans that, *or every
+$\d*lta ' > \delta$, there is some $\va*e**ilon > 0$ *uch *hat
+\*egin{*q**tion}
+  \lef*\|x\right\| \l* \v*r*psilon \Rig*ta*r*w N (x) \le
+  \*rac{\del*a '}{2} \left\|x\rig*t\|^{2}\ .
+\e*d{e*uation}
+
+It is an exercis* in *onvex *nal*sis, into whic* we shall not go, to
+show **at thi* implie* *hat ther* is an $\e*a > 0$ *uch **at
+\*egi*{eq*a*ion}
+  f\*ef*\|x\r*gh*\| \l* \e*a
+  \Righ*arrow N^{\as*} (y) \l* \fra*{1}{2\delta '}
+  \left\|y\r*gh*\|^{2}\ .
+  \label{*q:t*o}
+\end{eq*ation}
+
+\begin{*i*ure}
+\*space{2.5cm}
+\c*ption{Thi* is th* caption of t*e fi*ur* displ*y*ng a white e*gle and
+a *hit* *ors* on a snow field}
+\end{figure}
+
+Sinc* $u_{1}$ is a smoo*h func**on, we will h*ve
+$\lef*\|hu_{1}\r*g*t\|_\infty \le \et*$
+*or $h$ sm*ll enough, and inequal*t* (\r*f{eq:tw*}) will hold,
+y*e**ing the*eb*:
+\*egin{equation}
+  \p*i (hu_{1}) \l* \frac{h^{2}}{2}
+  \frac{1}{\lam*da} \left\|u_{1} \r**h*\|_{2}^{2} + \frac{h^{2}}{2}
+  \fr*c{1}{\delta '} \le*t\|u_{1}\righ*\|^{2}\ .
+\end{*q*ati*n}
+
+If we ch*ose $\de**a '$ clo*e enou*h to $\de**a$, the qua*tity
+$\left(\fra*{1}{\lambda} + \**ac{1}{\**lta '}\right)$
+wi*l be negative, and we end up wit*
+\b*g*n{equat*on}
+  \ps* (hu_{1}) < 0\ \ \ \ \ {\rm for}\ \ h\ne 0\ \ {\rm sma*l}\ .
+\end{equa*i*n}
+
+On the other hand, we c*eck *i*ect*y that $\psi (0) = 0$. This sho*s
+that 0 c*nnot be a minim*zer of $\psi$, not even a local one.
+S* $\ove*l*n*{u} \ne 0$ and
+$\ov*rline{u} \ne \Lambda_{o}^{-1} (0) = 0$. \qed
+\end{*ro*f}
+%
+\begin{co*ol**ry}
+A*sum* $H$ is $C^{2}$ and
+$\le*t(a_{\inf*y},b_{\*nft*}\righ*)$-subqu*dratic at infinit*. Let
+$\xi_{1},\al*o*bre*k\dot*,\a*lowb*e*k\xi_{N}$  be the
+*qu**ibr*a, that is, *he sol*tion* of $H' (\xi ) = 0$.
+Denote by $\omega_{k}$
+the *ma***st **ge*va**e of $H'' \left(\xi_{k}\ri*ht)$, and set:
+\be*i*{eq*atio*}
+  \omega : = {\rm Min\,} \*eft\{\omega_{1},\dots,\omeg*_{k}\right\}\ .
+\end{*q*ati*n}
+If:
+\begin{equation}
+  \fr*c{T}{2\pi} b_{\infty} <
+  - E \left[- \*rac{T}{2\pi}a_{\inf**}\r*ght] <
+  \**ac{T}{2\pi}\o*ega
+  \label{eq:thre*}
+\end{e*uation}
+t*en mi*imization of $\psi$ yield* a non-c**stant $T$-perio**c *ol***on
+$\ove*line{x}$.
+\end{**rol****}
+%
+
+W* recall once *ore t*at *y t*e integer part $E [\al**a ]$ of
+$\a*ph* \in \**br$, we m*a* the $a\in \bb*z$
+such t*at $a< \alpha \l* a+1$. F*r instance,
+if w* ta*e $a_{\inf*y} = 0$, *orollar* 2 tell*
+us tha* $\over*ine{x}$ ex*sts and is
+non-cons*ant provi**d th*t:
+
+\be**n{e*uation}
+  \*rac{T}{2\pi} b_{\i*fty} < 1 < \f*ac{T}{2\pi}
+\end{equation}
+or
+\*egin{equa*ion}
+  T\in \*eft(\fr*c{2\pi}{\o**ga},\*rac{2\pi}{b_{\inf*y}}\rig*t)\ .
+  \label{eq:four}
+\end{**uat***}
+
+%
+\be*i*{proo*}
+T*e spe*t*um of $\L*mbda$ is $\f**c{2\pi}{T} \bbbz +a_{\infty}$. The
+la*gest negat*ve eig*nvalue $\lambda$ is given by
+$\frac{2\pi}{T}k_{o} +a_{\**fty}$,
+wher*
+\*egin{***ation}
+  \*rac{2\pi}{T}k_{o} + a_{\i*f*y} < 0
+  \le \frac{2\pi}{T} (k_{o} +1) + a_{\infty}\ .
+\end{equation}
+*ence:
+\beg*n{equation}
+  k_{o} = E \left[- \frac{T}{2\pi} a_{\infty}\r*ght] \ .
+\end{eq**tion}
+
+The condi*io* $\g*mm* < -\la*bda < \*el*a$ now be*omes:
+\begin{**uation}
+  b_{\inf**} - a_{\infty} <
+  - \f**c{2\pi}{T} k_{o} -a_{\in*ty} < \omega -a_{\in*ty}
+\en*{e*uat*on}
+**ich is p*ecisely c*ndi**o* (\ref{eq:three}).\qe*
+\end{pr*of}
+%
+
+\*egin{lemma}
+*s*um* that $H$ is $C^{2}$ on $\bbbr^{2n} \s*tminus \{ 0\}$ and
+t*at $H'' (x)$ is non-de\-*en\-er\-ate for a*y $x\ne 0$. The* any l*c*l
+minim*zer $\widetild*{x}$ of $\*si$ h*s *inimal period $T$.
+\end{*e*ma}
+%
+\begin{proof}
+W* know *h*t $\wi*etilde{x}$, or
+$\**det**de{x} + \xi$ for some consta*t $\xi
+\in \*bbr^{2n}$, is a $T$-pe**odic solu*io* of the Hamilt*nian sy*t*m:
+\begin{equatio*}
+  \dot{x} = J*' (x)\ .
+\end{equation}
+
+Th*re is no lo*s of g**erality in t*k*ng $\xi = 0$. S*
+$\psi (x) \ge \psi (\widetild*{x} )$
+for *ll $\widet*lde{x}$ in som* **ig*bo*rhood of $x$ in
+$W^{1,2} \left(\bbbr / T\bb*z ; \*bbr^{2n}\righ*)$.
+
+But t*is *ndex is pre*isely the i*de*
+$i_{T} (\widetil*e{x} )$ of the $T$-per***i*
+s*lut*on $\widet*ld*{x}$ ove* the interval
+$(0,T)$, as def*ned in S**t.~2.6. So
+\*e*in{eq*ation}
+  i_{T} (\*idetil**{x} ) = 0\ .
+  \label{eq:*ive}
+\e*d{equation}
+
+Now if $\wide*ilde{x}$ has a *ow*r period, $T/k$ say,
+w* would h*ve, by *oro*lary 31:
+\be*in{*quati*n}
+  i_{T} (\wid*ti*de{x} ) =
+  i_{kT/k}(\wi*etilde{x} ) \ge
+  ki_{T/k} (\widetil*e{x} ) + k-1 \ge k-1 \ge 1\ .
+\end{eq*ation}
+
+This would c*ntra*ict (\re*{eq:fiv*}), and thus cannot h*p*en.\qed
+\end{proof}
+%
+\par**rap*{*otes and Comments.}
+T*e res*lt* in this secti*n are a
+refined *er*ion of \cit*{c*ar:e*e};
+the *inimal**y *esult of Pr*po*it*on
+14 was the first of its kind.
+
+To unde**t*nd th* nontri*ial*ty condi**ons, such as t*e on* in *or*ula
+(\ref{eq:four}), one may thi*k of a one-parameter family
+$x_{T}$, $T\in \l*ft(2\pi\omega^{-1}, 2\pi b_{\i*fty}^{-1}\righ*)$
+of periodi* so**ti***, $x_{T} (0) = x_{T} (T)$,
+wi*h $x_{T}$ going *way t* *n**ni*y when $T\to 2\pi \o*ega^{-1}$,
+*hich is *he p*riod of the line*rized s*st*m at 0.
+
+\be*in{tabl*}
+\captio*{Thi* is the ex***le *ab*e taken out of {\it The
+\TeX{}book,} p.\,246}
+\be*in{center}
+\*egi*{t*bular}{r@{\quad}rl}
+\hl**e
+\multic*lu*n{1}{l}{\rule{0pt}{12pt}
+                   Ye*r}&\mu*ti*olu*n{2}{l}{*orld pop*lation}\\[2pt]
+\h*in*\*ule{0pt}{12pt}
+8000 B.C.  &     5,000,000& \\
+  50 A.D.  &   200,000,000& \\
+1650 A.D.  &   500,000,000& \\
+1945 A.D.  & 2,300,000,000& \\
+1980 A.D.  & 4,400,000,000& \\[2pt]
+\*lin*
+\end{t*bular}
+\en*{*e*t*r}
+\end{table}
+%
+\begin{t*eor**} [*houssoub-*reiss]\la*el{g*ou:pr*}
+Assume $H(t,x)$ is
+$(0,\va**psilon )$-su*qu****tic at
+i*finity *or all $\*arepsilon > 0$, and $T$-per*odic in $t$
+\begin{equation}
+  H (t,\*dot )\ \ \ \ \ {\rm is\ *on*ex}\ \ \f*rall t
+\en*{equ*tion}
+\b*gi*{equ*tio*}
+  H (\cd*t ,x)\ \ \ \ \ {\rm is}\ \ T{\rm -pe*i*dic}\ \ \for*ll x
+\end{eq*a*ion}
+\b*gi*{equation}
+  H (t,x)\ge n\lef*(\le*t\|x\rig*t\|\right)\ \ \ \ \
+  {\rm *ith}\ \ n (s)s^{-1}\to \i*ft*\ \ {\rm as}\ \ s\to \i*f*y
+\end{equation}
+\b*gi*{equati*n}
+  \fo*all \v*r*psilo* > 0\ ,\ \ \ \exists c\ :\
+  H(t,x) \l* \f*ac{\vare**ilon}{2}\l*ft\|x\right\|^{2} + c\ .
+\end{*qu*tion}
+
+Assume also t*at $H$ is $C^{2}$, and $H'' (t,x)$ is positive defi**te
+e*ery**ere. Then ther* is a sequence $x_{k}$, $k\in \bbbn$, of
+$kT$-*eriodic *olut*ons of th* sys*em
+\b*gin{equ*ti**}
+  \dot{x} = JH' (t,x)
+\end{e*ua**on}
+such *ha*, *or **e*y $k\in \bbbn$, t*ere is som* $p_{o}\in\bbbn$ *ith:
+\beg**{equ**ion}
+  p\ge p_{o}\Ri*h*arrow x_{pk} \ne x_{k}\ .
+\end{*quation}
+\qed
+\end{*heorem}
+%
+\be*i*{example} [{{\rm *xternal **rcing}}]
+Con*ider *he sys*em:
+\*egi*{***ation}
+  \dot{x} = JH' (x) + f(t)
+\end{equatio*}
+w**r* *he *amil*onian $H$ is
+$\l*ft(0,b_{\*nfty}\right)$-subq**dr*tic, and th*
+**rci*g term is a dist*ib*tio* on the c*rc*e:
+\beg*n{equation}
+  f = \frac{d}{dt} F + f_{o}\ \ \ \ \
+  {\rm with}\ \ F\in L^{2} \left(\bbbr / T\*b*z; \*b*r^{2n}\right)\ ,
+\end{e**a*ion}
+where $f_{o} : = T^{-1}\int_{o}^{T} f (t) dt$. *or ins*ance,
+\**gin{equ**ion}
+  f (t) = \s*m_{k\in \b**n} \delta_{k} \xi\ .
+\end{eq*ation}
+whe*e $\de*ta_{k}$ is the Dir*c mass at $t= k$ and
+$\xi \in \bbbr^{2n}$ is a
+constant, fit* *he prescripti*n. This m*an* t*at the s*s*em
+$\do*{x} = JH' (x)$ is bei*g excited by a
+s*ries of identic** shocks at inte***l $T$.
+\end{example}
+%
+\be*in{d*finition}
+Let $A_{\in*t*} (t)$ and $B_{\infty} (t)$ be symmetric
+opera**rs in $\bbbr^{2n}$, de*e**ing c*ntinuously on
+$t\in [0,T]$, such *hat
+$A_{\infty} (t) \l* B_{\*n*ty} (t)$ for all $t$.
+
+A Bor*li*n functi*n
+$H: [0,T]\t*me* \bbbr^{2n} \to \bbbr$
+is cal*ed
+$\*eft(A_{\*nf*y} ,B_{\i*fty}\rig*t)$-{\it subquad*atic at infinity}
+if there exists a fu*ction $N(t,x)$ *uch that:
+\be*in{e*ua*ion}
+  H (t,x) = \*rac{1}{2} \left(A_{\infty} (t) x,x\righ*) + N(t,x)
+\e*d{equa*ion}
+\b*gin{**uati*n}
+  \fo*all t\ ,\ \ \ N(t,x)\ \ \ \ \
+  {\rm is\ conve*\ wit*\  r*spect\  to}\ \ x
+\e*d{e*uation}
+\begi*{e**a**on}
+  N(t,x) \ge n\le*t(\lef*\|x\right\|\right)\ \ \ \ \
+  {\rm w*t*}\ \ n(s)s^{-1}\to +\i**ty\ \ {\rm as}\ \ s\to +\i*fty
+\e*d{eq*a*i*n}
+\begin{eq*ation}
+  \e**sts c\in \b*br\ :\ \ \ H (t,x) \l*
+  \*rac{1}{2} \le*t(B_{\*nfty} (t) x,x\r*ght) + c\ \ \ \forall x\ .
+\end{equat*on}
+
+If $A_{\inf*y} (t) = a_{\*n*ty} I$ and
+$B_{\infty} (t) = b_{\infty} I$, w**h
+$a_{\infty} \le b_{\in**y} \in \bbbr$,
+we *hall say **at $H$ is
+$\l*ft(a_{\**f*y},b_{\inft*}\rig*t)$-subqua*ratic
+at infinity. As an *xa*pl*, th* *unctio*
+$\left\|x\ri*ht\|^{\alp*a}$, with
+$1\le \alph* < 2$, is $(0,\varep*il*n )$-subquadra*ic at infi*i*y
+fo* every $\*areps**on > 0$. *imi*arly, the Hamiltonia*
+\b*gin{eq*ati*n}
+H (t,x) = \frac{1}{2} k \l*ft\|k\right\|^{2} +\lef*\|x\righ*\|^{\alp*a}
+\end{equat*on}
+is $(k,k+\varepsilo* )$-subquadr*t*c f*r every $\v*re*s*l*n > 0$.
+*ote **at, if $k<0$, it is n*t conve*.
+\end{*efinitio*}
+%
+
+\*aragr*ph{N**es and *o*ment*.}
+T*e fi*st results on su*har**nics we*e
+o*t*i*ed by R*b*nowit* in \*ite{r*b}, w*o showe* the existence of
+inf*n*tely man* sub**rmonics *oth in the subqu**r*tic and s*perquadratic
+*ase, wit* *uita*** **owt* co**itio*s on $H'$. Aga*n th* du*li**
+  *ppr*ach *na*led Cla*ke and Ekel**d in \*ite{*lar:eke:2} to treat the
+sam* *ro**e* in the *onv*x-*ubqua*r*tic case, with g*ow*h cond*tions on
+$H$ on*y.
+
+Re**n***, M*c**lek and Tarant*l*o (see \cit*{mic*:ta*} and \cite{tar})
+hav* ob*ai**d lower b*u*d on *he num*er of ***harmon**s of p***o* $kT$,
+ba*ed on *y**et*y consi*erations and on pinching est*m*t*s, as in
+S**t.~5.2 of this articl*.
+
+%
+% ---- B*bl**gr*phy ----
+%
+\begin{t*ebibliogra*hy}{5}
+%
+\bibitem {cla*:eke}
+Cla*ke, F., Ekel*nd, I.:
+Non*inea* osci*la*ions and
+bound*ry-valu* pr*b*ems for Hamil*onian s*stem*.
+Ar*h. Rat. Me*h. Anal. {\bf 78} (1982) 315--333
+
+\bibi*em {cla*:eke:2}
+*larke, F., Eke**n*, I.:
+So*utions p\'{e}r*odiques, du
+p\'{e}*io*e donn\'{e}e, des \'{e}quati**s hamil*on*enn*s.
+Note CR*S Paris {\bf 287} (1978) 1013--1015
+
+\bibi*em {*ab}
+*abinowi*z, P.:
+On subh*r*onic so**ti*ns of a Hamiltonia* system.
+*omm. Pure A*pl. Ma*h. {\bf 33} (1980) 609--633
+
+\en*{*hebi*lio**aphy}
+
+%
+% *econd co*tributio* *ith nearly *denti**l te*t,
+% sli*htl* changed contrib**io* he*d (all *ntries
+% a*p*a* as defa*lts), and *odif*e* bibliogr*p*y
+%
+\*i*le{*a**lt*nia* Me**anics2}
+
+\*utho*{Iv*r Ekeland\in*t{1} \and *oge* Tema*\in*t{2}}
+
+\ins*itut*{Prince*on U*ive**it*, Princeto* NJ 08544, USA
+\and
+Univer*i*\'{e} de Pari*-*ud,
+Laboratoire d'An**y*e Num\'{e}rique, B\^{a}time*t 425,\\
+F-91405 Orsay *edex, France}
+
+\*ak*ti*le
+%
+% Modify t*e b**lio*raphy environment to c*ll for the author-*ear
+% *ystem. T*i* is done normally *ith the citeauthorye*r option
+% fo* a pa*t*c*lar *ont*ibution.
+\make**letter
+\ren*wenvi*onme*t{*heb*blio*raphy}[1]
+     {\s**tion{\refname}
+      \small
+      \list{}%
+           {\settowidth\labelwidth{}%
+            \*ef**argin\parindent
+            \itemindent=-\p**ind***
+            \labelse*=\z@
+            \if@openbi*
+              \a*vance\leftma*gin\b*binden*
+              \i*emindent -\bib**dent
+              \li*tpa*ind*nt \itemindent
+              \parsep \z@
+            \fi
+            \**ecou**er{enu*iv}%
+            \let\p@enumi*\@emp*y
+            \renewcomman*\th*enumiv{}}%
+      \if@op*nbib
+        \*en*wcommand\n*wblock{\pa*}%
+      \else
+        \r*newc*mm*nd\ne*blo**{\hsk*p .11em \@plus.33em \@minus.07em}%
+      \fi
+      \slo*py\clubpena**y4000\wid**penal**4000%
+      \sfco**`\.=\@m}
+     {\def\@n*it**err
+       {\@late*@*a*n**g{*mpty `theb*bliograp*y' envir*nment}}%
+      \en*list}
+      \def\@ci**#1{#1}%
+      \def\@lbib**em[#1]#2{\item[]\if@*ilesw
+        {\def\protec*##1{\s*r*ng ##1\spac*}\i*m**iate
+      \wri*e\@auxout{\**ring\b**c*te{#2}{#1}}}\fi\**no*espaces}
+\*a*ea*other
+%
+\begi*{abstract}
+*he *bstract should s*mm*rize *he co*te*ts of the paper
+us*ng at least 70 and at mos* 150 w*r*s. It w*l* be set in 9-poi*t
+**nt size and be inset 1.0 cm *rom the r*g*t and **ft margi*s.
+Ther* w*ll be two bla*k l*ne* before and *fter the Abstr*ct. \do*s
+\end{a**t*act}
+%
+\section{*ixe*-Peri** P*oble*s: T*e Su*l*near Cas*}
+%
+Wit* this cha**er, the pr*lim**aries are ove*, and we be*in *he *earch
+fo* *eri*dic solutions to Hamilto*i*n s*stems. All t*is wi*l be done in
+the convex ca*e; *ha* is, we shall st*d* th* **undary-va*ue *ro*lem
+\begin{eqn*rr*y}
+  \dot{x}&=&JH' (t,x)\\
+  x(0) &=& x(T)
+\en*{eqnarray}
+wi*h $H(t,\cdot)$ a conv*x fun*ti*n of $x$, goi*g to $+\infty$ when
+$\le*t\|x\right\| \t* \*nfty$.
+
+%
+\subsec*ion{Auto*omo*s Sy*te*s}
+%
+In *his secti*n, we w*ll *on*i*er t*e c*se when *he Hamiltonian $H(x)$
+is *ut***m*u*. *or t*e sake of simplic*ty, we shall als* a**ume that it
+is $C^{1}$.
+
+We shall *irst cons*der the question of *o*tr*viality, within *he
+*e*e*al f*amewor* of
+$\*eft(A_{\infty},B_{\i*fty}\right)$-subquadratic Hamiltonians. In
+the secon* subsect*on, we shall loo* i*to the speci*l c*se when $H$ is
+$\left(0,b_{\i*fty}\rig*t)$-s*bqua*rat*c,
+and we sh*ll try to *e*iv* *d*itional in*ormation.
+%
+\subsu*se*tion{Th* General *ase: N*ntr***a*ity.}
+%
+We *ssume *hat $H$ is
+$\*eft(A_{\i**t*},B_{\infty}\r*ght)$-s*b\-qua\-*ra\-tic at in*ini*y,
+fo* so*e consta*t sy*m*tric *atrices $A_{\infty}$ and $B_{\infty}$,
+w**h $B_{\in*t*}-A_{\infty}$ p*sitive def*nite. Set:
+\b**in{*qn*rray}
+\gamma :&=&{\rm smal***t\ eigenvalue\ of}\ \ B_{\i*fty} - A_{\infty} \\
+  \lambda : &=& {\rm larg*st\ ne**t*ve\ eige*va*ue\ of}\ \
+  J \frac{d}{dt} +A_{\infty}\ .
+\end{eqn*rray}
+
+*heorem 21 tells us that if $\lambda +\*amm* < 0$, the b*undary-v*lue
+p*o*lem:
+\begin{e*uatio*}
+\b**in{a*r*y}{rc*}
+  \dot{x}&=&J*' (x)\\
+  x(0)&=&x (T)
+\end{*rray}
+\end{equation}
+has at lea*t on* *olut*on
+$\*ver*ine{x}$, *hich is f*und by mini*i*ing the dual
+ac*i*n fu**tio*al:
+\be*in{equation}
+  \psi (u) = \int_{o}^{T} \left[\*rac{1}{2}
+  \left(\La**da_{o}^{-1} u,u\ri*ht) + N^{\as*} (-u)\right] dt
+\end{**u**io*}
+on the range of $\La*bda$, which is a sub*p**e $R (\Lam*da)_{L}^{2}$
+*ith *init* codi*e*sion. Here
+\begin{equ*tion}
+  N(x) := H(x) - \frac{1}{2} \left(A_{\in*ty} x,x\ri*h*)
+\e*d{*q*ation}
+is a co*vex funct**n, and
+\b*gin{equat*on}
+  N(x) \le \fr*c{1}{2}
+  \left(\left(B_{\infty} - A_{\*nft*}\right) x,x\right)
+  + c\ \ \ \foral* x\ .
+\end{e*ua*ion}
+
+%
+\begin{proposition}
+Assu*e $H'(0)=0$ and $ H(0)=0$. S*t:
+\b*gin{e*uation}
+  \delt* := \lim*nf_{x\to 0} 2 N (x) \le*t\|x\right\|^{-2}\ .
+  \l*bel{2eq:one}
+\en*{equa*ion}
+
+If $\gamma < - \lam**a < \delta$,
+*he *olut*on $\*verli*e{u}$ is non-ze*o:
+\**gin{eq**tion}
+  \overlin*{x} (t) \ne 0\ \ \ \forall t\ .
+\e*d{eq*ation}
+\end{**oposi*ion}
+%
+\begin{pr**f}
+Cond*t*on (\ref{2eq:*ne}) *eans that, *or *ver*
+$\delt* ' > \**lt*$, there is som* $\*arepsilon > 0$ such that
+\begi*{equa*ion}
+  \l*ft\|x\right\| \le \var***ilon \**ghtar*o* N (x) \le
+  \frac{\delta '}{2} \le*t\|x\r**h*\|^{2}\ .
+\end{*qu*tion}
+
+It is an *xe*ci** in *onvex a*al*sis, *nto which we shall not go, to
+show tha* thi* i*plie* t*a* t*er* is an $\eta > 0$ such t*at
+\begin{eq*at*on}
+  f\left\|x\right\| \le \eta
+  \Ri***arrow N^{\a*t} (y) \le \frac{1}{2\del*a '}
+  \lef*\|y\ri**t\|^{2}\ .
+  \la*el{2eq:two}
+\e*d{equ**i*n}
+
+\be*in{**gure}
+\*spa*e{2.5cm}
+\ca*tio*{This is *he capt*on of the f*gu*e di*playin* a white eagle and
+a *h*te hors* on a sno* field}
+\end{*igur*}
+
+Si*ce $u_{1}$ is a smooth fun*tio*, w* will ha*e
+$\left\|hu_{1}\right\|_\infty \le \*ta$
+for $h$ *mal* e*ough, and *neq**li*y (\ref{2eq:t*o}) will hold,
+***ld*ng th*re*y:
+\beg*n{equati*n}
+  \psi (hu_{1}) \le \*rac{h^{2}}{2}
+  \f**c{1}{\la***a} \l*ft\|u_{1} \r*ght\|_{2}^{2} + \*rac{h^{2}}{2}
+  \frac{1}{\d*l** '} \left\|u_{1}\r*g*t\|^{2}\ .
+\end{*quati*n}
+
+If we choos* $\delta '$ clo*e enoug* to $\*elta$, t*e *u*n*i**
+$\left(\f*ac{1}{\l*mbda} + \frac{1}{\delt* '}\ri*ht)$
+will be neg*tiv*, and w* e*d up wit*
+\begin{e*ua****}
+  \psi (h*_{1}) < 0\ \ \ \ \ {\rm for}\ \ h\ne 0\ \ {\rm *mal*}\ .
+\end{eq**t*on}
+
+On *he ot*er hand, we *heck *irectl* **at $\*si (0) = 0$. This *how*
+th*t 0 ca*not be a m*nim*zer of $\p*i$, not e**n a lo*al *ne.
+So $\ov*rli*e{u} \ne 0$ and
+$\overline{u} \ne \L*mbda_{o}^{-1} (0) = 0$. \qed
+\en*{proo*}
+%
+\begi*{c*rolla*y}
+As*ume $H$ is $C^{2}$ and
+$\left(a_{\infty},b_{\*nfty}\right)$-subqua*r*tic at infinity. Let
+$\x*_{1},\allo*b*eak\d*ts,\allowbrea*\x*_{N}$  be t*e
+equilibria, *hat is, *he so*utions of $H' (\x* ) = 0$.
+D*note by $\o*e*a_{k}$
+*he smal*est *i*e***lue of $H'' \le*t(\xi_{k}\ri*ht)$, and set:
+\*egin{eq*ation}
+  \ome*a : = {\rm Min\,} \*eft\{\ome*a_{1},\dot*,\o*e*a_{k}\r*g*t\}\ .
+\en*{equ*tio*}
+If:
+\begin{eq****on}
+  \frac{T}{2\pi} b_{\infty} <
+  - E \left[- \*rac{T}{2\pi}a_{\inft*}\ri*ht] <
+  \frac{T}{2\pi}\ome*a
+  \**bel{2eq:three}
+\end{equat*on}
+the* m**imizati*n of $\*si$ yields a n*n-co*stant $T$-peri*dic sol*tion
+$\o**rli*e{x}$.
+\en*{c*rolla**}
+%
+
+We recal* once m*re *h*t by *he integer part $E [\alph* ]$ of
+$\alpha \in \**br$, we mean the $a\in \b*bz$
+s*ch t*at $a< \alph* \le a+1$. *or in*tan*e,
+if w* t*ke $a_{\infty} = 0$, Coro**ar* 2 te*ls
+us that $\ove*line{x}$ exist* and is
+n*n-c*ns**nt provi*ed that:
+
+\begin{*qua*i**}
+  \fra*{T}{2\pi} b_{\i*fty} < 1 < \frac{T}{2\pi}
+\e*d{e*u**i*n}
+or
+\b*gin{equ*ti**}
+  T\in \*eft(\*rac{2\pi}{\o*ega},\fr*c{2\pi}{b_{\*nfty}}\ri**t)\ .
+  \l*bel{2eq:four}
+\end{equ*t*on}
+
+%
+\begin{pro*f}
+*he *pe*trum of $\Lambda$ is $\f*ac{2\pi}{T} \b*bz +a_{\in*ty}$. Th*
+larg*s* n*ga*i*e e*ge*value $\lam*da$ is g*v*n by
+$\f*ac{2\pi}{T}k_{o} +a_{\inf*y}$,
+wher*
+\beg*n{equat*on}
+  \f*ac{2\pi}{T}k_{o} + a_{\infty} < 0
+  \le \frac{2\pi}{T} (k_{o} +1) + a_{\infty}\ .
+\end{equation}
+He**e:
+\beg*n{equ*tion}
+  k_{o} = E \left[- \fr*c{T}{2\pi} a_{\infty}\ri*ht] \ .
+\en*{*qua*i*n}
+
+*he condi*ion $\g*mma < -\l*m*da < \delta$ *ow *e*omes:
+\begin{*quat*on}
+  b_{\infty} - a_{\infty} <
+  - \*rac{2\pi}{T} k_{o} -a_{\*nfty} < \***ga -a_{\**ft*}
+\end{eq*a*ion}
+wh*ch is precisely condition (\ref{2eq:*hr**}).\qed
+\end{proo*}
+%
+
+\begi*{lemma}
+*ss*me that $H$ is $C^{2}$ on $\bbbr^{2n} \setmi*us \{ 0\}$ and
+t*at $H'' (x)$ is *on-de\-g**\-er\-ate for any $x\ne 0$. Then a*y local
+minimizer $\widetilde{x}$ of $\psi$ has minima* peri*d $T$.
+\en*{lemma}
+%
+\begin{pro*f}
+W* know **at $\*i*e**lde{x}$, or
+$\w*det*lde{x} + \xi$ for som* c***t*nt $\xi
+\in \bbbr^{2n}$, is a $T$-p**iodic so*ution of the Hamilton*an *ystem:
+\*eg*n{*q*a***n}
+  \d*t{x} = JH' (x)\ .
+\end{equa*ion}
+
+There is no *oss of general*ty in taking $\xi = 0$. So
+$\*si (x) \ge \ps* (\w*d*ti*de{x} )$
+for *ll $\wide*ilde{x}$ in so** neig*bou***o* of $x$ in
+$W^{1,2} \l*ft(\bbbr / T\bbbz ; \b*br^{2n}\right)$.
+
+But this *nde* is prec*s*ly th* *ndex
+$i_{T} (\wide*ild*{x} )$ of t*e $T$-p*riodic
+solution $\*idet*ld*{x}$ over th* inte*val
+$(0,T)$, as def**ed in *ect.~2.6. S*
+\*e*in{equation}
+  i_{T} (\**d**ilde{x} ) = 0\ .
+  \l*be*{2*q:f*ve}
+\end{equ*ti*n}
+
+Now if $\wi*etilde{x}$ has a lo*er peri*d, $T/k$ say,
+we *oul* have, by C**ol*ary 31:
+\begin{e*uat*on}
+  i_{T} (\*idetil*e{x} ) =
+  i_{kT/k}(\wid****de{x} ) \ge
+  ki_{T/k} (\widetild*{x} ) + k-1 \ge k-1 \ge 1\ .
+\e*d{e*uati*n}
+
+*his wou*d contra*ict (\ref{2eq:five}), and thus cannot happen.\qe*
+\e*d{proof}
+%
+\parag***h{No*e* and Comments.}
+The r*s*lts in thi* sectio* are a
+refine* ***sion of \c*t*{2clar:*ke};
+*he minimality resul* of **opo*ition
+14 was t*e *irst of i*s k*nd.
+
+To underst**d the *ontr*via*i*y con*i*io**, suc* as the one in fo*mula
+(\ref{2*q:fou*}), one may *hink of a one-p***m*ter fam*ly
+$x_{T}$, $T\in \le*t(2\pi\om*ga^{-1}, 2\pi b_{\in*ty}^{-1}\ri*h*)$
+of periodi* solutio*s, $x_{T} (0) = x_{T} (T)$,
+*ith $x_{T}$ *oi*g away to infinity wh*n $T\to 2\pi \*me**^{-1}$,
+w*i*h is the per*od of t*e lin*arized sys*em at 0.
+
+\b*gin{tabl*}
+\capt*on{This is the exa*p*e *able take* o*t of {\it Th*
+\Te*{}book,} p.\,246}
+\begin{cente*}
+\be*i*{ta*ular}{r@{\quad}rl}
+\*line
+\m*lticol**n{1}{l}{\ru*e{0pt}{12pt}
+                   *ear}&\mu*ticolumn{2}{l}{World population}\\[2pt]
+\hl*ne\*ule{0pt}{12pt}
+8000 B.C.  &     5,000,000& \\
+  50 A.D.  &   200,000,000& \\
+1650 A.D.  &   500,000,000& \\
+1945 A.D.  & 2,300,000,000& \\
+1980 A.D.  & 4,400,000,000& \\[2pt]
+\hline
+\e*d{ta*ula*}
+\end{cen*e*}
+\end{table}
+%
+\b***n{theorem} [G*ousso*b-**ei**]
+A*sume $H(t,x)$ is
+$(0,\va*e*silon )$-subquad*ati* at
+in**nity f*r all $\v*reps*lon > 0$, and $T$-per*od** in $t$
+\b*g**{e**ation}
+  H (t,\cdot )\ \ \ \ \ {\rm is\ **nve*}\ \ \f*rall t
+\end{equ*ti*n}
+\begin{equati*n}
+  H (\cdo* ,x)\ \ \ \ \ {\rm is}\ \ T{\rm -perio*ic}\ \ \f*ra*l x
+\end{equ*tion}
+\begin{e*uatio*}
+  H (t,x)\ge n\left(\left\|x\righ*\|\r*ght)\ \ \ \ \
+  {\rm w*th}\ \ n (s)s^{-1}\to \i**ty\ \ {\rm as}\ \ s\to \infty
+\en*{equa*ion}
+\be*in{*qu**i*n}
+  \fo*all \varepsilon > 0\ ,\ \ \ \ex*st* c\ :\
+  H(t,x) \le \frac{\v*re*silon}{2}\*eft\|x\right\|^{2} + c\ .
+\en*{equation}
+
+As*ume also t*a* $H$ is $C^{2}$, and $H'' (t,x)$ is po*i*ive defini**
+everywh*re. T*e* t*ere is a *eque*ce $x_{k}$, $k\in \bbbn$, of
+$kT$-per*odic soluti*ns of *he sy*tem
+\b*gin{eq**ti*n}
+  \dot{x} = JH' (t,x)
+\e*d{equa*ion}
+*uch t*at, f*r *very $k\in \bbbn$, there is some $p_{o}\in\b*bn$ *ith:
+\begin{equation}
+  p\ge p_{o}\Ri*htarrow x_{pk} \ne x_{k}\ .
+\e*d{e**a*io*}
+\qed
+\end{**eore*}
+%
+\be*in{e*ampl*} [{{\rm *xt*rn*l **rcin*}}]
+C*ns**er the system:
+\*e*in{e**ation}
+  \dot{x} = JH' (x) + f(t)
+\en*{eq**ti*n}
+wher* the Hami*toni** $H$ is
+$\left(0,b_{\infty}\ri*h*)$-subquadra*ic, and the
+**rci** term is a *ist*i*ution on the circle:
+\*egin{*qu*tion}
+  f = \fr*c{d}{dt} F + f_{o}\ \ \ \ \
+  {\rm with}\ \ F\in L^{2} \left(\bbbr / T\*bbz; \*bbr^{2n}\ri**t)\ ,
+\en*{eq*ation}
+where $f_{o} : = T^{-1}\i*t_{o}^{T} f (t) dt$. For i*s*ance,
+\begin{equation}
+  f (t) = \sum_{k\in \bbbn} \delta_{k} \x*\ ,
+\e*d{equatio*}
+whe** $\*elta_{k}$ is the D*rac ma*s at $t= k$ and
+$\x* \in \*bbr^{2n}$ is a
+constant, *its the pr*****pti*n. This means *h*t the sys**m
+$\d*t{x} = JH' (x)$ is being ex*ited by a
+*er*es of i**nt**al shocks at **terval $T$.
+\e*d{ex*mple}
+%
+\**gin{defin*ti*n}
+L*t $A_{\infty} (t)$ and $B_{\i*fty} (t)$ be s*mm*tric
+ope***ors in $\bb*r^{2n}$, depe*di*g conti*u*usly on
+$t\in [0,T]$, such that
+$A_{\*n*ty} (t) \le B_{\i**t*} (t)$ f*r all $t$.
+
+A *ore*ia* fu*c*ion
+$H: [0,T]\times \*bbr^{2n} \to \*b*r$
+is called
+$\*eft(A_{\in*ty} ,B_{\i*fty}\ri**t)$-{\it sub*uadratic at infi***y}
+if t*ere e*ists a *uncti** $N(t,x)$ such t*at:
+\b*gi*{*quation}
+  H (t,x) = \**ac{1}{2} \**ft(A_{\**f*y} (t) x,x\righ*) + N(t,x)
+\en*{equation}
+\begin{equa*ion}
+  \*orall t\ ,\ \ \ N(t,x)\ \ \ \ \
+  {\rm is\ convex\ with\  *espe**\  t*}\ \ x
+\end{*quat*o*}
+\**gin{equa*i*n}
+  N(t,x) \ge n\*eft(\left\|x\ri**t\|\r***t)\ \ \ \ \
+  {\rm with}\ \ n(s)s^{-1}\to +\infty\ \ {\rm as}\ \ s\to +\inf*y
+\end{e*u**io*}
+\begin{*quation}
+  \exi*ts c\in \b*br\ :\ \ \ H (t,x) \le
+  \frac{1}{2} \l*f*(B_{\infty} (t) x,x\r*ght) + c\ \ \ \fo*all x\ .
+\en*{e*ua*ion}
+
+If $A_{\infty} (t) = a_{\infty} I$ and
+$B_{\*nfty} (t) = b_{\**ft*} I$, with
+$a_{\infty} \le b_{\i*fty} \in \b*br$,
+we shall s*y **at $H$ is
+$\left(a_{\**fty},b_{\inf*y}\right)$-*ubqua*r*ti*
+at **f*nity. As an example, t*e functio*
+$\left\|x\right\|^{\a*pha}$, *ith
+$1\le \*lpha < 2$, is $(0,\**repsilon )$-s**quadra*ic at infi*it*
+f*r ev*ry $\v*r*p*ilon > 0$. Similarly, t*e *amil*o*ian
+\begin{equation}
+H (t,x) = \frac{1}{2} k \left\|k\rig**\|^{2} +\left\|x\right\|^{\a*ph*}
+\e*d{*quat*on}
+is $(k,k+\*ar*psilon )$-subqua*ra*ic *or ev*ry $\varepsi*on > 0$.
+No*e th*t, if $k<0$, it is not conv**.
+\e*d{def*ni*io*}
+%
+
+\pa**grap*{Notes and *omments.}
+The firs* **sults on su*harmoni*s were
+o*ta*ne* by Rab*nowitz in \c*t*{2rab}, who showed the e***tenc* of
+**fi***el* many *u*harmonics *oth in *he s*b*uadratic and *uperqua*rati*
+case, *ith ***table growth co*di**ons on $H'$. Aga*n t*e duality
+approa** e*a*l*d Cl**ke and *kel*n* in \c*te{2clar:eke:2} t* tr*at th*
+same p**blem in the con*ex-subquadratic c*s*, with growth c*ndition* on
+$H$ only.
+
+Recent*y, Micha**k and Tara*tello (see Michalek, R., *arant*llo, G.
+\*ite{2mich:tar} and Taran*ell*, G. \*ite{2tar}) have obtained lowe*
+bou** on t*e numbe* of sub*ar*onics of period $kT$, bas*d on sy*m*try
+c*nsi**ration* and on pinching estima*es, as in Sect.~5.2 of this
+articl*.
+
+%
+% ---- **bliogr*p*y ----
+%
+\begin{the*i*l*ogra**y}{}
+%
+\*ibitem[1980]{2clar:ek*}
+*lar*e, F., *keland, I.:
+N*nlinea* o*c*llations and
+b**ndar*-value pr*blems for *amilton*a* s*stems.
+Arch. R*t. Mec*. *nal. {\bf 78} (1982) 315--333
+
+\bibit*m[1981]{2cl**:e*e:2}
+*larke, F., E*ela*d, I.:
+Sol**ions p\'{e}rio*ique*, du
+p\'{e}riode donn\'{e}e, des \'{e}quation* hamil**niennes.
+Note CRAS Paris {\bf 287} (1978) 1013--1015
+
+\b*b*t**[1982]{2*ich:ta*}
+Mi*halek, R., Taran*el*o, G.:
+Subharmonic solutio*s wi*h *rescribed mi*im*l
+period fo* n*na*tonomous H*mi*to*ian syste*s.
+J. *iff. Eq. {\bf 72} (1988) 28--55
+
+\bi*it*m[1983]{2t*r}
+Tar*ntel**, G.:
+Subharmonic solut*ons for Hami*tonia*
+sy*t**s v*a a $\bbbz_{p}$ pseud*ind** the*ry.
+Annali di M*t*mat*ca Pu*a (t* appe*r)
+
+\bib*tem[1985]{2rab}
+**binowitz, P.:
+On subharmonic soluti*ns of a *a*il**nia* sy*tem.
+Comm. Pure Appl. Math. {\bf 33} (1980) 609--633
+
+\end{thebi*lio**aphy}
+\c*earpag*
+\a**tocmark[2]{**tho* Ind*x} % additi*nal *umber*d TOC *ntr*
+\renewcommand{\ind**name}{Author Index}
+\p*int**dex
+\clearp*g*
+\a*dtocmar*[2]{Subject Index} % *ddition*l nu*bere* TOC entry
+\m*rkboth{S*bjec* *ndex}{Subject Index}
+\r*n*wc*m*and{\indexname}{Subj*ct Index}
+\input{*ubji*x.ind}
+\en*{document}

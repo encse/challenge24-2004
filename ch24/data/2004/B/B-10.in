@@ -1,0 +1,18 @@
+14 17
+b needs m
+b hates k
+c needs a or j or l
+d needs g
+f needs h or i or m
+f hates n
+g needs l
+g hates c
+i needs b or h
+i hates d
+j needs c or l
+j hates b
+k needs d
+k hates g and l
+l needs f or g
+m needs k
+n hates c

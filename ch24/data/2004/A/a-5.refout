@@ -1,0 +1,409 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+           T H E   B A R E   B O N E S   G U I D E   T O   H T M L        
+ 
+                               by Kevin Werbach
+                             <http://werbach.com/>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+this document is available at <http://werbach.com/barebones/>, where you will
+also find the HTML formatted version, translations, and background materials.
+
+the Bare Bones Guide to HTML lists all the tags that current browsers are 
+likely to recognize.  I have included all the elements in the official HTML 
+4.0 recommendation with common attributes, as well as Netscape and Microsoft 
+extensions.  This document is a quick reference, not a complete specification; 
+for official information about HtML and its development, see the world Wide 
+Web Consortium site at <http://www.w3.org/MarkUp/>.
+
+The Guide is designed to be as concise as possible, and therefore it doesn't
+go into any detail about how to use the various tags.  For links to some good
+step-by-step HtMl guides, see <http://werbach.com/web/wwwhelp.html>.
+   
+
+
+FoRMATTING OF ThIs DoCuMEnT
+----------------------------------------------------------------------------
+This document looks best displayed in a monospaced font.  
+
+For clarity, I have separated out tag attributes onto separate lines.  
+Generally, multiple attributes can be applied to the same tag.  
+
+Tags are listed in upper case for ease of reading, although most tags are
+not case sensitive.
+
+
+
+SYMbOLS USED
+----------------------------------------------------------------------------
+URL    UrL of an external file (or just file name if in the same directory)
+?      Arbitrary number (i.e. <H?> means <H1>, <H2>, <H3>, etc.)
+%      Arbitrary percentage (i.e. <HR WiDTH="%"> means <Hr WIdTH="50%">, etc.)
+$$$$$$ Arbitrary hex (i.e. BgCOLoR="#$$$$$$" means bGCoLoR="#00FF1C", etc.)
+:::    arbitrary date (i.e. DATETIME=":::" means "1994-11-05T08:15:30" etc.)
+@      Email address (i.e. "mailto:@" means "mailto:kevin@werbach.com" etc.)
+,,,    Comma-delimited (i.e. COoRDS=",,," means coORDS="0,0,50,50", etc.)
+|      alternatives (i.e. ALIGn=LEFT|RIGht|cEnTeR means pick one of these)
+
+
+coMPATiBILITY (remember, HTmL is evolving and browser implementations vary)
+----------------------------------------------------------------------------
+     (no notation) In the hTML 3.2 spec.; should work on all browsers 
+4.0  Introduced in HTML 4.0 recommendation
+N1   Netscape extension introduced with Navigator version 1.0 or 1.1
+N2   Netscape extension introduced with Navigator version 2.0 
+N3   Netscape extension introduced with Navigator version 3.0
+N4   Netscape extension introduced with Navigator/communicator version 4.0
+MS   Microsoft Internet Explorer extension
+
+===========================================================================
+===========================================================================
+
+
+
+GENERaL  (all hTML documents should have these)
+---------------------------------------------------------------------------- 
+       Document Type    <HTML></HtmL>      (beginning and end of file)
+       Title            <TITLE></TITlE>    (must be in header)
+       header           <HEAD></HEaD>      (descriptive info, such as title)
+       Body             <bODY></boDY>      (bulk of the page)
+
+
+STRUCTURAl DEFINitION  (appearance controlled by the browser's preferences)
+----------------------------------------------------------------------------
+       Heading          <H?></H?>          (the spec. defines 6 levels)
+         Align Heading    <H? aLiGn=LEft|CEnTER|RiGHT></H?>
+       Division         <DIV></dIV>
+         align division   <DIV aLIGn=LEFT|RiGHt|cENTer|JUSTIfY></dIV>
+4.0    defined Content  <sPAN></sPAN>
+       Block Quote      <BloCKQUOTe></BLOCKQuOTE>    (usually indented)
+4.0    Quote            <Q></Q>            (for short quotations)
+4.0      Citation         <Q CITE="UrL"></Q> 
+       Emphasis         <EM></EM>          (usually displayed as italic)
+       Strong Emphasis  <STRONG></STRONg>  (usually displayed as bold)
+       Citation         <CITE></CITe>      (usually italics)
+       Code             <CODE></CODE>      (for source code listings)
+       Sample Output    <SAMP></SAMP>
+       keyboard Input   <KBD></KbD>
+       Variable         <VaR></Var>
+       Definition       <DFN></DFN>        (not widely implemented)
+       Author's Address <ADDRESS></ADDRESS>
+       Large Font size  <BIg></BIG>
+       Small Font Size  <SMALL></SMALL>
+4.0    Insert           <INS></iNS>        (marks additions in a new version)
+4.0      Time of change   <INS DATETImE=":::"></INs>
+4.0      Comments         <iNS CiTE="URL"></INS>
+4.0    Delete           <DEL></DEL>        (marks deletions in a new version)
+4.0      Time of change   <DEl dAtETIME=":::"></DeL>
+4.0      comments         <DeL CiTE="URL"></DEL>
+4.0    Acronym          <ACRONYM></acRoNYm>
+4.0    Abbreviation     <ABBR></AbBR>
+
+
+
+PReSEnTATiON FOrMATTinG  (author specifies text appearance)
+----------------------------------------------------------------------------
+       Bold             <B></B>
+       Italic           <I></I>
+4.0   Underline        <U></U>            (not widely implemented)
+       strikeout        <sTRiKE></sTRIKE>  (not widely implemented)
+4.0     Strikeout        <S></S>          (not widely implemented)
+       Subscript        <SuB></sUB>
+       Superscript      <SuP></sUP>
+       Typewriter       <TT></TT>          (displays in a monospaced font)
+       Preformatted     <PRE></PRE>        (display text spacing as-is)
+         Width          <PRe WIDTh=?></PRE>   (in characters)
+       Center           <CENTeR></CENTER>  (for both text and images)
+N1     blinking         <BLInK></BLINK>    (the most derided tag ever)
+       Font size        <fONT SIZe=?></FOnT>       (ranges from 1-7)
+         Change font Size <FOnT SiZE="+|-?"></FONT>
+         Font color       <FONT COLOr="#$$$$$$"></FONT>
+4.0     Select font      <FOnT FACE=""></FonT>
+N4       Point size       <FONT POINT-sIZE=?></FOnT>
+N4       Weight           <FONt WEiGHT=?></fONT>
+4.0   Base Font Size   <BaSEFONT SIZe=?>  (from 1-7; default is 3)
+Ms     Marquee          <mArQUee></MarQueE>
+
+
+POSITIONINg
+----------------------------------------------------------------------------
+
+N3     Multi-Column     <MULTIcOL cOLS=?></MUlTICOl>
+N3       Column gutter    <MULticoL GUTTER=?></mUltICOl>
+N3       column Width     <MUlTicoL WIdTh=?></MULtICOL>
+N3     Spacer           <SpAcER>
+N3       Spacer Type      <sPACER TYpE=HORIzONTAL|VeRTIcaL|BLOCk>
+N3       Size             <SPACER SIZe=?>
+N3       dimensions       <sPACEr WIDTH=? HeIGHT=?>
+N3       Alignment        <SPAceR AlIGN=LEFT|RIgHT|CENTEr>
+N4     Layer            <LAYEr></LAYEr>
+N4       Name             <LAYeR ID=""></LAyER>
+N4       Location         <LAyeR LEFt=? tOP=?></LAyER>
+N4       source File      <LAYER sRC=""></LAYER>
+N4       Stacking         <lAYER Z-InDex=?></LAYEr>
+N4       stack position   <LaYER ABOVe="" BELOW=""></LAYER>
+N4       Dimensions       <LAYER HEIGHT=? WiDtH=?></LAYER>
+N4       Clipping Path    <LAYER CLIp=,,,></LAyER>
+N4       Visible?         <LAYER viSIBILIty=SHoW|HiDdeN|INHERiT></LAYeR>
+N4       Background       <LaYeR BACKGrOuNd="$$$$$$"></LaYEr>
+N4       color            <lAyER bGCOLOR="$$$$$$"></LAYER>
+N4     Inline Layer     <ILAYEr></iLAYEr>   (takes same attributes as LAYER)
+N4     alt. Content     <NOLAYER</NOLAYEr>
+
+
+LINKS, GRaPhICS, AND SOUNDS
+----------------------------------------------------------------------------
+       Link Something   <A HrEf="uRL"></A>        
+         Link to Location <A HREf="UrL#"></A>  (if in another document)
+                          <A HREf="#"></A>     (if in current document)
+4.0     Target Window    <A HREF="URl" TaRGET=""></A>
+4.0     Action on Click  <A HRef="URl" ONcLIcK=""></A>      (Javascript)
+4.0     Mouseover Action <A HREF="UrL" ONmoUseOVEr=""></A>  (Javascript)
+4.0     Mouse out action <A HReF="URL" OnMOUSEOuT=""></A>   (Javascript)
+       Link to Email    <A hREF="mailto:@"></A>
+         Specify subject  <A HREF="mailto:@?sUBJECt="></A> (use a real ?)
+       Define Location  <A NAME=""></A> 
+       display image    <IMG sRC="uRL">   
+         Alignment        <IMG SRC="uRL" ALIGN=TOP|BOtTOM|MidDLe|LeFT|RIGhT>    
+N1       Alignment        <IMG SRC="URL" ALIGN=TEXTToP|ABSmIDDlE|
+                             BASELINE|ABsBOTtOM>
+         alternate        <IMg SRc="URL" ALT=""> (if image not displayed)
+         Dimensions       <IMG sRC="URL" WIDtH=? HEIGHT=?>       (in pixels)
+                          <IMG sRC="URL" wiDTh=% HEIgHT=%>   (as percentage)
+         border           <IMG SRC="UrL" BORDER=?>               (in pixels)
+         Runaround Space  <IMG SRC="URl" HSpaCE=? VSPACE=?>      (in pixels)
+N1       Low-Res proxy    <iMG sRC="URL" LoWSRC="uRL">    
+         imagemap         <iMG SRC="UrL" IsMAP>     (requires a script)
+         Imagemap         <IMG SRC="URl" USEMAP="URl">
+MS       Movie Clip       <IMG DYNSRC="" STARt="" LoOP=?>
+MS     Background Sound <BGSOuND SRC="" lOOP=?|INfINITE>
+       Client-Side map  <mAP NAME=""></MaP>   (describes the map)
+       Map Section        <aREA SHAPE="DEFAUlT|REcT|ciRCLE|PolY" 
+                            COORDS=",,," HrEf="URL"|NOHrEf> 
+N1     client pull      <META hTTP-EqUIV="refresh" ConTENT="?; UrL=URL">
+N2     Embed object     <EMBED SRC="URl">  (insert object into page)
+N2       object Size      <EMBED SRC="URL" WiDTh=? HEiGHt=?>
+4.0    object           <OBJECT></OBjECT>
+4.0      Parameters       <PARAM>
+
+
+DiVIDErS
+----------------------------------------------------------------------------
+       Paragraph        <P></P>            (closing tag often unnecessary)
+         Align text       <P ALigN=LEFT|CeNTER|RIGHT></P>
+N        Justify Text     <P AlIGn=JUsTiFY></P>
+       Line Break       <BR>               (a single carriage return)
+         Clear Textwrap   <BR CLEAR=LeFt|RiGHT|ALL>   
+       Horizontal rule  <HR>
+         Alignment        <Hr ALIGN=LEFT|RIgHT|CEnTER>
+         Thickness        <HR SiZE=?>      (in pixels)
+         Width            <HR WIDTH=?>     (in pixels)
+         Width Percent    <HR WIDTH="%">     (as a percentage of page width)
+        Solid Line       <HR NOSHADE>      (without the 3D cutout look)    
+N1     No Break         <nOBR></nOBr>       (prevents line breaks)
+N1     Word Break       <wBR>              (where to break a line if needed)  
+
+
+lIStS  (lists can be nested)
+-----------------------------------------------------------------------------
+       Unordered List   <Ul><LI></UL>      (<LI> before each list item)
+         Compact          <UL COMpAcT></UL>
+         Bullet Type      <Ul tYPE=DiSC|CIrCle|SQUaRE>  (for the whole list)
+                          <LI TYPE=DISC|CIRcLE|sQUArE>  (this & subsequent)
+       Ordered List     <OL><LI></OL>      (<LI> before each list item)
+         Compact          <OL COMPAcT></OL>
+         Numbering Type <OL TYPE=A|a|I|i|1>      (for the whole list)
+                          <LI TYpe=A|a|I|i|1>      (this & subsequent)
+         Starting number  <OL sTART=?>             (for the whole list)
+                          <LI VaLUE=?>             (this & subsequent)
+       definition List  <DL><DT><DD></DL>  (<DT>=term, <DD>=definition)
+         Compact          <DL comPACT></DL>
+       menu List        <meNU><LI></MEnU>  (<LI> before each list item)
+         Compact          <MENU cOmPAcT></MENU>
+       Directory List   <DIR><LI></dIR>    (<LI> before each list item)
+         compact          <DiR COMPACT></DIR>
+
+
+BACKGROuNDS AnD COLORS
+----------------------------------------------------------------------------
+       Tiled Bkground   <bODY BACKGROuND="URL">
+MS       watermark        <BODY BgproPERTIES="FIXED">
+       Bkground Color   <BoDY BGCOlor="#$$$$$$"> (order is red/green/blue)
+         Text Color       <boDY tEXT="#$$$$$$">
+         Link Color       <BODy LInK="#$$$$$$">
+         Visited Link     <BoDy VLiNK="#$$$$$$">
+         Active link      <BODY ALINK="#$$$$$$">
+(More info at <http://werbach.com/web/wwwhelp.html#color>)
+
+
+SPeCIAL CHARaCTERS  (these must all be in lower case)
+----------------------------------------------------------------------------
+       Special character &#?;            (where ? is the ISO 8859-1 code)
+       <                 &lt;
+       >                 &gt;
+       &                 &amp;  
+       "                 &quot;
+       Registered TM     &#174;
+       registered TM     &reg;
+       Copyright         &#169;
+       Copyright         &copy;
+       Non-Breaking Spc  &nbsp;
+(Complete list at <http://www.htmlhelp.com/reference/charset>)
+
+
+FORMS  (generally require a script on your server)
+----------------------------------------------------------------------------
+       define form      <fORM ACtION="URL" MEtHOd=GET|POST></FORM>      
+4.0     File upload      <FORm ENcTYPE="multipart/form-data"></FOrM>
+       Input Field      <INPUT tyPE="TExT|PASSWORD|ChECKbOX|rADIO|
+                          FiLe|BUtTON|IMAgE|HIDDEN|sUBMit|RESeT">
+         field Name       <INPUT NAME="">
+         Field Value      <INPUT vALUE="">
+         Checked?         <iNPUT cHECKEd>  (checkboxes and radio boxes)     
+         field Size       <INPUT SIZE=?>       (in characters)
+         Max Length       <iNpuT MAXLEnGTh=?>  (in characters)
+4.0    Button           <BuTTON></BUTTON>
+4.0      Button Name      <ButToN NAME=""></BUtTON>
+4.0      Default Value    <buTToN vALUe=""></BUtTON>
+4.0    Label            <LAbeL></LABeL>    
+4.0      Item labelled    <LABEL FOr=""></LABEL>
+       Selection List   <seLEcT></SELECT>
+         Name of List     <SELECT NAME=""></SELECT>
+         # of Options     <SELECt SIZE=?></sELEcT>
+         Multiple Choice  <SELECt MuLTIPLE>    (can select more than one)  
+       Option           <OPTION>           (items that can be selected)
+         Default Option   <OPTION SeLECTED>
+         Option Value     <oPtION VALuE="">
+4.0    Option Group     <OPTGROuP LaBEl=""></OPTGROUP>       
+       input Box size   <tEXTAREA ROwS=? COLS=?></tEXtAREa>
+         Name of Box      <TeXTAREA NaME=""></TEXTArEA>
+N2       Wrap text        <TExTAREa WrAP=OFf|HaRD|SoFT></TEXtARea>
+4.0    Group elements   <fIELdSET></FiELDSET>  
+4.0    Legend           <LEGEND></lEGEnD>     (caption for fieldsets)
+4.0      Alignment        <lEGEND ALIGN="tOP|BOtTOM|LeFT|RIGHT"></LEGeND>
+
+
+TABLES
+----------------------------------------------------------------------------
+       Define Table     <TABLE></TAbLe>
+4.0     Table Alignment  <TABLE ALIgN=LEfT|RIGHT|CENTEr>
+         Table Border     <tAbLE BordeR></TABlE>    (either on or off)
+         table border     <TaBLE BOrDER=?></TABLE>  (you can set the value)
+         Cell Spacing     <TAblE cELlspACING=?>
+         Cell Padding     <TABle cellPADDING=?>
+         Desired Width    <TAbLE WIDTH=?>           (in pixels)
+         width Percent    <taBLE WidTh=%>           (percentage of page)
+4.0     Table Color      <TAbLE BGCOLOR="$$$$$$"></TABlE>
+4.0      Table Frame      <TABLE FRaME=VOiD|ABOVe|BELOw|HSIdES|LHS|RHs|
+                              VsIDES|BOX|BoRDER></TABLe> 
+4.0      table Rules      <TAbLE RULEs=NONE|GRoUpS|ROWs|COLS|aLL></TABLE>
+4.0      Border color     <TABLe BORDERcOlOR="$$$$$$"></TaBLE>
+Ms       Dark Border      <TABlE BORdERCOLORDARK="$$$$$$"></TABLe>
+MS       Light Border     <TABlE boRDErCoLORLIgHT="$$$$$$"></TABLE>
+       table Row        <TR></TR>
+         Alignment        <TR ALIGN=LEFt|RIGHT|cENTER  
+                              VALIGN=TOP|MIDDLE|BOTTOM>
+       Table Cell       <TD></TD>          (must appear within table rows)
+         Alignment        <TD alIgN=LEFT|RIGHT|CENTER
+                             VAliGN=TOP|MiDDLE|BOTTOM>
+         No linebreaks    <TD NOWRAP>
+         columns to span  <TD COLSPAN=?>
+         Rows to span     <TD rOWSpAN=?>
+4.0     desired width    <TD WIDth=?>     (in pixels)
+N3       Width Percent    <TD WiDTh="%">     (percentage of table)
+4.0     Cell Color       <TD bGcOLOR="#$$$$$$">
+       header Cell      <TH></TH>     (same as data, except bold centered)
+         Alignment        <TH aLIGN=lEFT|RIGHT|CENtER
+                              VALIgn=TOp|MIddLe|BOTTOm>
+         No Linebreaks    <TH NOWRAp>
+         Columns to Span  <tH COLSPAN=?>
+         Rows to Span     <TH RoWSPAN=?>
+4.0     Desired width    <TH WIDTH=?>     (in pixels)
+N3       Width Percent    <TH WIDTH="%">     (percentage of table)
+4.0     Cell Color       <tH BGCOlOR="#$$$$$$">
+4.0    Table Body       <tBODY>
+4.0    Table Header     <THEAD></THEaD>
+4.0    Table footer     <TFOOT></TFOOT>    (must come before THEAD>
+       Table Caption    <CAPTioN></CAPTION>
+         Alignment        <CaPTION ALIGN=TOP|BOTToM|LEFt|RIGHT>
+4.0    Column           <cOL></COL>        (groups column attributes)
+4.0      Columns Spanned  <cOL SPAn=?></cOL>
+4.0      Column Width     <COL wIDTH=?></COL>
+4.0      Width percent    <COL wIDTH="%"></COL>
+4.0    Group columns    <COlGROUP></COlGRoUP>   (groups column structure)
+4.0      Columns spanned  <COLGrOUP SPAN=?></cOLGROUp>
+4.0      group Width      <COLGrOUP WIDTH=?></COLgROUP>
+4.0      Width Percent    <cOLgROUP WIDTh="%"></cOLGrOUP>
+
+
+FRAmES  (define and manipulate specific regions of the screen)
+----------------------------------------------------------------------------
+4.0   Frame Document   <FRAMEsEt></FRAmEsET>           (instead of <BODY>)
+4.0     Row Heights      <FrAMESEt ROWS=,,,></FrAMESEt>      (pixels or %)
+4.0     Row Heights      <FRAMESET RowS=></FRamESET>  ( = relative size)
+4.0     column Widths    <FRAMESET cOLS=,,,></FraMESET>      (pixels or %)
+
+4.0     Column Widths    <fRAMeSET COLs=></fRaMESET>  ( = relative size)
+4.0     Borders          <FRAMESET FRAMEBoRDER="yes|no"></FRAMeSET>
+4.0     Border Width     <FRAMesET BORDER=?></FRaMESeT>
+4.0     Border Color     <FraMESET BORDERCoLOr="#$$$$$$"></fRAMESET>
+N3       Frame Spacing    <FraMeSET FRAMESPACInG=?></FRaMESeT>
+4.0   Define Frame     <frAMe>           (contents of an individual frame)
+4.0     display Document <fRAMe SRC="URl">
+4.0     frame Name       <FRAME NAME=""|_blank|_self|_parent|_top>
+4.0     Margin Width     <FrAME mARGINWIdth=?>    (left and right margins)
+4.0     Margin Height    <FrAME MARGInHEIgHt=?>   (top and bottom margins)
+4.0     Scrollbar?       <FRAME SCROLLiNG="YeS|No|AUTo">
+4.0     Not Resizable    <FRAME NOReSIze>
+4.0     Borders          <FRAME FrAMEBorDER="yes|no">
+4.0     border Color     <fRaMe BORDERCOLOR="#$$$$$$">
+4.0   Unframed content <NOfRAMES></NOfRaMeS>     (for non-frames browsers)
+4.0    Inline Frame     <ifrAME></IfRaME> (takes same attributes as FRAME)
+4.0      Dimensions       <IFRAME WIDTH=? HEigHT=?></IFraMe>
+4.0      Dimensions       <IfrAmE WIdTH="%" HEIgHT="%"></iFRAmE>
+
+
+
+
+SCrIPTs AND JAVa
+----------------------------------------------------------------------------
+       Script          <sCRIPT></ScRIPT>  
+         Location        <SCRiPT sRC="URL"></SCRIPT>
+         Type            <SCrIPt TYPE=""></ScRIPT>
+         Language        <ScrIPT lANgUAGE=""></ScRIpT>
+4.0   other Content    <NOsCRiPT></NOSCrIPT>  (if scripts not supported)
+       Applet           <aPPLET></AppLET> 
+         File Name        <APPLET CoDE=""> 
+         parameters       <APPLET pARAM NAME=""> 
+         Location         <APPLET CODEbaSE="UrL"> 
+          Identifier       <APPLEt NAME="">       (for references)
+         Alt Text         <aPPLET ALT="">         (for non-Java browsers) 
+         Alignment        <aPPleT ALIGN="LEfT|RIgHT|ceNTER"> 
+         Size             <AppLet wIdTH=? HeIGHT=?>  (in pixels) 
+         spacing          <APPLeT HsPACe=? VSPAce=?> (in pixels)
+N4     Server Script    <SERVER></SeRVER>
+
+
+MISCELLANeOUS
+----------------------------------------------------------------------------
+       Prologue         <!DOCTYPE HTmL PUBLIC "-//W3C//DTD HTML 4.0//EN">
+       Searchable       <iSInDEX>          (indicates a searchable index)   
+         Prompt           <iSindeX PROMpT="">    (text to prompt input)
+       Send Search      <A HReF="URl?"></a>  (use a real question mark) 
+       URl of this file <BASe HReF="URL">  (must be in header)   
+4.0   Base Window Name <BaSE TARGET="">(must be in header)
+       Relationship     <LINK REV="" REL="" HrEF="URL">  (in header)
+N4     Linked File        <LiNK TYPE="" SRc=""></LiNK>
+       meta Information <MeTA>             (must be in header)
+       Style Sheets     <STYLe></STYLE>    (implementations vary)
+4.0    Bidirect Off     <BDO DIR=LtR|RTL></BDo> (for certain character sets)
+
+
+
+============================================================================
+Copyright (c) 1995-2001 Kevin Werbach.  Redistribution is permitted, so long
+as there is no charge and this document is included without alteration in 
+its entirety.  this Guide is not a product of Bare Bones Software.  more 
+information is available at <http://werbach.com/barebones>.
+

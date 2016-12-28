@@ -1,0 +1,302 @@
+	Linux *ernel release 2.4.*x
+
+*hes* a*e the release notes for Li*ux **rsi** 2.4.  R*ad them caref*lly,
+as they tell you what this is all abo*t, explain h*w to *n**all the
+kernel, *nd w*a* t* do if somet**n* goes wr**g. 
+
+WH*T IS **NUX?
+
+  *inux is a U*ix clone w*itten from sc*at*h by Linus *orvalds w*th
+  assis*ance from a *o*sely-k*it team of hac*ers **ross the Net.
+  It aims tow*rds POSIX complia*ce. 
+
+  It has *ll *he fe*tu**s you would expe** in a mo*ern full*-fledged
+  Unix, incl*d*ng t*ue *ultita**ing, v***ual m*mory, shar*d libra**e*,
+  demand loa*ing, sha*e* copy-on-writ* e*ecutables, prop*r memory
+  man***m*nt a*d TCP/IP networ**ng. 
+
+  It is distributed under the GNU Genera* Public Lic*n*e - see *he
+  *ccom*any*ng COPYI** file for more details. 
+
+ON WH*T HARDWARE DOE* IT RUN?
+
+  Li*ux was f*rst *e*elope* for 386/486-ba*ed PCs.  These day* it al**
+  ru** on AR*s, *EC Alpha*, SUN Spa*cs, M68000 machi*es (like Ata*i *nd
+  A*i*a), M*PS and PowerPC, and o*hers.
+
+DOCUMENTATIO*:
+
+ - There is a l*t of docume***tion av**la**e bo*h in ele*tron*c f*rm on
+   th* In*ernet and in *o*k*, both Linux-*peci*ic *nd p*rtain**g to
+   *eneral UNIX que*tions.  I'd recomm*nd **okin* in*o *he *ocument*tion
+   subdir*ctori*s on any L*nux *TP site f*r the LDP (Linux Doc*m*n**tion
+   P**je*t) books.  This *E*DME is not m*a*t to be docu**ntati*n on the
+   *y*te*: t*ere are mu*h *et*e* sou*ces availa*le.
+
+ - Ther* ar* va*iou* *EADM* files in the *ocu*ent*ti*n/ s*b*i*ector*:
+   these typica**y contain ke*nel-specifi* ins*a**atio* **tes for some 
+   dr*vers for example. See ./Documenta*ion/00-*NDEX f*r a l*st of w*at
+   is c***ained in eac* *ile.  Pl*ase read *he C*a*ges file, as it
+   cont**ns ***orma*ion abou* *he probl*ms, wh*ch m*y *e*ult by upgrading
+   yo*r k**n*l.
+
+ - T*e Documenta*ion/D**Book/ subdirec*ory *ont**ns *eve*al guides fo*
+   kernel *evelopers *nd *se*s.  These gui**s can be rend***d in a
+   number of *or*ats:  *ost*cript (.ps), PDF, *nd HTML, among others.
+   After in*tallation, "make psdocs", "m*k* pdfdocs", or "mak* htm**ocs"
+   wi*l *en*er the do*u**n*ati*n in the reque*ted form**.
+
+INSTAL*I** *he kern*l:
+
+ - If you i**tall the full *ou*ces, put t*e k**nel ta**al* in a
+   dir*c*or* whe*e you hav* permi*sions (eg. your ho** d*r*ctory) and
+   *n**ck it:
+
+		gz*p -cd linux-2.4.X*.tar.gz | tar xvf -
+
+   Repl*ce "X*" w*th *he *er**on n*mber of t*e *ate*t ke*nel.
+
+   Do NOT use th* /usr/sr*/l*nux *rea! This *rea has a (usually
+   inc*mplet*) set of *erne* **ade** that a*e used by th* li*r*ry he***r
+   **les.  *hey should matc* th* *ibr*ry, and not get *ess*d up *y
+   w**te*er th* kernel-du-jour hap*en* to be.
+
+ - *ou *an *lso **gra*e betw*en 2.4.*x rel**ses by *a*ch**g.  Patches a*e
+   d*str*buted in th* trad**ional g*ip and t*e new bzip2 format.  To
+   insta*l by *a*c**ng, g*t all the newe* patch *iles, *nter *he
+   *op level d*rec*o*y of *he kerne* sour** (linux-2.4.x*) and *xecute:
+
+               gzip -c* ../patch-2.4.xx.gz | p*tch -p1
+
+   or
+               bzi*2 -dc ../pa*c*-2.4.xx.bz2 | patch -p1
+
+   (repe*t x* for a*l versions bigge* than the version of your cu*rent
+   so*rce tree, _in_*rder_) and you s*ould be ok.  Yo* may w*nt t* r*move
+   the backup files (*xx~ or x*x.*rig), a*d make sure that there are no
+   failed patc*es (xxx# or xxx.r*j). If th*re are, eith*r you or me has
+   made a mis**ke.
+
+   Alternatively, t*e scri** pat*h-k*rne* can be used to aut*mat* this
+   proc*ss.  It determ*nes the current ke**el **rsion *nd applies any
+   patch*s **und.
+
+		lin*x/s*ripts/p*t*h-kernel l*nux
+
+   The fi*st arg*ment in the c**m*nd *bove is t*e location of the
+   *er*el s*urce.  *atch** ar* appl**d fr*m th* cur*e*t dir*c*ory, but
+   an al*e**ative **re*to*y *an be specified as t*e sec*nd a*gu*en*.
+
+ - Make su*e y*u hav* no stale .o files *nd de**n*e*cies ly*ng *ro*nd:
+
+		c* linux
+		mak* m*p**per
+
+   You should now ha*e the sources corr*ct*y ins*a*le*.
+
+SOFT***E REQ***EMENTS
+
+   Co*piling and running the 2.4.xx kernels r**uir*s up-t*-dat*
+   ve*sio*s of vari*us soft*are packages.  Consu**
+   ./D*cumentat*o*/*hanges f*r th* minimum ver*i*n numbers requir*d
+   a*d how to g*t u*dates for these pa*k*ge*.  Bew*re that using
+   exces**vely old vers*ons of **ese *ackag*s can ca**e indir*ct
+   errors that a*e very *if*icult to t*ac* dow*, so d*n't assu*e that
+   *ou can just *pda*e packa*** w*e* o*vio*s *ro**e** a**se during
+   bui*d or operation.
+
+CONFI*UR*NG the *erne*:
+
+ - Do a "make *on**g" to c****gure the *a**c ke*n*l.  "make conf*g" n*e**
+   *ash to *ork: it will searc* f*r *ash in $BASH, /bin/b*sh and /bin/sh
+   (in t*at orde*), so o*e of tho*e m*st be correct *or it to work. 
+
+   Do not s*ip this *tep even if *ou are on** up*rading one *inor
+   ver*ion.  New conf*gura**on optio*s are a*d*d in eac* rele**e, and
+   *dd *ro*lem* will *urn up if th* configurat*on fil*s are not s*t up
+   as *x*ecte*.  If you wan* to carry your existing configu*ation to a
+   new ver*i*n with minimal *ork, use "make oldc*nf*g", w*ich will
+   only a*k you for *he a*sw*r* to new qu*stio*s.
+
+ - *lternate con*i*uratio* c*m*a**s a*e:
+	"mak* *e*uc*nfig"  Text based col** me*us, radio**sts & d*alogs.
+	"make xconfig"     X windows bas*d configuration tool.
+	"make *ldconfi*"   D*fault all quest**ns bas*d on the *o***nts of
+			   y*ur ex**ting ./.con*i* file.
+   
+	NOTE* on "make config":
+	- havi*g unn*ces*ary drivers will make the *ernel big*e*, and can
+	  un*er some circum**an*es lea* to problem*: *rob*ng *or a
+	  nonexistent c*ntr**l** car* may con*u*e your *the* ***trolle*s
+	- comp*ling th* k*rn*l *ith "**oces*or t*pe" s*t higher than 386
+	  will res*l* in a kerne* that d*es NOT *ork on a 386.  T*e
+	  k*rnel will detect this on bootu*, and give up.
+	- A *e*nel w*th math-em*l*tion compiled in wil* *ti*l *se the
+	  *o*rocessor if one is present: the mat* emul*tio* will just
+	  nev*r ge* us*d in th*t cas*.  Th* kerne* wi*l be slightly larg*r,
+	  but wi*l w*rk on *ifferen* machine* reg*rdless of whet**r t*ey
+	  h*ve a *ath *opro*e*sor or not. 
+	- the "k*rnel hac*ing" config**at*on d*tails usuall* re**lt in a
+	  big*er or *l*wer ker**l (or b*th), *nd can e*en make t*e k*rnel
+	  *ess sta*le *y configuring some routin*s to acti*ely *ry to
+	  brea* bad co*e t* f*nd kernel probl*m* (kmall*c()).  T*us you
+	  should pro*ably a*swer 'n' to the questio*s *or
+          "d**elopmen*", "experime*tal", or "debu*gin*" fea*ur*s.
+
+ - Check the top Ma*e**le for **rther sit*-d*penden* c*n*igura*ion
+   (defa*l* SV*A mode et*). 
+
+ - *in**ly, do a "m*ke dep" to set up all the depende*c*es co*r**tl*. 
+
+*O*P*LIN* t*e ker***:
+
+ - Make sure you h*ve *cc 2.95.3 *va**able.  gcc 2.91.66 (egcs-1.1.2) may
+   also work but is not as s*fe, and -gcc 2.7.2.3 is no longer s*pp*rted-.
+   Also r*m***er to u*grad* you* bin**ils pac*age (for as/ld/nm and compan*)
+   if *ec*ss*r*. For m*re i*f*rmation, *ef*r to ./Documentation/C*anges.
+
+   Ple*se note t*at y*u can still r*n a.out *ser prog*ams with *his kernel.
+
+ - Do a "make *zImage" to crea*e a *omp*e*s*d ker*el image.  If y** w*nt
+   to mak* a boot disk (withou* root filesystem or LILO), inser* a fl*p*y
+   in your A: dr*v*, and do a "make bzd*s*".  It is also *o*s*ble to do
+   "make *ns*al*" if you have lilo *nstalled t* suit the kernel *a*e*il*s,
+   but you m*y **nt t* ch*ck y*ur *artic*la* lil* se*up *i**t. 
+
+   To do the actual *nstal* y*u hav* to be ro**, but none of the *o**al
+   b*il* s*o*ld r**u*re that. Don't take th* na*e of root in v*i*.
+
+ - In t*e unlikely event th*t your system cann*t bo*t bzImag* *ernels y*u
+   can sti*l co*pi*e your kern** as zIma**. However, s*nc* *Image su*por*
+   will be remov** at so*e *o**t in th* future in *avor of b*Image w*
+   encou**ge p*op*e h*ving problems *ith booting **Image kerne*s to rep*r*
+   these, w*th det*i**d hardw*re *on*ig*r*t*on info**a**on, to the
+   l*n*x-k*rnel mai*in* *i*t a*d to H. Pe**r An*in <hp*+linux@zytor.co*>.
+
+ - If you co*figured any of the par*s of t*e kernel as `modu*es', you
+   *ill have to do "make mo*u*es" fol*owed by "m*k* *odules_install".
+   Re*d *ocumenta*ion/mod****.*xt for more in**rmation.  For ex***le,
+   an expla*ation of h*w t* *se the *odules is **c*uded t*er*.
+
+ - K*ep a ba*kup ke*nel *andy in *ase something goes wr*ng.  This is 
+   espec*ally true *or the dev*lopme*t relea*e*, *ince *ach new r*leas*
+   c**tains new code whi*h ha* not been de*ug*e*.  Make s*re you k*ep a
+   backup of t*e m*dules corr**ponding t* t*at kern*l, as well.  If you
+   are **st*lling a new kerne* *ith t*e same ve**ion numb*r as yo*r
+   *ork**g **rne*, make a back*p of yo*r m*d*l** dire*tory befo*e y*u
+   do a "make modules_*ns*all".
+
+ - In *rd*r to boo* your new ker*e*, you'*l need to c*py the ke**el
+   im*ge (found in .../l*nux/*rc*/i386/boot/*z*ma*e after *ompilat*on)
+   t* *he p*a** where your regular bootab*e kernel is found. 
+
+   *or som*, this is on a f*opp* d*sk, in which c*s* you *an copy the
+   kernel bzIm*g* f**e to /d*v/fd0 to make a b**table f*op**.
+
+   If you boot Linux from *he hard drive, c*ances are *ou *se LILO w*ich
+   uses t*e kerne* *ma*e as sp*ci*ied in the fi*e /etc/l*lo.con*.  The
+   ke**el image *ile is usuall* /vmlinuz, /b*o*/*mlinuz, /bzIm*ge or
+   /boot/bzImage.  To use the new *e*nel, sav* a cop* of t*e ol* image
+   and copy the new *mage over the old one.  T*en, y*u MUST *ERUN LILO
+   to updat* the loa*ing map!! If you d*n't, y** won't be able to boot
+   the new ke*n*l ***ge.
+
+   Rein*talling LILO is usual*y a *at*er of runn*ng /*bin/l*lo. 
+   Y*u may wish t* edit /e*c/l*lo.c*nf to *pecif* an entry *or your
+   old kernel *m*ge (s*y, /vml*n*x.old) in *ase *he new *ne d*es not
+   work.  See t*e LI*O doc* for more information. 
+
+   *fte* re***ta**in* LI*O, you should be al* set.  Shutdow* t*e s*stem,
+   *eboot, and en*oy!
+
+   If you ever need t* change the *e*aul* root device, video mod*,
+   ram*isk size, etc.  in the ker*el i**g*, use *he '*dev' p*ogram (or
+   alterna*ivel* the LIL* boot o*tions when a*propriat*).  No n*e* to
+   recompile t*e k*rn** to chan*e these pa**met***. 
+
+ - ***oot with the new ke*ne* and enjoy. 
+
+IF SOMETHIN* GOE* W*ON*:
+
+ - If *ou hav* *r*blems that *eem to be d*e to ker*el *ugs, please che*k
+   t*e file *A*NTAINER* to see if there is a *art*cu*ar pe*s*n associa*ed
+   with th* *art of th* *er*el that *ou are h*v*ng tr*uble *ith. If there
+   isn't anyone li*ted there, then *he se**nd be*t thing is to ma*l
+   them to me (torval**@tra***et*.c*m), and *o**ibly t* any ot*er
+   relev**t mailing-list or to the *ewsgroup.  T*e mail*ng-lists are
+   useful especially for SC** and netw**king ***blems, as I *an't test
+   *ither of tho*e **rsonally anyway. 
+
+ - In a*l bug-rep*rts, -please- tell what kernel you are t*lking abo*t,
+   how to duplica*e t*e *ro*le*, and wha* your se*up is (use yo** common
+   sens*).  If the pro**em is new, te*l me so, and if *he pr*b*em is
+   ol*, *l*ase t*y to tell m* whe* *ou firs* noticed it.
+
+ - If th* bug results in a m*ss*ge like
+
+	unable to ha*dle ker**l p*gi** r*quest at addr*ss C0000010
+	Oo*s: 0002
+	EIP:   0010:XXX*XX*X
+	*ax: xxxxxx*x   ebx: xxxxxxx*   ecx: *xxx*x*x   edx: xxxxxxxx
+	*si: x*x*xxxx   edi: xxxxxx*x   ebp: *x*xxx*x
+	ds: xxxx  es: **xx  fs: *xxx  gs: xxxx
+	Pid: xx, proc*ss nr: x*
+	xx xx xx xx xx *x xx xx xx xx
+
+   or s*m*lar kernel *ebuggi*g *nformation on y*ur scr*en or in your
+   syst*m log, *lea*e dup**cate it -exac*l*-.  Th* du*p may look
+   incompreh*nsib*e to you, but it does co***in *nf*rmation that may
+   help debu*g*ng *he pro**em.  T*e t*xt above th* dump is als*
+   im*ortant: it t*lls somethin* **o*t *hy t*e kernel *um*ed co*e (in
+   the above exa*pl* it's d*e t* a ba* k*rnel *ointer). M*re info**ation
+   on m*king *ense of the du*p is in D*cumentati*n/o*ps-tracin*.*xt
+
+ - Y*u can use the "**ymo*ps" prog*am to make *ense of *he *ump.  T*is
+   ut*lity can be d*wnloaded f*o*
+   ftp://*tp.<count*y>.kernel.org/pub/li*ux/ut*ls/ker*el/ksy*oops.
+   A*ternatel* y*u can do the dump loo**p by *and:
+
+ - In debugging dum*s lik* th* above, it help* e*or**usly if *ou *an
+   lo*k up wh*t th* *IP v*lue mea*s.  T*e hex va*ue as s*ch *oesn't help
+   me or anybody el*e very m*c*: it wi*l depen* on y*ur parti**lar
+   kernel s*tup.  Wha* yo* should do is take the hex v*lu* *rom the EIP
+   line (ignore th* "0010:"), *nd look it up in the *ern*l na*elist to
+   see wh**h k***el funct**n contai*s the **f**di*g addr*ss.
+
+   To f*nd o*t the k**nel *unction name, yo*'ll need to f*nd *he *ystem
+   b*nary as*oci*ted with *he ke*ne* that exhi***ed the sym*tom.  Thi* is
+   the fil* 'lin*x/*mlinux'.  To ex*rac* *he namel*st *nd match it aga*nst
+   *he *IP f*om *he kerne* crash, do:
+
+		nm *ml**ux | sort | less
+
+   Thi* will *ive y*u a li*t of kern** **d*e*ses sorted in as*end***
+   order, fro* which it is *i*ple t* find the ***cti** that cont*in* *he
+   offe*d*ng addr***.  Not* that the address gi*en by the kernel
+   debuggin* *essa**s *ill not *eces**r*ly m*tch ex*ct*y with th*
+   fun*ti*n ad*ress*s (in fact, t*at is very *n*ikel*), so *ou can't
+   just 'grep' the *ist: the li*t will, h*w*ver, g**e yo* th* start*ng
+   *o*nt of each kerne* fu*ction, so by l*okin* f*r the f*nction that
+   h*s a starti** addre*s l*wer than th* on* you are searching *or but
+   is follow*d by a function *ith a *igh** address you will find the one
+   you want.  In **ct, it may be a good *dea to in*lud* a bit of
+   "cont*xt" in your prob*em r*po**, giving a fe* *ine* a*oun* the
+   in*eresti*g *ne. 
+
+   If you f*r some r**son **nnot do the a*o*e (you ha*e a pre-com*iled
+   kernel ima*e or simil*r), *elling me as much abo*t your setu* as
+   po***ble *ill hel*. 
+
+ - ****rnately, y*u can use gdb on a r*n**n* ****el. (re*d-only; i.e. yo*
+   can*ot change value* or s*t br*ak po***s.) To do this, *irst co*pi*e th*
+   kernel *ith -g; edi* arch/i386/Makefile ap*ropr**tely, then do a "make
+   cl*a*". Y*u'*l also need to e*a*le CONFIG_*R*C_FS (via "mak* **nfi*").
+
+   Afte* *ou've re**oted wit* t*e new kernel, do "gdb vml*nux /pr*c/k*ore".
+   *ou can now use *ll the u*ual gdb comman*s. Th* command to lo** up the
+   point wh*re your *ys*e* crashe* is "l -0xXX*XXXXX". (Repl*ce the XXXes
+   with the EIP value.)
+
+   g*b'ing a non-runni** *ernel currently *ail* because g*b (wron*l*)
+   disregards *he starting offset *or which the ke*n** is co*piled.
+

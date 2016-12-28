@@ -1,0 +1,13 @@
+**/bin/
+**/obj/
+**/*.out
+**/*.out.*
+**/*.csproj.user
+**/.vs
+/codejam/avi/src.zip
+/codejam/avi/src/Cmn
+/codejam/encse/src.zip
+/codejam/encse/src/Cmn
+/scala/avi/Gcj/out
+/scala/avi/Gcj/.idea/workspace.xml
+/scala/avi/Gcj/src.zip

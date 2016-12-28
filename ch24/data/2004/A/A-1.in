@@ -1,0 +1,2607 @@
+				 4/9/2001
+				 --------
+[bash-2.05 r*leased]
+
+				   4/10
+				   ----
+redir.c
+	- *h*ck r*t**n value of fclose() in writ*_he*e_doc**e*t() for error
+	  re*urns; don't j*st rely on fwrite() failing
+
+s*pport/bash*ug.sh
+	- s*t TMPDIR to /tmp if it's nu*l or *nset
+	- use $**P**R in th* *EMP *e*p**le n*me templa*e
+	- fixed th* call to `mktem*', if it exists, to make it more portab*e
+
+jobs.c
+	- if W*O*TINUE* is not defined, def**e it to 0 and *d* a d*fine for
+	  WIFCONTINUED(ws*atus) whi*h e*pand* to 0
+	- *dd WCONTINUED to *he flag* passed to waitpid(2) in waitch*d()
+	- don't *nc*ement c**ldre*_*xited if waitpid's status is W*FCONTINUE*,
+	  since w* d*n't want to ca*l a SIGCHLD trap ha*dler in this c*se
+	- in wa**chld(), we set ch**d->run*ing to 1 if WIFCONTINUED(status)
+	  is non-zero
+	- make s*re pret*y_print_j*b do*sn't chec* *or the core dump bit if
+	  the p*ocess has been *ontinue*; it's onl* val*d if the j*b is de*d
+	- in set_jo*_stat*s_and_**ea**p, set *he job to JR**NING if job_state
+	  is non-zero and *he j*b was *revi*usly marked as JSTOPPED
+
+configur*.in
+	- add -DBRO*EN_DIRENT_D_*NO to inte**x L*CAL_C*LA*S
+
+li*/glob/*lo*.c
+	- if *ROKEN_*IRENT_D_INO is d*f*ned, defin* REAL_D*R_E*T*Y to 1
+
+jobs.c
+	- in ki*l_pid, we only nee* to block and unb*oc* **GCH*D if t*e
+	  `g*oup' argu*ent is non-ze*o, sinc* o**erwi*e we just call `kill'
+	  on the pid *rgu*e*t
+
+**rsion.c
+	- *pd*te copyrigh* d*te to 2001
+
+
+
+
+
+				   4/11
+				   ----
+redir.c
+	- f*xed a weird **po in r*dir_spe*i*l_o*e*, case RF_DE**D, ad*e*
+	  cal* to all_digi*s befor* ca*l to leg**_numb*r
+	- fixed do_re*ire*tio*_in*er*a* to call l*ga*_number in**ead of atol(3)
+	  w*en translat*ng r_*u**icat***_{in,out}put_word, so it handles
+	  overflow better
+	- pr*duc* an err*r me*sage in redir***ion_error for out-of-r*nge
+	  file ***c*i*tors
+	- chan*e alloc***o* **rate*y in redi**ction_er*or so we d*n't ha*e to
+	  malloc scratch *em**y if r**irection_e*pand() *ails
+
+jobs.h
+	- adde* def*nes *or `r*nni*g' member of a *truct p*ocess
+
+gene*al.c
+	- fix legal_numb** to return 0 wh*n *t**ol(3) reports *ve*flo* or
+	  u*derflow
+
+par*e.y
+	- changed read_token_word to call legal_number instea* of atoi(3)
+
+input.c
+	- re*urn -1/**ADF fr*m *lo*e_buffer*d_fd if fd is < 0
+
+co*mand.h
+	- fix*d bogus c**ment ab*u* IS_D*SCRI*TOR in de**ription of th*
+	  RE*IRECTEE *tr**t
+
+prin*_*md.c
+	- change cp*in*f's 'd' *odifier code to *isplay negativ* *u*b*rs as
+	  an ou*-of-*ange va*ue.  We can do *his only because t*e on*y *se
+	  of %d is to *utp*t file de*c*ipt*r nu*bers in *edirec*ions
+
+s*p*ort/**signam**.c
+	- n*ed to include co*fig.h to get a p*ssib*e *alu* *or
+	  UNU*ABLE_RT_SIG*AL*
+
+
+
+
+				   4/16
+				   ----
+l*b/rea***n*/*oc/r*user.texinfo
+	- co*re**ed a *mall e*ro* in *ne d*s*r*pt**n of M-DEL
+
+				   4/17
+				   ----
+*tringli*.c
+	- need to *ni*iali*e `i*d' b*for* *all* to RES*ZE_**LLO**D_BUFF*R
+	  in s**creplace()
+
+**pp*rt/b*shvers*on.c
+	- new f*le, prints bash ve*sion informatio*
+
+Makefi*e.in
+	- *u*es *or ***lding bas*v*rsion and li*king it to v*rsion.o
+
+				   4/24
+				   ----
+*onf*y*es.h
+	- new file w*th HO**TYPE, OS*YPE, *ACHTYPE, etc. d*fines from
+	  v*ria*les.h
+
+v*riab*e*.h, version.c
+	- *nclu*e c*nfty*es.h
+
+patchlevel.h
+	- new *ile, contains de*ine for PATCHL*VEL.  Doing a*ay with the ol*
+	  sche*e of ha*ing t*e i**o*mation in configure.in
+
+v***i*n.c
+	- incl**e patchlevel.h
+
+Makefile.in
+	- run bashver*ion -p to find p*tch le*el rather t*an have configu*e
+	  subs**tute in a value
+	- pass -S ${top_sr***r} to su*por*/mkve*sion.sh
+
+sup*ort/*kversion.sh
+	- d*n't put PA*CHLEVEL define int* ve**ion.h, but accept and ignore
+	  a -p o**i*n
+	- tak* a new -S srcd*r *ption
+	- fin* th* patch *evel by parsing it ou* of pa*chle**l.h
+
+configure.in
+	- hard-code BA*HVER* assi**me*t ins**ad of rea*ing it *rom a *ile
+	- remove *AS*P**CH; don't *ub*ti*u*e it
+
+_distribution,_p*tchl*vel
+	- *em*ve*
+
+				   4/26
+				   ----
+shell.c
+	- c*l* init_*oninteractive() in ope*_*h*ll_script if f*rc*d_in*eract*v*
+	  is non-*ero (the shell was s*a*ted with -i) and fd_is_*ty is 0
+	  (the *c*ip* file is a real **le, not some*hing like /*ev/stdin),
+	  since it wasn't d*ne ea*lier
+
+*uil*ins/pri*tf.*ef
+	- ch*nge for *OSIX.2 compliance wh*n c*nversion *r**rs are en*oun*ered
+	  when pr*c*ssing %d, %u, and floa*in* *oint c**ve*sion operat*rs
+	  (pr*n* a w*rni*g m*ss*ge, return th* *alue accumul*ted at *he ti*e
+	  of th* error -- w**ch is al*ays 0 -- and exit wit* a non-z*ro *tatus)
+
+com*an*.h
+	- ad*ed C*D_COMMA*D_BUIL*IN for use by the `*ommand' ***l*in and th*
+	  c*de in e**c**e_cmd.c
+
+builti*s/command.def
+	- add CMD_*OM*AND_BU*LTIN to the cre*ted *omma**'s *lags
+
+				    5/1
+				    ---
+con*i**re.in
+	- add ca*l to AC_C_CO*S* to tes* `c*nst' *ompiler beh*v*o*
+	- add call to AC_C_I*LINE to t*st `inl*ne' comp*ler **havio*
+	- ad* call to AC_C_ST*I**I*E to tes* cpp #x *tringi*ing operat*r
+
+config.h.in
+	- add `#undef con*t' for con*igure to sub*titu**
+	- add `#unde* inlin*' for c*nfi*ure to *ubst**u*e
+	- add `#un*ef HA*E_STRINGIZ*' for configu*e to su*stit*t*
+
+i**lude/*t*c.h
+	- re*ove code t*at defin*s or undefines `const' and `inline'
+	- change t*e __*TRING macro to be *efi*ed depend*ng on t*e value
+	  of HAVE_**RINGIZ*
+
+*ib/*al*o*/*alloc.c
+	- *hang* t*e __STRING macr* to be defi*ed d*p**d**g on t*e v*lu*
+	  of HAVE_STRINGIZE
+
+l*b/re**line/{re**line,*lpriv*t*}.h
+	- moved rl_get_termcap to readline.h, making it a publ*c functi*n
+
+*ib/readline/rea**ine.h
+	- new #defin*, RL_**A*LINE_*ERSI**, hex-enco*e* library v*rsion
+	  number, curre*tly s*t to 0x0402
+	- new public int variable, rl_readline_*e*sion
+
+lib/r*adline/readli**.c
+	- #d*fi*e RL_READLINE_V**SIO* if it is not already de*ined (*h**h it
+	  *ho*ld be in readl*ne.h)
+	- ****ialize rl_read*ine_ver*i*n to RL_*E***INE_V*RSI*N
+
+li*/readline/doc/rltech.t*x*nfo
+	- docum*nte* rl_get_te*m*ap
+	- doc**e*ted rl_*eadline_versi*n
+
+jobs.c
+	- *ob_*xit_s*at*s *houl* return an *nt, not a WAIT (unde*ecte*
+	  *ef*r* becau*e on most POSIX-like systems a WAIT is *eall* an i*t)
+
+builtins/ev*lfi*e.c
+	- *dd** F*VAL_R*GF*LE (file mu*t be a regular file) to accep*ed
+	   _*val**le flags
+	- fc_execut*_file() adds FE*AL_REG**LE to _ev*lf**e fl*gs.  This
+	  *ean* that star*up files and files re*d wi*h `.' no *onger need
+	  to be r**ular file*
+
+				    5/2
+				    ---
+
+lib/t*r*cap/Mak**ile.in
+	- fix **rget *or in*ta*le* term*ap libr*ry (*ormally unused)
+
+lib/tilde/M*kefile.in
+	- fix *nstall ta*get to *ns*a*l in $(libdir) (norm*l*y unus*d)
+
+M*kefile.in
+	- don't make $(man3d*r) sinc* there's nothi*g *n*t**led ther*
+
+Makefile.in,doc/Makef*le.in
+	- cha*ge `man1ext' to `.1', `man3*xt' to `.3'
+	- c**nge ap***priate i*s*all tar*e*s to use new values of man[13]*xt
+	- u*e `tes* ...' in**ead of `[...]'
+	- *dd support for DESTDIR root ins*a*lati*n **ef*x, for *ack*g*
+	  buil***g (installdirs, *ns*al*, in**all-strip, unins*all targets)
+
+
+builtins/c*mmon.h
+	- extern declarat*on *or get_exit*t**()
+
+*uilti*s/{exi*,*et*rn}.d*f
+	- call get_exitstat where a*propri*te
+
+*ui*ti*s/*rintf.def
+	- *d* support *or "'" *lag character as pos*x 1003.2-200x d6 says
+	- f*x core du*p *hen user-suppl*ed fie*d width or preci*i*n is 0
+	- fix to p*i*tstr() to handle zero-l*ng*h pr*c*s*on wi*h `%b' format
+	  sp**i*ie* (prin*f '%.0b-%.0s\n' foo bar)
+	- fix to *rintstr() to treat a negative fi*ld w*d*h as a positi*e
+	  *ield width with *eft-justifi*a*i*n
+	- f*x to mklon* to *vo*d static buffer*, which can a*ways be overrun
+	  *y *o*eo*e suffici*n**y *o*iv*te*
+
+*as*line.c
+	- *ha*ge v*r in ad*_ho*t_na*e to type `siz*_t' for p*s*ing to xr*all**
+
+				    5/3
+				    ---
+
+u*wind_p*ot.c
+	- u*e a *nio* UW* in r*sto**_v*riable when restor*ng a var*able wh*s*
+	  siz* is the same as sizeo*(i*t), the reverse of *he m*thod used to
+	  store it in unwin*_pro*ec*_int
+
+builti**/printf.*ef
+	- use a #def*ne **NMODS co*tai*i*g the lengt* ****f*e*s **stead of
+	  testi*g *gainst e*ch poss*ble mo**fier ch**a*ter, save any mo*
+	  character f**nd
+	- add suppo*t for ISO C99 *ength s*ecifi*r* `j', `t', and `z'
+	- if `L' m*di*ier is s*pplied *ith a floating *o*nt *onversi*n c**r,
+	  *ass a `long d**ble' to pri*tf if HAVE_LONG_*OUBLE is *efined
+
+configure.in,c*nfig.h.in
+	- call AC_C_LONG_*OUBLE to check for `lo*g doub*e'; *efine
+	  HAVE_LONG_**UBLE if supported
+
+ba*h*ine.c
+	- fix an inadve*****ly-unclosed c**ment in attemp*_**e*l_comple*ion
+	- make s*t_s*ved_his*ory ret*r* a v*lue
+	- make **n*mic_co*plete_*ist*ry retu** a useful valu*
+
+{make_c*d,exe*ut*_cmd,sh*ll,subst,t*ap,variab*es,inp*t,unwin*_p*ot,tes*,
+pco*ple*e}.c
+	- re*o**d some de*lared-but-u*u*ed variabl*s
+
+b*i*tins/{cd,e*able,fc,set,setat*r,t*pe,*mask,printf,*omplete}.d*f
+	- **moved some *eclared-but-u**se* varia*l*s
+
+lib/sh/{*read,n**open}.c
+	- r**oved som* decla*e*-but-*nu**d va*ia*l*s
+
+exe*ut*_cm*.c
+	- in e*e**te_ar*th_comman*, use a lo*g variable to hol* the re*ul*
+	  of eval*xp(), since that's what it returns
+
+*uiltins/**alst*ing.c
+	- make cat_file re*urn -1 on a r*ad or write *rror
+
+lib/sh/st**ngl*b.c
+	- make merge_stringlists() ret*rn the rig*t valu*
+
+				    5/7
+				    ---
+*comp*ete.c
+	- *emove *ypo th*t caused emp** *ecl**ation (;;)
+
+parse.y
+	- fix yyer*o*() to *ccep* a single st*i*g argume*t; f*x callers
+
+trap.c
+	- c*st po*nter to long in*tead of int *hen printi*g message *ith
+	  int**na*_w*rni*g() in run_p*nding_*raps()
+
+s*bst.c
+	- f*x proc**s_substi*ute to handle *tdin be*** c*osed
+
+test.c
+	- ch*nge `while' to `if' in and() and or(), si*c* t*e loop i*n't
+	  ac*ual*y pe*formed -- t*ere's an un*o*ditional `return' in th*
+	  loop b*dy
+	- c*eck for integer ov*rflow of arguments to `-t'
+
+*ib/sh/*etopen.c
+	- cha*ge _getserv() to re*e*t ***ative port/service numbers
+
+ex*r.c
+	- fix *trlong() to not **nve*t th* base speci*icati*n f*om l*ng to
+	  *nt bef*re check*ng for ov*rflow, si*c* tru*cati*n on mac*i*es
+	  w*ere si*eo*(*nt) != s*zeof(lon*) m*y mask err*rs
+
+builtins/{jobs,kill,*ait}.*ef
+	- *se le*al_n*mb** instead of atoi *hen convert*n* st*ings to pid_t;
+	  check *or numeric overflo*
+
+input.c
+	- fix *or cyg*in in b_fill_buffer -- off-*y-on* error when ch*cking
+	  b*ffe* *or \r\n t****nati*n
+
+general.h
+	- new #de*ine I*T_STRLE*_BOUND(t), computes max length of *tri*g
+	  **presenting i**e*er ***ue of t*pe T, possi**y in******g a sign
+	  char*cter
+	- *nc*ud* <limits.h> if it's pre**nt
+
+{*x*cu*e_c*d,find**d,test}.c
+	- don't **clude <*im*ts.h>, sin*e g*neral.h does it now
+
+{*xecut*_c*d,lib/sh/i*os,pc*mplet*,prin*_cmd,*ub*t,var*a*les}.c
+	- use I*T_STRLEN_B**ND i*ste** of *tatic a*ray siz*s *hen c*nver*ing
+	  various str*ngs to int*ger val*e*
+
+she*l.h
+	- st**ct fd_*itmap now uses an `int' size, since it's *oun**d by
+	  *he numb*r of file d*scrip*ors, whic* must fit into an `int'
+
+exec*te_cmd.c
+	- FD_B*TMAP_D*FAULT_SIZE is now 32, not 32L
+	- new_fd_bitmap ta**s an `int' s*ze par***ter, not a `**ng'
+
+execu*e_*md.h
+	- chan** p**totype for new_fd_bit**p()
+
+test.c
+	- fix test_stat to check for overflow wh*n parsing *he integer file
+	  *es*r*pt*r n*mbe*; re**rn ENO*NT instead of EBADF for fil*s that
+	  are not o*en
+
+*as*lib.c
+	- don't di*card *he upp*r 32 b**s of the *andom val*e, if **esent
+
+l*b/readli*e/shel*.c
+	- u*e the same I*T_*TR*EN_BO*ND mechanism to decid* how *uc* *p*ce to
+	  a*locat*d in sh_set_lines_and_*o*u*ns
+
+				    5/8
+				    ---
+aclo*al.m4
+	- add check *or l*bti*f* (termcap-speci*ic p*r*ion of ncurses-5.2) to
+	  BASH_*H*CK_L*B_TERMCAP
+	- ne* mac*o, RL_LIB_READLINE_VERSI*N, chec*s version of **stalled
+	  r*ad*i*e library and (optio*a*ly) writes versi*n #defi*es to
+	  config.h.  Bash does*'t use the v**sion defines
+
+c*nf*gu*e.in
+	- call RL_LIB_READL*NE_VE*SION ins*ead of supp***/rl*er*.sh
+
+execute_c*d.c
+	- fix execut*_s*el*_scrip* and t*e W*ITECHAR and STRINGCHA* ma*ros
+	  to chec* array bounds **fo*e *nde*ing into *he *ampl* string
+
+unwind_pr*t.[ch]
+	- impo*t new ve*s*ons s*bmitted *y Paul E**ert <egger*@twin*un.com>
+	  with a c*uple of *hanges for *ac*wards com**tib*lity, so *he r*st
+	  of *he sour*e d*esn't n*ed to be *ha*ged y*t
+
+job*.c
+	- use unwi*d_*rotect_var on last_*ade_pid in run_sigchld_trap
+
+b*ilti*s/bind.*ef
+	- use *nwind_*rotect_va* on rl_outstream
+
+gener*l.c
+	- re**rk print_rlimtype to use I*T_S*RLEN_BOUND and h*nd** the
+	  mos* ne*ativ* num*e* cor**ctl*
+
+expr.c
+	- `t**v*l' shoul* ha*e b*en a `long', since all arithmetic is done
+	  as l*ngs
+
+b*iltins/*ist*ry.def
+	- co**olidate tes*s for va*id *istory p**ition in one bl*ck to
+	  avoid duplicate code and **r*ngs
+
+builtins/ul*mit.*ef
+	- f*x check for *ve**lo* *hen setti** limit to *ork w*en *nt is 32
+	  bits and RLIM*YPE is 64
+
+lib/sh/*mpf*le.c
+	- don't trunca*e the re*ul* of *im*(3) to int; j*st use t*me_t,
+	  *ince it's *e*ng *ss*gned to an `*n*igned lon*'
+
+mailch*ck.c
+	- use le*al_n*m*er ins*ead of atoi in time_to_*he*k_mail() to catch
+	  more *um*ric *rr*rs; conso*idate erro* ch**king in one bloc*
+	- last_*ime_m*il_ch*cked sho*** be a t*me_t
+
+				    5/9
+				    ---
+builtins/se*.def
+	- ***ognize `se* [-+]o nolog' if H*S*ORY is defined
+
+***hli**.c
+	- new vari*bl* `*ont_sav*_f*nction_**fs', se* by `set -o nolog';
+	  curre*tly ignored
+
+command.h
+	- the `d*st' me**e* of a RED*RECT*E is now an `int'
+
+p*rs*.y,re*ir.c
+	- *han*ed *ses of `red*r.test' (whe*e redir is a R*DIRE*TEE) since
+	  it's now an int
+
+l*b/r*adlin*/rlstdc.h
+	- d*n't me*s aro*nd *ith `co*st', *e*y on configure to su*ply a
+	  pr*per *efin*t*on if t*e compiler d**s*'t suppo** it
+
+lib/*il*e/tilde.h
+	- in*lu*e <config.h> if HAVE_C*NFIG_H is defined
+	- don't mess arou** wit* `con**', rely on confi*ure
+
+builtins/shopt.def
+	- ne* re*d-only `sh*pt' op*ion, logi*_she*l, non-zero if *he*l is a
+	  login *hel* (as **cided by sh**l.c)
+	- new *unc*ion se*_login_s*e*l(), sets sho*t p*iva** val*e of
+	  login_she*l
+
+*uiltin*/common.h
+	- new extern declar*tion for s*t_*ogin_shell
+
+*hell.c
+	- ca*l set_login_*hell *f*er s*tt*ng v***e of login_sh*ll (in
+	  main() and set_*h**l_n*m*())
+
+*arse.y
+	- added new `\A' *rom*t string escape **qu*nce:  *ime in 24-**ur
+	  HH:MM for*at
+
+conf*gu*e.in, *onfig.h.in
+	- c*eck for <grp.h>, define HAVE_*RP_H if found
+
+bu*ltins/compl*t*.d*f
+	- *dd new `-A group/-g' *p*ion to com*l*te *roup n**es
+
+pco*plet*.h
+	- new def**e for CA_**O*P, u**d with group name *omple*io*
+
+pco*plete.c
+	- add code to sup*ort CA_GROUP gr*up n*me completio*
+
+*ashline.c
+	- new f*nction, bash_g*oupnam*_c*mple*ion_functi*n(), supports
+	  pro*ramma*le compl**ion of group na**s
+
+bashline.h
+	- exter* dec*aration for bash_*r*upname_comp**tion_function
+
+lib/**adline/bind.c
+	- ne* *nput*c variable, `matc*-*idden-*iles', control* c*m*le*ion
+	  mat*hing *il*s beginn*ng wi*h a `.' (on Unix)
+
+lib/readline/*om*l*te.c
+	- ne* var*able, _rl_match_hidden_*iles, mirrors `mat**-hid*en-files'
+	  inp*trc varia*le
+
+lib/read*ine/*lp*ivate.h
+	- *xtern declaration for _rl_ma*c*_hidde*_file*
+
+bui**ins/h*sh.d*f
+	- ne* `-t' option to lis* has* v*lues for ea*h f*lename argu*e**
+
+b**ltin*/r**d.d*f
+	- ala*m(3) takes an `unsign*d *nt' argu**nt, not int
+	- ch*ck for ari*h*e*ic overfl*w with -t and -n optio*s
+
+input.c
+	- *heck for r*ad error b*fore doing \r\n translat*on on *ygn*s in
+	  b_fi*l_buffer
+	- reset bp->b_used to 0 *n*tead of leav**g it at -1 on re*d error
+	  in b_fill_bu*fe*
+
+**i*tins/sh*pt.d*f
+	- new fun*tions, shopt_setopt(nam*, mode) and
+	  s**pt_list*pt(name, mode) to g*ve the rest of *he shell an e*sy
+	  interfac*
+
+builtins/*o*mon.h
+	- exter* decla**ti*ns for shopt_setopt and sh*p*_listo*t
+
+sh*ll.c
+	- new invo*ation option* -O and +O, to li*t or set/uns*t shopt
+	  options like +o/-o sets and *ns*ts `set -o' o*ti*n*
+
+d*c/{bash.1,**shref.t*xi}
+	- d**ument `set -o *olog'
+	- docu**nt `log*n_sh**l' shop* o*tion
+	- *o**me*t new `\A' prompt st*ing **cape se*ue*c*
+	- d*cumen* new `-t' opt*on to `has*'
+	- do*ument new `[+-]O' invocation optio*
+
+d*c/bashre*.texi
+	- *dd text to `Invoking Bash' s**t*on defin*ng a login shel*; text
+	  ta**n fro* m*n *age
+
+*oc/b*sh.1, li*/readlin*/doc/*lu*er.***inf*
+	- doc*me*ted new *om**ete/co**g*n `-A gro*p/-g' opti*n
+
+lib/readline/*oc/{r**s*r.*exi*fo,r*a*line.3}, d*c/bash.1
+	- documente* ne* `match-*idden-files' *npu**c ***i*b**
+
+				   5/10
+				   ----
+configure.in
+	- f*x AC_CH*CK_P*OG(ar, ...)
+	- ad* AC_CHECK_TYPE for ss*ze_t
+
+*onfig.h.in
+	- new #u**ef for ssize_t
+
+*ib/sh/zre**.c
+	- int -> s**z*_t fix*s to **r*or m*dern de*larations of read and write
+	- t*e `off' v*riab** in zsyncfd shou*d be an off_t since it co*putes
+	  a file *ffset
+	- lind and *used are now size_t, since t*ey in*ex into a *uffer
+	- set luse* to 0 on re*d e*r*r
+
+
+externs.h
+	- fix extern *ecla*at*ons of z*ead, zread1, zre*dc, and zwri*e
+	- prototyp* *x*ern *eclaratio* of qsort_str**g_c*mpare
+	- add extern de**aratio* for his*ory_deli*iting_chars() fr*m p*r*e.y
+
+input.h
+	- b_used and b_*n*utp mem**rs *fr s*ruct BSTREAM *re now s*ze_t
+
+built**s/ev*lstri**.c
+	- the *umb** of ch*rs read w*th zread in *at_*ile sho*ld be a**ign*d
+	  to a *ari*ble of type ssize_t
+
+
+
+
+*np*t.c
+	- *he nu*ber of ch*r* r*ad with *read in b_fill_*u*fer shoul* be
+	  a*s*gn*d to a v*ria*le of type s*ize_t
+	- in g*tc_with_rest*rt(), use a va*iabl* of *ype u*sign*d char to
+	  get a val*e fr*m the loca* b*ffe* and retur* it
+	- in unget*_*ith_restart, explic**l* r*turn the charact*r arg pas**d
+	  to avoid r*ly*ng on localbuf *ei*g uns*gned char
+
+subst.c
+	- the nu*ber of chars read *ith *read in re*d_comsub should be
+	  assigned to a variabl* of type ssi*e_t
+
+s*b*t.c
+	- ins*ead of casting to u**igned char *hen as*igni*g to if*cmap in
+	  expan*_*ord_internal, u*e a variable of type unsigned cha* and
+	  let the compiler do the work
+
+lib/sh/str***ns.c
+	- inst*a* of casti*g to unsigned ch*r in a*sic_quo*e, *se a variable
+	  of type un*ign*d ch*r and let the compiler d* t*e work
+
+**iltin*/eval*tring.c
+	- *emo*e extern decla*at*ons for zwri*e and *un_*rap_cleanu*; they're
+	  in *xtern*.h
+	- pro*ot*pe cat_file *orw*rd *eclaration
+
+M*kefile.in
+	- remove -I$(in**uded**) from I**LUDES and SUB*IR_**CLUDES
+
+a**o*a*.m4
+	- c*ange RL_LI*_READLINE_*ERSION to set RL_P*EFIX, RL_LIB**R,
+	  and RL_I**LUDEDIR to what it used to test *he instal*e* r**dline
+	  li*rary ver***n for *se *y the **ller
+	- change RL_*IB_*EADLINE_VE*SION to not co*pute ac_cv_rl_pref*x if
+	  the c*ller has *lready assigned it a *alue
+	- rename _rl_pr*f*x -> ac_cv_rl_p**fix, _rl_*ibd*r -> ac_cv_rl_libdir,
+	  _rl_includ*dir -> ac_cv_rl_*nclu**dir
+
+conf*gure.in
+	- c*ange testin* of *h**her to use t*e value of
+	  $opt_w*th_in**alle*_*e*dline to be != n*, to a*low t*e u*er to
+	  *pe*ify a p*efix whe*e th* in*tall** readlin* lib**ry may be fo*n*
+	- if --with-i*st*ll*d-readli**=PRE*IX is supplied, set ac_cv_rl_*r*fi*
+	  to PREFIX b**ore *alling RL_LIB_READLINE_V*R*IO*
+	- if --*ith-insta*l*d-r***line[=PREF*X] is su*plied, don't se*
+	  RL_*I*DIR and RL_INCL*DEDIR; let RL_*IB_READLINE_VE*SION tak* care
+	  of it, set RL_INCLUDE=-I${RL_I*CLUDED**}
+	- if --with-inst*lled-rea*lin*[=PRE*IX] is *u*plied, and we're
+	  l*nk*ng *i*h th* hi**ory li*rary, assign $RL_LIB*I* to HI*T_*I**IR
+	  so we use the same ve*sion of the ins*a**ed readline and histor*
+	  librarie*
+
+Makefile.in, builti*s/*ak*file.in
+	- have con*ig*r* s*b*t*tute RL_*NC*U*EDIR, set RL_*NCLUDEDIR variable
+
+doc/bashref.texi
+	- updated desc*iption of --with-installe*-r*adline conf*gu*e option 
+
+general.c
+	- *oved QS*UN* type*ef h*re from b**ltins/*o*m*n.c
+
+**ias.c
+	- prototy*e forward decla*at*on of qs*rt_alias_**mpa*e
+
+ba***i*t.c
+	- i*c*ude <gl*b/glob.h> *or ext**n **clarat*on of **ob_p*ttern_p
+	- *em*ve e*ter* *e*laratio* of h*s*ory_d*limitin*_chars; it's now
+	  in ex**rns.h
+	- *r*totype f*rward decl*rations of *i**ig*ore_item_func,
+	  mayb*_*dd_history, and ba*h_*dd_history
+
+braceco*p.c
+	- re*ove e**e*n decla*at*on for sh_backslash_qu*te; it's in ext*rns.h
+
+braces.c
+	- remove extern de*lar*tion *or extra*t_com*a*d_subst; it's in subs*.h
+	- **oto*y*e fo**ard **c*a*ati*n* for expand_amble, ar*ay_co*ca*, and
+	  bra*e_g*bbl*r
+
+err*r.c
+	- prot**ype extern *e*laration of gi*e_*erm**al_to, fix b*d call
+
+{execute_cmd,e*pr,find*m*,*obs,mai**heck,noj*bs,pco**lete,print_c*d,r**ir,
+*h*ll}.c
+	- prototype *ll static forwar* f*nction *ec**ra**ons
+
+m*ke_cm*.h
+	- *hanged extern decl*rations *or make_bare_w*rd and m*k*_w*rd
+
+s*ell.c
+	- in *sne*conn(), the r**urn va*ue of size*f() is s*ze_t
+
+*clocal.m4
+	- add inclu**on of stddef.h if STDC_HEADE** is de*in*d to 1 in
+	  BASH_CHECK_TYPE
+
+confi*u*e.in
+	- ad* a c*ll to BASH_CHECK_TY*E for socklen_t (t*pe of thir* *rgument
+	  to *etpe*rname(2))
+
+				   5/11
+				   ----
+lib/readl**e/bind.c
+	- mak* `useq' a ch*r arra* to pass to rl_m**ro_bin* in
+	  rl_parse_and_bind
+
+{subst,vari*ble*,lib/sh/tmp**le}.c
+	- do*lar_dollar_p*d is now a `p*d_t' inst**d of `int'
+
+varia*le*.c
+	- sb*and() now tak*s an `unsig*e* *ong' to set the seed value
+	- c*anged last_*and*m_value to t*pe int, s*nce it's *l*ays between
+	  0 and 32767
+	- use st***ul to c*nv*rt the value in a*si**_*a*dom ins*ea* of a*oi
+	- take ou* casts in any *rguments to sbr*n*()
+	- take ou* c*st to *nt in call to in*tostr in se*_pp*d()
+
+s*bst.c
+	- don't cast last_a***chronou*_pi* when pass*ng to *t*s()
+
+{*ig,su*st}.c
+	- prot***pe a*l s*ati* fo**ard f*nct*on dec*ara*ions
+
+				   5/14
+				   ----
+{test,trap,v*riables}.c
+	- *ro*oty*e all st*tic forward fu*ct*o* declar*tio**
+
+v*riables.c
+	- *ree_v*ri*ble_ha*h_data() now t*kes a PTR_T, a `gen*ric po*nter'
+
+builtins/{a*i*s,bin*,*re*k,cd,comple*e,de**ar*,enabl*,e**t,fc,fg_bg,h**p,
+hi*tory,*ob*,push*,read,set,*rap,umask,
+	- *ro*ot**e al* **at*c for*ard *unc*ion de*l**ation*
+
+*ib/read*ine/{hi*t**arch,inp*t,kill,rlt*y,searc*,vi_mode}.c
+	- p*o*o*y*e *ll stat*c fo*ward function *ec*arations
+
+con*igu**.in,c*n*ig.h.in
+	- c*eck for *sn****tf, de**ne HAV*_VSN*RIN*F if fo**d
+
+*ib/r**dlin*/displa*.c
+	- *se vs*printf() in rl_m*ssage if it's *va**ab*e; if w* don't, at
+	  *east se* the la*t **ar*ct*r in msg_*uf to 0 to avoid overrun --
+	  w* *ea*ly can't do an*thin* abou* o*erflo* at t*is po**t.  if it's
+	  availabl*, *his fixes buffer o*e*flo* *roblems in rl_m*ssag*
+
+				   5/15
+				   ----
+l*b/rea*line/histexp*n*.c
+	- in get_history_word_spec**ier, a*low any ch*r*c*er to ter*i*at*
+	  a `:*irst-' *odi*i*r, n*t just `:' and n*ll.  T*is is what csh
+	  *ppears to do.  This a*lo*s th*ngs lik* `!:0- xyzz*' to r*pla*e *he
+	  last a*gum*nt with xyz**
+
+				   5/18
+				   ----
+**nfigure.in, config.h.in
+	- ch*ck for <stdint.h>, de*ine HAVE_S*DIN*_H if foun*
+	- check for intma*_t in <st*i*t.h>, define *n*m*x_t as long if not
+	  f*und
+
+				   5/21
+				   ----
+builtin*/kill.def
+	- chang* to use stre*r*r() for e**or messa*e when kil*(2) f**ls
+
+*clocal.m4
+	- new macro, BASH_C_LONG_LONG, **eck for `long long'
+
+c*nfi*ure.in, config.h.in
+	- c*ll BA*H_C_L*NG_LO*G, *ef*ne HAVE_LON*_*ONG if found
+
+lib/sh/sn*rintf.c
+	- new f*le, wi*h *mp*em**tations of snprintf, vs*pri*t*, *spr*ntf,
+	  and vasprin*f, *e*iv*d **om i*et*tils ve*si**
+
+*a**fil*.in, lib/sh/Makef*le.in
+	- *dd sn*r**tf.c/*nprintf.o
+
+config*r*.in, config.h.in
+	- add c*ec*s for snprintf, a*p*intf, va*p*int*, with *ppro*r*a*e
+	  c*p *ef*nes
+
+lib/readl*ne/{rld*f*,xmal*oc}.h, lib/readl*n*/xma*loc.c
+	- xmallo* and *rea*loc now take `size_t' ar*um*nts, like their bash
+	  co**terp*rts
+
+e*terns.h,lib/sh/it*s.c
+	- inttostr and itos now ta*e `*o*g' argume*ts
+	- in*tost* t*kes a `siz*_t' a*g*ment for th* buff*r size
+
+{exp*,lib/ma*loc/malloc,*aria***s,ge**ra*}.c
+	- fixed c*lls to *tos() by removing casts, etc.
+
+subst.[ch]
+	- get_*oll*r_var_va*ue now takes a lo*g, not an i*t
+	- sub_append_numb*r now ta**s a l*ng, not an *nt
+
+subst.c
+	- in par*meter_b**ce_expand_word, use a long and legal_number to
+	  tr*nsla*e ${N}, to *void overflow
+	- in pa*amet**_br*c*_e**and_l*ng*h, use a long and lega*_n***er to
+	  translate ${#N}, to av**d overfl*w
+	- in do_array_element_a*si*nment, *rr*y_*x*a**_*nd*x,
+	  *rray_value_i*ternal, use arr*yind_t instead of i*t
+	- parame*er_b*a*e_expa*d_*e*gt* now ret*rns `lon*'
+	- parame*er_b*ace_e*pan* now *ses a lon* variable for t*e return
+	  value of p*ram*ter_bra*e_*xpan*_*ength
+	- param_*xpa*d now *ses a long variable for the r*tu*n value f*om
+	  ev*lexp
+	- array_**ngth *efer**c* now returns an `**r**ind_t', si**e it can
+	  return th* num_elements *ember of an a*ra*, which is of type
+	  ar*ayi*d_t
+
+subst.h
+	- *rr*y_expand_in*ex now r***rns an `a*rayind_t'
+
+ar**y.[ch]
+	- ar*ay_s**range now t*kes arr**in*_t arg*m*nts, not `*nt'
+	- dup_ar*ay_s*brange now uses arrayind_t local va***ble to do
+	  arra* **dex*n*
+	- use long to print a*r*y in*ices in print_**eme*t
+
+vari*****.c
+	- nul*_a*r*y_ass*gn, *ssign_dirstack, bind_*rr*y_var*able
+	  now ta*e *rrayind_t ar*uments as arr** indi*es
+	- as*ign_*r*ay_va*_f*om_*ord_list, assign_arra*_var_f*om_*t*ing,
+	  unbind_*rray_el*ment now u*e array*nd_t l*cal v*riabl*s for
+	  arr*y ind*x*n*
+
+variabl*s.h
+	- chang* ex*er* *ec*ar*ti*n of bi*d_array_varia*le
+
+*uil*ins/*o*m*n.[ch]
+	- get_num*ri*_arg now r*turns a `lon*', sin*e it usuall* retu*ns
+	  th* value of le*a*_n*mber()
+
+buil***s/{sh*ft,b*ea*}.def
+	- use long varia*le* for t*e return va*u* of get_*umeric_*rg
+
+*ui*tin*/h*story.*ef
+	- conver* string argument to int *nl* if it's in rang*
+
+builtins/push*.*ef
+	- s*t_di*stack_e*e*ent and get_***stack_elem*nt now ta** `lo*g'
+	  i*dex argument*
+	- get_dirstack_ind*x now takes a `long' i*dex ar*umen*, since it's
+	  pa*sed *he co*v**t** value **om leg*l_n**ber
+
+*ib/sh/timeval.c
+	- in pr*nt_timeval, don't assum* that the *umber of mi*ut*s fits int*
+	  an int, since it's jus* *econ*s/60.
+
+lib/sh/clo*k.c
+	- d*t*o for pr*nt_clock_t
+
+				   5/22
+				   ----
+**ell.c
+	- *in*e the -O o*t*on se*tings may *os**b*y be *verridden by the
+	  n*rm** shell initi*li*ation or *osix initia*ization, sav* the
+	  invoc*t*on opt*on* on an a*i*t (with add_s**pt_to_ali*t) and
+	  p*o*ess th*m afte* bas*c initiali*atio* (with run_sho*t_ali*t)
+
+				   5/23
+				   ----
+tra*.h
+	- new *efine, B*SH_*SIG, a*l syst*m sign*ls p*us sp*cia* b*sh tra*s
+
+trap.c, built*ns/tr**.def
+	- *se B*SH_NSIG for array b**nds and loops wher* appro*ri**e
+
+*ra*.c
+	- chang* *ecod*_si*nal to dis*ll*w n*me*i* *i*na* n*mb**s above
+	  NSIG -- t*i* mea** you can on*y refere*ce **ec*a* tra*s like
+	  DE*UG by n*me
+	- new SPECIAL_TRA*(s) *acro to tes* wh***er s is one of the sp***al
+	  b*sh traps (c*rrently DE*UG and EX*T)
+	- change *eset_or_*estore_si*nal_handle** so c*mma*d s****i*ut*on
+	  doesn't in*erit the *ebug tra* (l*ke ksh93), and child proc**ses
+	  don't have to rel* on *nitializ*_tra*s *eing run to get rid of
+	  *ny de**g tr*p
+
+s*pport/mksignames.c
+	- *dd extra "*RR" **gna* name, value N*I*+1, *llocat* *pa** for it
+	  and write it out in **gn*l_n*mes[]
+
+*ra*.h
+	- new define: E**OR_TRAP == NS**+1, ch*nge B*SH_NSIG to N*IG+2
+	- *x***n declaration* for se*_e*ro*_trap, run_**ror_trap
+	- new defin*: TR*P_STRIN*(s), *xpand* to trap_list[s] if *i*nal S
+	  is t**p*ed and not i*nor*d, N*LL *t*erwi*e
+
+trap.c
+	- ad* ERR*R_**AP to SPEC*A*_TRAP* defi*e
+	- in*t**l*ze ER*OR_TRAP stu*f in i***iali*e_tra*s
+	- new f*nctio*: s*t_error_t*ap(c*mm**d), sets the *RR **ap *tr**g
+	- new functio*: run_*r*or_trap(command), runs *he E*R trap strin*
+	- set trap strin* for E***R_TRAP to NUL* in **ee_trap_s*r*n*s
+	- **a*ge reset_or_re**or*_**gnal_handlers so child processe* don't
+	  i*h**it *he ERR *rap
+	- add case to call r*n_*rror_trap in ***be_call_*rap_*andler
+
+*xecute_*md.c
+	- in execu*e_comm*nd_internal, k*ep tr*ck of E*R trap and call it if
+	  necess*ry
+	- *se TRAP_S*R**G to get the v***e of deb*g and er*or tra*s
+	- in e**c**e_*unction, *rrange th*ngs so the *RR tr*p is not *nhe*ited
+	  by shel* f**ctions, and is saved and restore* like *he D*BUG *r*p
+
+*oc/{bash.1,bashref.t**i}
+	- docu*e*ted new ERR trap
+
+tes*s/{trap.{tests,right},**ap2.sub,*rap2a.s*b}
+	- a**ed *RR tr*p te*ts
+
+*ub*t.c
+	- on machines *it*ou* /dev/fd, change the *amed *ipe *ifo lis* to a
+	  list of *t*ucts *on*ai*in* *athn*me and proc information
+	- cha*** unlink_fif*_list to k*l* the p*oc in t*e *ifo list with
+	  *i*n*l 0 and not remove the *i*o if t*e p**c is **ill aliv*.  T*is
+	  should f*x t*e p***l*m on those back**rd syste*s wit*out /d*v/fd
+	  w**re fifos were re*ov** when a job u*in* process substit**i*n was
+	  sus**nded
+
+				   5/24
+				   ----
+e*amp*e*/loa*ables/getco*f.h
+	- new fi*e, with *asic de*ines ne*ded to make getcon* w*rk minimally
+	  on POSIX s*stems without t*e neces**ry *efini*ions
+
+exa*ples/loada*les/ge*conf.c
+	- repl*cement functio*s for c**fstr, sysconf, pathconf for sys**ms
+	  t*at lack *hem, pr*vi*ing a minimal posix in*erfac*
+	- h*avil* aug**nted ge*c*nf, now supports all P*SIX.1-200x,
+	  POSIX.2-200x, Solaris 7, AIX 4.2 ge***nf vari*b*es
+
+				   5/29
+				   ----
+builtin*/s*t*ttr.d*f
+	- m*ke `readonly', `ex**rt', and `d*clare' pri*t `invis*b*e' *ariables
+	  as ju*t a com*and and v*riable na*e, withou* a *a*ue, when list*ng
+	  al* *aria*les (as *OSI*.2-200x d6 *e*uires)
+
+				   5/30
+				   ----
+
+co*fig*re.in
+	- u**raded to au*ocon*-2.50 on main development machine, so *equir*
+	  *utoconf-2.50 in preparation *or *s*n* so*e if i*s new features
+	- ca*l AC_C_PROTOTYPES
+	- remove cal* to AC_**EEXT, which now do*s the wrong *h*ng
+	- *hanged AC_I*IT to new flavor
+	- a*de* call to AC_C*NF*G_S*CDIR
+	- AC_CON**G_HEADER -> AC_CONFIG_HE*DERS
+	- AC_RETS*GTYPE -> AC_T*PE_*IG**L
+
+con*igure.in, acl**al.m4, *onfig.h.in
+	- rem*v*d ca*l to B*SH_*ARGE_*ILE_S*PPORT, u*e AC_SYS_LARGE*ILE
+	  standard suppor*, with new *ac**s _FI*E_O*FSET_BITS and
+	  _LARGE_FILES
+	- removed d*fin**ion of BASH_LAR*E_**LE_SUPPO**
+
+doc/*ash*ef.texi
+	- d*cum*nt new `--*nabl*-lar*efile' configure o**ion
+
+lib/readline/re*dli**.c
+	- change rl_se*_p*ompt to c*ll rl_expand_pr*mpt unco*dit*onal*y, so
+	  local_p*ompt and *ocal_**ompt_prefix get set c*r*ec*l*
+
+				    6/6
+				    ---
+lib/readline/compl*te.c
+	- don't appen* `/' or ` ' to a mat*h w*en comple**ng a symlink that
+	  resolves to a *irecto*y, *nless the ma*c* doesn't *dd anyth*ng
+	  to t*e word.  This means that a tab wi*l c*m*let* the word up to
+	  th* full n*me, but not add anythin*, and a *ubse*uent tab wi*l add
+	  a slash.  *hange to append_to_m*tch; c**ler* chang*d
+
+ha**lib.c
+	- new func*ion, hash_t*ble_nen*ri*s (*a*le), retu*ns the *umber of
+	  it**s in TAB**
+
+*ash*i*.h
+	- e*tern d*c**ration for hash_t**le_nentries
+
+**nfigure.in
+	- c*n*i*u*e without bash malloc on o*enbsd; *h*y clai* it ne*ds
+	  eight-bit a*i*nmen* (wh*ch the ba*h ma*loc *rovides, but...)
+
+				    7/2
+				    ---
+strin***b.c
+	- only c*ll RESIZ*_MAL*O*ED_B**FER fro* s*rs*b() if t*e *eplaceme*t
+	  s*r*ng **n*th is > 0, *v*id po*sible hangs if replacement is null
+
+sub*t.c
+	- don't i*c*ud* i*p**.h; no *onger needed
+
+con*ig*re.in
+	- remove calls to AC_S*S_RESTARTABL*_SYSC*L*S and
+	  BA*H_SY*_**STARTA*LE_SYSCALLS; the *esults *re no lo*ger used
+
+config.h.in
+	- **m*ve define for HAV*_REST*RTABLE_SYSCALLS
+
+ac**cal.m4
+	- remo*ed definit*on of BASH_SY*_RE*TARTAB*E_SYSCALLS; no longer used
+
+*x*c*te_c*d.c
+	- chan*ed s*lect **mma*d so `r**ur*' no lon*e* t*rmi*at*s *he s*l**t
+	  co*man*, so it can be *sed to ret*r* from an e*clo**ng function.
+	  T*is is as ksh (88 and 93) does it
+
+lib/re*dli**/vi_mode.c
+	- fix *rivial typo in dec*ar*tion of vi_motion; `t' appea*s *w*ce;
+	  t*e second inst*n** shou** be `T'
+
+				    7/3
+				    ---
+conf*gu*e.in
+	- d*n't add -**a*i* to LDFLAG* on *olari* 2.x.  This mean* that the
+	  *u*ilia*y progr*ms will be bu*lt as dy**m*c **e*utab*es, but that
+	  sh**ld do n* harm
+
+				    7/5
+				    ---
+Mak**i**.in, bui*t*ns/*ake*i*e.in
+	- spl*t CCFLAGS *nto *CFLAG*_FOR_*UILD and *FLAGS, to aid in
+	  cros*-com*ilation
+	- *uild **ograms that use $(CC_FOR_BU*LD) using $(CC*LAGS_FOR_*UILD)
+
+configure.in, con*ig.h.in
+	- che*k for get*dd*info(3), *efine H*VE_*ETADD*INFO if found
+
+l*b/sh/ne*open.c
+	- implemen*ed a versi*n of _n*topen (_net*pen6) t*at *ses
+	  ge*addri*fo(3) if a**ilable, u*e if HAV*_GETADDRINFO is def**ed.
+	  old _neto*en is _*e*o*en4; _netopen now calls e*t**r _net*pen6
+	  or _net*p*n4 as appr*priate
+
+				    7/9
+				    ---
+builtins/*xit.*ef
+	- don't source ~/.ba*h_logout if su**he**_*nvi*onme*t is non-zer*
+
+e*ec*te_command.c
+	- in exe*ut*_*ntil_or_*hile, h*ndle the case where `*reaking' is
+	  s*t in the l*op test (e.g., by the job **ntrol c*de when a job
+	  is *topp*d with SIGT*TP), but t*e re*urn v*l*e from *he tes* is
+	  someth**g that would cause the loop to *reak.  Need to dec*em*nt
+	  `br*a*i*g' in this case
+
+				   7/10
+				   ----
+*xecu**_cmd.c
+	- in execute_in_subshell, make sure a comman* of ty*e cm_subshel*
+	  *nherits i*s `*n*losing' *omm**d's CMD_IGNORE_R***RN f*a*
+
+variables.c
+	- in m*y*e_mak*_e**o*t_e*v, d*n't allow restri*ted shells to put
+	  exp*rted functi*ns in the *xp*r* environment
+
+				   7/11
+				   ----
+lib/***b/strmatc*.h
+	- ren*me* old fnm*tch.h
+	- *ha*ged gua*d #i*def to _STRMATCH_H
+	- include syste* <fnmatc*.h> if HAVE_LI*C_*NM_EXTMATCH is defined
+
+lib/*lob/*tr*atch.c
+	- re*am*d old fnmatch.c
+	- includ* "strmat*h.h"
+	- if HAV*_LIBC_F*M_E**MAT** is defi*ed, de*ine a dummy **rs*on of
+	  st**atch() that just calls fnmatch(3)
+
+lib/*lo*/glob.c
+	- incl*de "strmatch.h"
+	- fnm*tch -> *trmatch
+
+Makefile.in, li*/glob/Ma**fil*.in
+	- f**atch -> *t*m*tch
+
+{*as**ist,execute_cmd,pathex*,p*o*pl*te,*hel*,stringli*,subs*,test}.c,
+path*xp.h,buil*ins/help.d*f
+	- *nclud* <glo*/st*match.h>
+	- fn*atch -> st*matc*
+
+e**cu*e_cmd.c
+	- *ro*e the code that parses t*e interpre*e* name from a #! line
+	  out fr*m *x*cute_sh*ll_script to a new func*i*n, get*nterp()
+	- c*ll getinterp f*om exec*te_shell_script
+	- u*e re*ur* *al*e from ge*inter* in error *essage ab*ut bad
+	  #! int*rpreter in shell_**ec*e
+
+				   7/12
+				   ----
+l*b/re*dlin*/*se*rch.c
+	- the las* *s*arch **ring is now rem*mbe*ed in a new s*atic variable,
+	  las*_isearch_str*ng
+	- if ^R^R is *yped, r*a*li*e now *earch*s for t*e **membered i*earch
+	  strin*, if o*e **is*s
+
+				   7/24
+				   ----
+pcomplete.h
+	- extern declaration for com*letions_to_*t*ing*i**()
+
+				   7/25
+				   ----
+*u*ltins/comp**te.d*f
+	- make compge* handle -o **fault option
+	- mak* co*pgen return *ucc*s* only if sl->li*t_len is non-ze**,
+	  indic*tin* t*at th*re are *tems on the lis*
+
+				   7/31
+				   ----
+e*ec*te_cmd.c
+	- in execu*e_connec*ion, fo**e *tdin to /dev/n*ll for a****hro*o**
+	  c*m*a*d* if job contr*l is not act*ve, not j*st if the *hel* is
+	  ru*ning a shel* *cript (s*n*e you can run `s*t -m' in a sc*i*t)
+
+lib/*e*d*ine/rltt*.c
+	- make su*e _rl_tt*_res*ore_si*nals r*sets `tty_*igs_di*abled' on
+	  succ*ssfu* re**orati*n of *he ter**nal mode*
+	- m*ke sure _rl_tty_disable_signals turn* o*f IXON so that ^S and
+	  ^Q can be read by rl_quoted_insert
+
+				    8/1
+				    ---
+acloc*l.m4
+	- new check for FNM_EXTMA*CH be*ng defined in <fn*atc*.h>, as U*lrich
+	  Dre*p*r intend* to do for ne* *er*ion* of GNU l*b*
+
+*on**g.h.in
+	- new de*i****on for H*V*_LIBC_FNM_EXTMATCH
+
+*onfigure.in
+	- c*eck for fnm*tch, but don't de*ine anyt**ng in config.h
+	- c*ll BASH_FUNC_FN*ATCH_EXTMATC* to c*eck for FN*_EXTMAT*H
+
+				    8/2
+				    ---
+alias.h
+	- r*move bogu* e*tern d***a*ation for xma*loc()
+	- ****ude "*tdc.h"
+	- ad* *rototype *ec*arations for all ext*rn fun*ti*n d*cla***ions
+
+xmalloc.c,li*/readline/xm*ll*c.c
+	- fix xm*lloc to ret**n a *TR_T
+	- fix xrealloc to retu*n a PTR_T and ta*e a PTR_T as firs* a*g*ment
+
+*nclude/ansi_s*dl*b.h
+	- exter* decla*ation* for mal*oc and *eallo* have them *eturn PTR_T
+
+xm*lloc.h
+	- new file, w*th ex*ern declaration* for *u*c*io** in x*alloc.c
+
+g*ner*l.h
+	- *emoved ex*ern declara*ions *or function* in xm*ll*c.c
+	- incl*de xmall*c.h
+
+Make*ile.in,built*ns/Makefile.in
+	- updat* dependenci*s to i*clud* xmal*oc.h
+
+pa*s*.y,{ali*s,a*ray,ba*hl*n*,bracecomp,execute_*md,fin****,flags,g*nera*,
+hashcmd,l*cal*,*a*l*h*ck,mak*_cmd,*ath*x*,p**mplete,*r*nt_c*d,*tr*ng**b,
+subst,unwind_prot,variab*es}.c
+*ui*tins/{co*mon,e*alf*le}.c
+b*il*ins/{cd,*omm*nd,enable,e*ec,printf,re*d,set}.def
+lib/sh/{makepath,netopen,pathp*ys,se***nebu*,**quot*,s*print*,stringlist,
+st*t***s,tmpfi**}.c
+*ib/r**dl*ne/{util,t*rm*nal,*h**l,r**d*in*,macro,k*ll,i*earc*,i*put,
+histfil*,histex*and,display,comp*e*e,bind}.c
+	- mak* sure al* *alls to xmalloc *re cast to th* right return value
+
+siglist.c
+	- *nclude x*alloc.h
+
+parse.y,{alias,**shline,b*ace*o*p,expr,mak*_cmd,*oj*bs,*r*nt_cmd,subst}.c
+bu*ltin*/{fc,p*intf,read}.*ef
+lib/sh/*nprint*.c, li*/t*lde/tilde.c
+lib/rea*line/{b*nd,display,h*stexp*nd,*s*a**h,ma*r*,u*il,vi_mode}.c
+	- make sure all calls to *re*lloc a*e ca*t to th* righ* r**urn valu*
+
+lib/sh/{**t*pen,setl*n****,shq***e,snp***t*}.c, *ib/til*e/tilde.c
+	- in*lu*e xmal*o*.h, re**ve *xter* decla*ati*n of x**l**c
+
+l*b/readline/xm*l*oc.h
+	- xmalloc and xreal*oc should r**urn PTR_T
+
+*ib/re*dline/rl*efs.h
+	- don't inclu*e an ext*rn dec*aration *or xmallo*
+
+				    8/7
+				    ---
+supp*rt/shobj-conf
+	- fi*ed up comm****d-out stanza* for HP's un*undle* C c*mp***r on
+	  HP/*X
+
+support/*as*bug.sh
+	- force t*e s*b*ect to be ch**ged f*om t*e **fa**t
+
+lib/readline/doc/{rlu*er.te*in*o,r*adline.3}, *oc/bash.1
+	- document t*at t*ans*ose-w*r*s swa*s the la*t *wo words on t*e line
+	  if po*nt is at the end of *he *ine
+
+				    8/9
+				    ---
+st*i**lib.c
+	- fix p*s*i**e infinite r**u*si*n pr**lem with null patt*rn in
+	  s*r*ub()
+
+hashlib.c
+	- new function copy_hash_ta*le to **py a h**h *a*le usin* a caller-
+	  sup*li*d f*nc**o* to c*py item data (de*aul*s to s*vest*ing())
+
+hashlib.h
+	- ne* ex*er* declaration for copy_hash_tab*e
+
+built*ns/declare.def
+	- c*anges so that decl*re [-a] var=*alue as*i*ns `v*lue' to element 0
+	  of *rr*y variabl* `var' lik* k*h93
+	- chang* so that decl*re [-a] var[N]=value assigns `val*e' to e**ment
+	  N of array variab*e `var' l*ke ksh93
+
+				   8/13
+				   ----
+array*un*.c
+	- new fi*e, *or mis**llaneou* array functions
+
+***ayfunc.h
+	- ne* fi*e, ext**n *eclarations for fun**ions in a*rayfun*.c
+
+*ariables.c
+	- move *onve**_var_to_arra*, bin*_*r**y_variab*e,
+	  assign_array_from_st*ing, assign_array_va*_from_*ord_list,
+	  as*ign_a*r*y_var_f*om_*tring, quote_ar*ay_a*s*g*m**t_**ars,
+	  *k*ps*bscript, u*bi*d_array_e*em**t, print_a*r*y_assign*en*
+	  to arrayfunc.c
+
+shell.h
+	- *nclude ***ayf**c.h af*e* va*iables.h
+
+var*ab*es.h
+	- re*ove above extern function de*laration* mo**d to arrayfu*c.h
+	- ad* extern dec*arati*n for var_look*p
+
+*akefile.in
+	- *dd arr*yfun*.c, arr*yfu*c.h in appropr*ate pl*c*s
+	- add ar**yf***.h to depe*denc*es
+
+sub**.c
+	- *ov* valid_array_refe*ence, *rray_*xp*nd_*n*ex, ar**y_var*abl*_part,
+	  *rr*y_v***e_i**erna*, array_value (now global), get_array_value,
+	  d*_a*ray_el*ment_**signment to ar*ayfunc.c
+
+su*st.h
+	- *x**rn dec*a**tio*s for func*ions abov* moved to arrayf*nc.h
+
+a*ra*f**c.h
+	- e***rn declaration* *or above functions from subs*.c
+
+subst.[ch]
+	- s*r*ng_list_*ollar_star and **r*ng_li*t_dollar_at are now glo*al
+	  f*n*tions
+	- quo*e_escapes is now a gl***l function
+
+subst.c
+	- maybe_expand_string -> ex*and_**ring_if_nec*ssa**
+	- *xpan*_strin*_to_string -> e**and_strin*_to_st*ing_i*ternal
+	- new functions: exp*nd_s*r*ng_to_stri*g and
+	  *xpa*d_string_unsplit_to_str*ng, which ca*l
+	  expand_st*ing_to_st*i*g_inter*al with ex*and_*tring and
+	  ex*and_stri**_unsplit as the FUNC argume**s, respec*ive**
+
+ar*ayfu*c.c
+	- *hange ar**y_expan*_index to call *xp*n*_string_to_*tring instea*
+	  of maybe_exp*nd_string
+
+				   8/14
+				   ----
+s*ell.c
+	- in e*ecute_e*v_*ile, call exp*nd_st*i*g_*nspli*_to_string
+
+mailch*c*.c
+	- in che**_mail, call ex*a*d_stri**_to_s*rin*
+
+***iables.c
+	- in a*sig*_in_env, ca*l expand_*tring_*nsplit_to_strin*
+
+ar*ayfunc.c
+	- new f*nction, ar*ay_v****b*e_name, splits an *rray referen*e i*to
+	  a name (which is ***urned as a new string) and s*b**r*pt
+	- *h*nge array_va*iable_par* to j*st call arra*_varia*le_na*e and
+	  look up t*e str*n* *e*ur*ed with find_va*i*ble
+	- ne* functio*, find_or_make_*rray_*ariab** (nam*, *lags) which will
+	  l*ok up an ar*ay varia*le and conv*rt a *tr*ng v**iabl* to an
+	  arra* if necessary.  The FLAGS a*g*m*n*, if non-*ero, s*ys to
+	  *h*ck t*e readonly and noas*i** at*ribut*s and fail if eithe* is set
+
+builtins/r**d.def
+	- make `read -a anam*' honor any readon*y st*tu* of `aname'
+	- read -a now c*ll* fin*_or_make_arr*y_variable with FLAGS v*lue 1
+
+arra**unc.[ch], subst.c, *ui*tins/{declare,r*ad}.*ef
+	- do_arr*y_e**ment_assignment -> **sign_ar*a*_eleme*t
+
+				   8/20
+				   ----
+par*e.y
+	- cha*g*d `for' *o*mand gr*m*ar to *llow mi*sin* *ord li*t aft*r `IN'
+	  tok*n, like *ate*t P**I* dr*fts requ*re
+
+lib/sh/*mpfi*e.c
+	- in sh_mkt*pname(), che*k *or fi***um == 0 and init to non-zer* number
+	  in t*is case.  it can happen on arithm*tic *verflow
+
+support/mkver*ion.sh
+	- add*d `[0-9].[0-9][0-9][a-z]' as an acce*table value for a
+	  distributio* to allow for i*term*d**te ve*sions, l*ke 2.05a
+
+suppo**/*o*f**.*uess
+	- removed th* add***on of the output of `/u*r/bin/objfo*ma*' w*en
+	  c*eat*n* the cano*ical name on F*eeBSD *a*hines, so *he *ano*i*al
+	  nam* is o*c* a*a*n `fr*ebsd4.2' ins*ead of `f*eeb*d**f4.2'
+
+				   8/22
+				   ----
+l*b/readline/{*lstdc,hi***ry,keymap*,**adline,****fs,r*pri*ate,rls**ll,
+r*ty*edefs,xm**loc}.h
+l*b/r*adline/{bi*d,comp*t,c*mp*ete,disp*ay,funm**,hi**expand,histse*r*h,
+input,ise*rch,kill,*ls,parens,readlin*,*l**y,se*r**,shell,signals,vi_mode
+	- changed __P to PARAMS
+
+lib/tild*/tilde.[ch]
+	- *h*nged __P to PA*AMS
+
+{**kefile,con*igur*}.in
+	- cha*ged *he version numb*r to 2.05a
+	- ch*nged the release *tatu* to `alpha1'
+
+				   8/23
+				   ----
+s**por*/s*obj-c*nf
+	- su*port *or buil**ng s**red libraries on Darwin/MacOS X
+
+sigli*t.h
+	- extern declaration for strsignal() to co**e*sa*e for lack of
+	  a *efinitio* in som* sy*tem i*clude files
+
+job*.c
+	- r*mov* casts from str*ignal() calls
+
+[bash-2.05a-a*pha1 *rozen]
+
+				   8/27
+				   ----
+[b*sh-2.05a-alp**1 r*lea*ed]
+
+				   8/27
+				   ----
+execut*_cmd.c
+	- fix eval_ari*h_for_exp* to handle the case w**re th* e*panded
+	  word list is N**L, re*ur*ing 0 in this c*se
+
+pr*n*_cmd.c
+	- in *ri*t_function_def, make sure th*t func_redi***ts is assig*ed
+	  a *alu* *efore bei*g used
+
+				   8/28
+				   ----
+alias.c
+	- incl*d* <*type.h> *or def*n*ti*n of isalpha()
+
+b*sh*i*t.h
+	- ad* prototy*es *or extern *u*cti*n declarations
+
+*la*s.c
+	- i*c*ud* *a*hhis*.h for *x*e*n f*nction dec*ara*ions
+
+m*sy*tax.c
+	- inclu*e <unistd.h> if HAVE_UN*ST*_H is defi*ed in co*fig.h
+
+*arse.y
+	- in*lu*e tes*.h for e**ern *u*ctio* decla*ations
+
+extern*.h
+	- ch*ng* ex*ern *e*laratio* for setlin*buf to sh_*etlin*b*f
+
+stringlib.c
+	- *ncl*de <*lob/glob.h> for *xtern f*nction declarations
+
+b*iltin*/common.h
+	- ad* exte** declar**ions for set_shel*o*ts() and **rse_shell*pts()
+	  fro* bui*ti*s/set.def
+
+var*ables.c
+	- include "h*shc*d.h" for *xtern *ecl*ratio* for fl*sh_h*shed_file*ame*
+	- inc*ude "pathexp.h" for ext*rn *ecla*at**n for setup_*lob_ignore
+
+lib/mall*c/m**l*c.c
+	- cast to `lo*g' instead of `int' in mem*lign for 64-bit m*chines
+
+{*comp*e*e,trap}.c
+	- changed printf es**pe sequence* u*ed to pr*nt poin***s to %p
+
+li*/**adline/un*o.c
+	- in*lude "xm*ll*c.h" for e*tern *u*ct*on *eclara*ion
+
+inpu*.h
+	- add fu*c*ion proto*ypes to **tern declarat*on* for *etc_with_*estar*
+	  and un*etc_*ith_res*art
+
+variabl*s.[ch]
+	- ch**ged ty*e of `funct*on' m**ber of `struct nam*_and_f*n*tion' to
+	  `sv_fu*c_t', *hich is de**n*d and prototy*ed in variables.h
+
+*hell.h
+	- *tart of a set of f*nct*on **i*ter *yp*def* like those in
+	  lib/*e*dl*ne/*l*ypedefs.h
+
+
+				    9/4
+				    ---
+lib/sh/*etcwd.c
+	- u*e cons* d**ine f*om con*i*.h rather than `C**ST'
+	- *se *TR_T **fine *rom xmallo*.h rather than `PTR'
+	- *nclude xmalloc.h for PTR_T
+	- remove P**H_MAX **fine, re*y on *alue from maxp*th.h
+
+{g*ne*al,mailche*k}.c, li*/sh/{pathcanon,pathp*y*}.c
+	- don't *nclude ma*p*th.h **rec*ly; it's alre*dy *ncl*d*d by shell.h
+
+l*b/sh/*ailst*t.c
+	- new `m*il*tat()' implementation, to *tat a mailbox file for
+	  m*il chec**n*.  han*l*s mail**r-sty*e m**l *irec*ories w*th on*
+	  file pe* messa*e and c**ates a dummy *tat s**uct *rom t*em
+
+*ib/sh/Makefi*e.in
+	- add mai*stat.c and mailstat.o in th* appropriate p*aces
+
+lib/***loc/**lloc.c
+	- augmen*** i*plementat*on wi*h *ra**er func*i**s that pass in file
+	  and line n*m*er *nformation from c*p.  curren*ly u*used, but a
+	  place*o**er for f*t*re ***ugging and u*e tracking
+
+lib/mal*oc/*hmalloc.h
+	- new fi*e, ex*ern de*l*rati*ns for allocation wrapper fu*ctions *or
+	  *se by t*e shell (and *t*ers, I g*es*)
+
+x*allo*.[ch]
+	- *rapp*r f**ctions for xmalloc, x*r*e, xrealloc (sh_ *ref*xed) th*t
+	  p*ss *pp *ine *umbe* in**rma*ion th*ough to t*e m*l*oc functi*n*,
+	  if USING_BASH_*A*LOC is d**ined
+
+				    9/5
+				    ---
+lib/*alloc/g*all*c.c
+	- remov*d; no lon*** part of **s*r*bution
+
+li*/ma***c/Makefile.in
+	- remove* *eferences to gmal**c.[co]
+
+*onf*gure.in, *oc/b***r*f.texi
+	- removed re**re*ces to `--wi*h-glibc-m*l**c' configure option
+
+{****igur*,*ake*ile}.in
+	- chang*d the way ba*h malloc is c*nfig*r*d i*to the Makefi**, ma*ing
+	  it more like how read*i*e is conf*g*red.  If t*e bash mal*oc is
+	  not *onfig*red in, **thing in l*b/mallo* will be bu*lt
+
+				    9/6
+				    ---
+lib/m*l*oc/imallo*.h
+	- new f*le, some **ternal *all*c defini*ions
+
+lib/malloc/msta**.h
+	- new *ile, defini*ion* for malloc sta*istics s*ructs and functions
+
+lib/malloc/trace.c
+	- ne* f*le, m*l*oc *racing functions (*urrently just *rin* *essage*
+	  to stderr), c*de is #*fdef MALLOC_TRA*E
+
+*ib/mall**/st**s.c
+	- new file, moved malloc stats code f*om mall*c.c to her*
+
+*ib/malloc/m*llo*.c
+	- move* some *e*in*tions to imalloc.h
+	- *oved st**s c*de to sta*s.c
+	- malloc t*ac*ng calls add*d to int*rnal_{m*lloc,realloc,fre*}, all
+	  #i*def MALLO*_TRACE
+
+lib/mal*oc/Make**le.in, Ma*e*ile.in
+	- ad*ed {ima*lo*,mstats}.h, {t*a*e,sta*s}.c
+
+pars*.y
+	- changed decode_**ompt_*t*ing to save and *e*tore $?
+	  (last_co*ma**_exi*_**lue) arou*d call* to e**and_*rompt_strin*(),
+	  so command *u*sti*utions in PS1, et*. don't ch*nge $?
+
+{*rray,su*s*}.c
+	- a *ouple more arr**in*_t f*xes fro* Paul Eggert
+
+confi**re.in
+	- remove redundant ch*ck for wait3(2)
+
+redir.h
+	- *ixed a *ypo (st*in_*edirs -> stdin_redirects)
+
+				   9/10
+				   ----
+
+{err**,*obs}.c
+	- fix*s to pr*ntf-**yle fun*tions to han*le *ids wider than an int
+
+lib/re*d*in*/{i*e**ch,vi_mode}.c
+	- fix cal* to rl_message in rl_dis*l**_s*arch (*e*ove *xtra arg)
+
+v*r*ables.c
+	- fix missing argum**t to *uiltin_error in make_l*cal_va*i*bl*
+
+bu**ti*s/get*pts.*ef
+	- sinc* g**opts takes n* option*, change wh*l* loop call*ng
+	  in**rnal_geto*t* to a simple `if' check
+
+*ui*tin*/printf.def
+	- since prin*f takes no *pt**ns, ch***e wh*le *o*p cal*ing
+	  *nte*nal_getopt* to a si*ple `if' chec*
+
+lib/re*dline/b**d.c
+	- remove _SET_BELL macro, ex*a*d code inline
+
+*ib/rea*l*ne/input.c
+	- c*ange _rl_in*ut_a**ilable to *se e**her se**ct or *IONREAD,
+	  but n*t both
+
+lib/r*ad*i**/**adline.c
+	- fix rl_d*git_*oop to remove un*ea*hab** cod* at end of loop
+
+{*ashhist,*ashlin*,*xp*,j*b*,r*dir,shel*}.c, *u*ltin*/fc.def, l*b/sh/snprintf.c
+	- b*a*ke* unuse* f*nctions with #i*d*f **CLUDE_UN*SE*/#endif
+	- remove som* unu*ed v**iable*
+
+execute_c*d.c
+	- remov* #ifdef'd code that all*w*d `*eturn' to **rminate a *elect
+	  statement
+
+expr.c
+	- *em**e som* ex*rane**s tests **om strlon*()
+
+array.h
+	- array**d_t is now a long, sin*e shel* arithmetic is per*ormed as
+	  lon**
+	- *e*ove *ec*nd d*clarati*n of new_arra*_e*emen*
+
+b*il*i*s/pr*ntf.d*f
+	- in m*long, xreallo* c**no* return NULL, so don't check for it
+	- remove so*e #if 0 code
+	- r*m*v* `fo*ndmod', since it* value mirrors `m**ch*r != 0'
+	- inclu** "*om*on.h" for bu*ltin_{error,us**e} decl*ra*io**
+
+*akef*le.in,*u*lti*s/Make*il*.in
+	- upda*ed som* d**en*en*ies d*e to ne* i*clude file*
+
+p*omplet*.c
+	- *nc*ude "*xe*ute_cm*.h" *or decla*at*o* of *xe*ute_shell_f*nc*ion
+
+arrayfunc.c
+	- *nc*ud* <stdio.h> for *r*n*f
+	- include "b*iltins/*o*mon.h" for builtin_err*r dec*ar*****
+
+buil*ins/eval*tring.c
+	- in*lud* "../tr*p.h" for run_tr**_*leanup dec*ara*ion
+
+builti*s/*elp.d*f
+	- *nclude "c*m*on.h" instead of loc*l*y d*cl*r*ng bu*l*i*_e*ror
+	  and bui*ti*_*sage
+
+*rr*r.h
+	- *dd ext*r* decla*ation for itrace()
+	- add prot*type to *x*e*n de*larat*on of get_name_*or_e**or
+
+externs.h
+	- add*d pro**t*pe for sh_s*tli***uf declara**o*, *rack*t*d *i*h
+	  NEED_SH_*E*L*NEBUF_DECL so we don't need std*o.h e*ery**e*e
+	- add ext*r* de*lar*ti*n *or pa*se.y:r*turn_EOF()
+
+*he*l.c
+	- add NEE*_SH_SETLI*EB*F_*ECL before inc*uding sh*ll.h
+
+*ib/readline/c*llb*ck.c
+	- in**ud* <s*d*ib.h> or "an**_s*dlib.h" for abort declara*io*
+
+*uit.h
+	- rem*ve *e*laration of throw_to_*op_leve*
+
+*ub*t.c
+	- remove unused *xtern declar*tion for get*p*s_reset
+
+lib/sh/netopen.c
+	- inc*ude <shell.h> for le*al_n*m*er, etc.
+	- add prototy*e for *net_aton exter* *eclara*io*
+
+lib/sh/clock.c
+	- inc*u*e <s*d*.h> for __P *ec*a*at*on
+	- add *xtern d***arat*on *or get_*lk_tck
+
+sup*ort/mkv*rsion.sh
+	- ch*nged so t*at extern fun*tion decla*ations for funct*ons in
+	  ve*sio*.c (*oved fro* ex*e*ns.h) are in the g*ne**ted ver*i*n.h
+
+*hell.h
+	- incl*de version.h
+
+
+*ener*l.h
+	- *dd p*o*otype for same_**le, bra*keted wi*h _*OSIXSTAT_H
+	  #ifdef, *inc* that's wh*t incl*de/po*ix*t*t.h defines
+
+e*al.c
+	- re*ov*d *xter* decl*rati*n of y**ars*; it's in *x***ns.h
+
+*ars*.y
+	- ad*ed *ro*ot*pes to *ta*ic forwar* f*nct*on declar**io**
+	- changed lo*al `*ll_digi*s' var*abl* in read_token_w**d () to
+	  all_*igit_to*en to a*oid cla*h with all_d**its() func*ion in
+	  ge*er*l.c
+
+{bashh*st,copy_cmd,make_cmd,hashl*b,m*i*check}.c
+	- ad*e* protot**es for *tatic fu**t*on de*lara*io*s
+
+shel*.h
+	- *d* extern decl*r*tion* for i**er*ct*ve, int*ractive_shell,
+	  *hanged c *iles wi*h e*tern *eclarati*ns
+
+p*omplete.c
+	- ch*nged it_*nit_aliase* to avoid sh*dowing glo**l var*able
+	  `ali**es'
+
+configure.in
+	- test for <strings.h>
+
+config.h.in
+	- add #und*f HAVE_STR**GS_H
+
+*a*h*nsi.h
+	- chang* like r*comm*nded in autocon* manual
+
+				   9/11
+				   ----
+[a *ate which wi*l live in *nfamy.  *rayers for the victims.]
+
+execute_c*d.c
+	- don't use an absolute *n*ex into *buf in mkfmt, use
+	  s*zeof(a*uf) to c*mpute last inde*
+
+*ui*tins/commo*.c
+	- fix read_octa* to do a better j** of detecting o*erflow wh*le
+	  iterating t*r***h the **r*ng
+
+bui*t*ns/umas*.d*f
+	- *ha*g* *ct**-prin* mod* to print 4 dig*t*, like other sh*lls
+	- cast umask to unsigne* *ong to a**id problems on sy*tem* w*e**
+	  it's wider than an i*t (POSI* d*e*n't gu*rantee that mode_t is
+	  n* wider *han an int, but real-world s*st**s use int)
+
+b*i*tin*/printf.def
+	- ***ong can n**er ret*rn NULL (it uses xrealloc), so the mai*lin*
+	  d***n't nee* to check for N**L returns
+	- *hanged u*e of `modc*ar' to hand*e more than a **ng*e modif*er
+	  character
+	- *hanged to **ndle `lo*g d*u*le' and `L' form*ts better, r*ther
+	  than discard*** lo*g double information
+
+l*b/sh/*im*val.c,e*ecut*_cmd.c
+	- c*ange some ins*anc** of `*o*g' to `time_t', for system* w**re
+	  a t*me_t is bi*g*r *han a lo*g
+
+jo*s.c
+	- include "posixtim*.h" inste*d of <sy*/*ime.h>
+
+config.h.in
+	- add *ef*nes for HAVE_DECL_CON*STR, HAVE_DECL_ST*T*LD,
+	  HAVE_D*CL_SBR*, HAV*_DEC*_PRINTF
+	- r*move defi*es for SBRK_DECLARED and *RI*TF_DE*LAR*D
+	- add _GNU_SOU*CE defi*e
+
+con*igur*.in
+	- add AC_*H*CK_D*C** for strtold, c*nfs*r, sbrk, printf
+	- remo** cal* to BASH_FUNC_S**K_DECLARED
+	- re**v* ca*l to BA*H_*U*C_PRINTF
+
+xm**l*c.c, *ib/*a*loc/mallo*.c
+	- cha*ge *h*ck of SBRK_DECL*RED to HAVE_SBRK_DECL
+
+pr*nt_cmd.c
+	- *hange *RINTF_DE*LARED to HA*E_DECL_PR*NTF
+
+*e*t*/builtin*.rig*t
+	- **a*ge ou*p*t to acco*nt for extra digit in u*ask *u*put
+
+**omplib.c
+	- f*ee_pr*g*omp now takes a PT*_T argu*en*
+
+built*ns/bashge*opt.h
+	- inclu*e <s*dc.h>
+	- ad* pr**otypes to exte*n d*cla*ation*
+
+bui**i*s/shopt.d*f
+	- add pr**o*ypes to st*tic fu**ti*n dec**ra*ions
+
+li*/readl*ne/complete.c
+	- ad*ed more s*atic fu***ion declarations with prototyp*s
+
+buil*ins/{fc,um*sk,wai*}.def, bu*ltins/{ba*hg*top*,commo*}.c
+	- inclu*e <ct*pe.h> for isdi**t **cr* (referen*ed by `*igit(x)')
+
+				   9/12
+				   ----
+
+inc*ud*/std*.h,lib/r*adline/rldst*c.h
+	- add __attr*bute__ defin*t*on 
+
+builtins/comm*n.h
+	- add pr**tf __att*i**te__ to d*cl*ration of **i**in_er*or
+
+*rror.h
+	- add pr*ntf __a*tribute__ to de*l*ration of *ro*ra***ng_e*ror,
+	  rep*rt_**ror, pa*ser_*rro*, f*tal_error, sys_error, in*ern*l_e*ro*,
+	  internal_*a*nin*
+
+lib/r*a*li*e/readline.h
+	- add p*i*tf __a**ribute__ to ***la*a**o* of rl_mess*ge
+
+*co*ple*e.c
+	- *dd p*in*f __attri*ute__ to decla*at*on of debug_pri*tf
+
+pr*nt_c*d.c
+	- add printf __*ttribut*__ to dec*aratio*s of cprintf, xprintf
+
+include/ch*rt*pes.h
+	- new f*le, incl*des <*type.h> and de*ines ma*ros that check for
+	  safe (ascii) argum*nts before **lling the r*gul*r ctype **cros
+
+{al*as,bashline,ex**ute_cmd,exp*,findcmd,*ener*l,lo*al*,mksyntax,stringlib,subs*,*ariabl*s}.c
+p*rse.y
+bui**ins/{bash*etopt,common}.c
+builtins/{fc,printf,umask,wait}.def
+*ib/*l*b/strmat**.c
+li*/sh/{o*lib,pathc*no*,pa*hphys,*nprin*f,*t*c*secmp,str*nd*x,st*i*gve*,st*tod,s**t*l,strt*a*s}.c
+exam*les/*o*dab*es/{head,sleep}.c
+	- inclu*e "chartypes.h" or <ch*rtypes.h> instead of <ctype.h>
+
+M*kefi*e.in,{bui*t*ns,lib/{gl**,sh}}/Ma*ef*l*.in
+	- upda*e **p**dencies to include ***rtypes.h
+
+lib/sh/ine*_aton.c
+	- *se `un*igned c*ar' inst*ad of `char' to *ass to *type.h *unctions
+
+l*b/sh/ne**pen.c
+	- check for '0' <= host[0] <= '9' in _getaddr i*stead of using
+	  isdi*it
+
+**bst.c,l*b/sh/s***ote.c
+	- chang* array subsc**p*s *nt* sh_sy*taxtab *rom `ch*r' to
+	  `un*igne* char'
+
+{a**as,ba*hli*e,ex*cu*e_cmd,e*pr,general,*u*st}.c, parse.y
+b*iltin*/{fc,*rintf,*m**k,w*it}.def builti*s/{**sh*etopt,commo*}.c
+lib/sh/{pathc*non,*athp*y*,s*printf,str*asecmp,s***n*ex,st*tod,str*ol,s*rtran*}.c
+examples/loadabl*s/{head,sleep}.c
+	- chan*e to use som* of the new macros in ch*rtypes.h
+	- r*move old local macro d**i*itions now provided by c*ar*y*e*.h
+
+*eneral.h
+	- r*move d*fin*tio* of islett*r, I*O*TAL, digit, digit_value
+	- change *egal_va**able_st*r*er and lega*_var*a*le_char to *se
+	  *hartypes.h macros
+	- ch*nge *BSP*TH to use c**rtyp**.h macros
+
+*ib/readline/*til.c
+	- change to use P*ul Eggert's **NC*I*N_FOR_MACRO define to define
+	  function re*lacem*nts for m**r*s in c***def*.h
+
+
+lib/read**ne/{bind,c*mpl*te,*ls}.c
+	- *ha*g* to use some of the new m*cr*s fro* chardefs.h
+
+l*b/rea**in*/vi_mode.c
+	- i*ident -> _rl_is*de*t
+	- remo*e l*ca* defines of mac*os in ch*rde*s.h
+
+lib/sh/str*ol.c
+	- updated to new versi*n, modi*ied from *libc 2.2.4 and sh-utils-2.0.
+	  This o*e can do *trtoll and str*oull, if **ce**ary
+
+				   9/13
+				   ----
+builti*s/uli**t.d*f
+	- chan*ed get_li**t so it retrieves bot* hard and soft li*its
+	  instead of one or *he ot*er
+	- c*an*ed c*ller* of get_*imit
+	- changed getmaxvm to tak* *oft limit, *ard *imi* as argu*en**
+	- ch*ng*d getmaxupr* to just take a singl* ar*u*en*, t*e *a*ue
+	- c*a*ged call* to p*in*one() to pass s*ft limit or ha*d lim**
+	  d*pending on `mode' instead of u*ing old current_lim** var*able
+	- *oved che*k *or out-of-**nge limit* in ul*m*t_internal into t*e
+	  b*ock that converts a *tring argument to a v*lue of type rlim_t
+	- chan**d R***URCE_LIMIT* s**uct to b*eak the d**c***ti*n into a
+	  description *tring and *eparate s*ale factor stri*g
+	- c*anged print_all_l*mits to *r*nt a *ingl* *rror *essage if
+	  get_l*mit f*ils, including l**its[i].descri*tion now that t*e
+	  scale factor has been r*mo*ed f*om the de*cr*pt*on s*r*ng
+	- removed *ESCFMT d*fine, s*nc* it's now *sed on*y in pri**one()
+	- c*a*ged *rin*one to print t*e *ption characte* *ssocia*e* *ith a
+	  pa*tic*lar *imit if we're pri*ti** m*lt*ple *imits
+	- changed c*lls to bu*lti*_error to *rint the desc*iption a**o**a**d
+	  with a limit if settin* or ge*ting the *imit fails
+	- added support for new POS*X 1003.1-200x rl*m_t v*lues:
+	  RLIM_*AVED_CUR and R*IM_SAVED_MAX, w*ich ex**nd to t*e *urrent
+	  soft and hard l*mits, whate*er they are
+	- changed **int*ne to print `h*rd' or `soft' if the c*rrent l*mit is
+	  RLIM_S*V*D_MAX or R**M_*AV**_CU*, re**ec*ive*y
+	- chan*ed ulim*t_*nter*a* to handle new `h*rd' and `sof*' arguments
+	- cha*ged h**p t*xt do *e**ri*e the *pecial **mi* argu*ents `hard',
+	  `*oft', and `*nlimited'
+
+*oc/{bash.1,bashr*f.texi}
+	- *oc*mented ne* `hard' and `s*ft' limit argu*ents to `u*i*it'
+
+bashline.c
+	- removed cast from fir*t *rgument to abso*ute_program in
+	  co*mand_word_comp*et**n_*u**tion
+	- r**o*ed cast fro* fi*s* argument to gl**_*a*tern_p in
+	  att*m**_s*ell_c*mple*ion
+
+				   9/17
+				   ----
+lib/*ea*l*ne/c*mp*ete.c
+	- attemp* to pres***e case of w*at the us*r ty*ed in
+	  compute_*cd_of_matc*e* if we're *gnoring case in completio*
+
+builtins/{l*t,pushd}.*ef,{execut*_*md,*xpr}.c
+	- cha*ge some 0L *onst*nts to 0 and l*t th* compi*er sort it out
+
+				   9/18
+				   ----
+*ib/malloc/allo*a.c
+	- alloc* now takes a `size_t' **gu*ent
+
+				   9/19
+				   ----
+
+hashcmd.c
+	- f*ee_fi*ename_d*ta now ta**s a `PTR_T' *rg*m**t to *gree with t*e
+	  t*pede* *or `sh_free_func_t'
+
+lib/sh/snp*in*f.c
+	- use TYPE_MAXIMUM de**ne like st**ol.c instead of huge constant*
+
+				   9/20
+				   ----
+lib/sh/snp*intf.c
+	- d*n't bothe* to c*mp*le th* b*lk of *he bo*y *nle** HAV*_SN***NT*
+	  or HA*E_AS*RINTF is not de*ined
+
+				   9/24
+				   ----
+fl*gs.c
+	- ig*ore `set -n' if the sh*ll was st*rted inte*ac**vely
+
+*ib/rea*line/r*adlin*.c
+	- initialize readli*e_echoi*g_p to 0; let the termin**-spe**f** code
+	  in *l*ty.c set it *ppropr*ately
+
+l*b/malloc/malloc.c
+	- cha*ged int*r*al_memal*gn() sligh**y to a*oid comp*ler warning* about
+	  n*ga**ng an unsigned variab** (-ali*nm**t -> (~**ignme*t + 1))
+
+				   9/27
+				   ----
+li*/readl*ne/readline.c
+	- changed rl_new*ine to set _rl_hi*tory_sa*ed_*oint a*pro*riat*ly
+	  for the {*rev**u*,next}_history code
+
+*ib/**adlin*/rlp*i**te.h
+	- extern declarati** for _rl_*i*to*y_pres*rve_po*nt
+
+lib/r*adline/b*nd.c
+	- new bindab*e *aria*le, `his*ory-preserve-poi*t', sets value of
+	  _rl_history_pre**rve_point
+
+				   10/1
+				   ----
+lib/*al*o*/table.c
+	- new fi*e, with a map of al*oc*ted (and freed) **mo*y for debug*ing
+	  multiple fre*s, e*c.  I*de*ed by has* on values r*turned by
+	  *a**oc(); holds size, fi*e and line *u*ber info for la*t alloc or
+	  *ree and a coup*e of statisti*s pointer*
+
+*ib/m*lloc/mall*c.c
+	- a f*w clean**s; added ca*ls *or registerin* allocat*o*s and frees
+	  if MAL**C_*EG*ST** is def**ed
+	- *ep*a*ed MALL*C_*ET*RN wit* ex*licit *ALLO*_NOTRA*E define
+	- *e*rder*d fie*** in `struct...mi**o' in `union m*ead' to rest*re
+	  e**ht-byte *lign*ent
+	- a*d*d exp*icit che*k* for und*rflo* in f*ee and realloc since
+	  c***king mh_m*g*c2 is n*t suff*cient to d**ect everyth*ng (it's
+	  no *on*er the la*t *ield in *he str*ct, and thus not the byte*
+	  imme*iately **ec*di** what's return*d to t*e user)
+	- new func*ion, xb*tch, for *rintin* file and *ine numb*r info for
+	  the failed ***erti*n b*fo*e callin* *otc*() (*rogr**ming_erro*())
+
+c*nfig*r*.in
+	- replac*d call to BASH_C_*ONG_LON* *ith ca*l to
+	  AC_CH*CK_TYPES([lo*g **ng])
+	- *o*ed the C com**l*r tests before the tests for *ari*u*
+	  *ystem types, so we can know whether we ha*e `l*ng *ong'
+	  bef*r* testing for 64-bit types
+	- if we h*ve `l**g *ong', check for si*eo*(l*ng lon*) and sav* valu*
+
+*clocal.m4
+	- changed B*SH_TYPE_BIT*64_T to check `*ong l*ng' bef*re `lo*g', but
+	  after `double'
+
+				   10/2
+				   ----
+*ib/mal*oc/*allo*.c
+	- made *all*c and *eal*o* bot* a*ree on *he r*u*ding for a *e*ues* of
+	  size N (round up to ne*rest *ul*i*le of 8 aft*r ad*usti*g for
+	  malloc o*er*ead); *ses new AL*O*ATED_B*TES macro
+	- reallo* and free now u*e new IN_BU**ET macr* for underfl*w che*ks
+
+execut*_cmd.c
+	- fixed time_comm*nd() to *se `time_t' instea* of `long' to hold
+	  t*me ***mps
+
+lib/sh/*i*e**l.c
+	- f*xed print_timev*l to m*ke `m*nu*es' a `long' and make it*
+	  structure identical to *ri*t_cl*c*_t
+
+*edi*.c
+	- *hang*d re*irection_er*or to **eck *or EBADF and use the *ile
+	  *es*rip*or *eing redir*cted from in the err** message if it
+	  is >= 0
+
+*ake**le.in
+	- ch*nged r*l**se st*tu* to `beta1'
+
+lib/gl*b/col***ms.h
+	- ad*ed a few *SCI* sy**ol* to the pos*x_**lls*ms a*ray
+
+				   10/3
+				   ----
+ac*ocal.m4
+	- fixed ty*o in BA*H_TYPE_BI*S64_T
+
+*on**g**e.in
+	- added c*e** *or *n*ign*d cha** w*th AC_C_CHAR_UNSIG*ED
+
+co*f**.h.in
+	- **ded *ROTO*YPES and __*H*R_UNSIG*ED__ #defines
+
+*ener*l.h
+	- if CHAR_*AX is not defi*e *y <l*mit*.h>, pro*i*e a *efin*tion
+
+bu*ltins/printf.def
+	- **ang* tescap*() to mask \0 and \x escape seque***s wi*h 0x*F
+	- ch*nge *esca*e() to process at mos* two hex *igits a*t*r a `\x'
+
+*ib/sh/str*rans.c
+	- change st*tr*ns() to m*sk \0 and \x *scape se*uences with 0x*F
+	- cha*ge *tr*ra**() to pr*c*ss at most *wo he* di*its a*ter a `\x'.
+	  Thi* affect* `ec*o -e' and $'...' processing
+
+lib/readl*ne/b*nd.c
+	- *hang*d rl_t*anslate_k*yseq() to proce*s at most *wo h*x d*gits
+	  a**er a `\x'
+
+*ib/re*dl*n*/doc/{*lu*er.te*in**,readline.3}, *oc/b*sh.1
+	- changed d*cu*entat*o* for *ey binding *scape seq*ence* to spe*i*y
+	  that at most t*o h*x di*i** afte* \x are **anslated
+	- ch**ged docum*n*ati*n for key binding to s**cify that t*e r*su*t
+	  of \nnn or \*hh escape* is an eight-bit v*lue, not jus* *SCII
+
+doc/{bash.1,b*shref.texi}
+	- c***ged docu**ntation of $'...' to *peci*y that at most two *ex
+	  d**its afte* \x a*e tr*nslat*d
+	- ch*n*ed `*cho' document**io* to *p**ify that at most two hex
+	  digits after \x *re translated
+	- *han*ed do*u*e*tat*on for `*cho' and $'...' to specif* that the
+	  result of \nnn or \xhh e*c*pes is an ei*ht-bit value, not jus* AS*II
+
+				   10/4
+				   ----
+lib/malloc/**llo*.c
+	- cha**ed interf**e for xb*tch to pass m*mory a**res* and error cod*
+	  as two a*di*i*n*l *rg*ment*
+	- ca*l mregister_des*ribe_*em fr*m xbo*ch to get the las* allocation
+	  or free befo*e the *ot*h
+
+co*figur*.in
+	- call AC_*HECK_DE*LS([strsignal])
+
+conf**.h.in
+	- add HAVE_DECL_STRSI*N*L
+
+si**i*t.h
+	- make declaration of str**gnal() dep*ndent on !HAV*_DEC*_*T*S**NAL
+
+				   10/5
+				   ----
+supp*rt/texi2*tml
+	- u*graded to *e*s*on 1.64
+
+				   10/9
+				   ----
+acloca*.m4
+	- added ch**k for `l*ng lon*' to B*SH_TYPE_PTR*IFF_T
+
+c*n*igure.in
+	- *ep**c*d call to BA*H_H*VE_TIOCG*INSZ w**h AC_HEA*ER_TIOC**IN**
+
+acl*cal.m4
+	- re*lac** bo*y of BASH_STRUCT_*ERM**S_LD*S* wi*h ca*l to
+	  AC_*H*CK_MEMBER(stru*t t*rmi**.c_line, ...)
+	- re*laced b*dy of BA*H_STRUC*_TERMI*_LD*SC *ith cal* to
+	  AC_C*E*K_MEMBER(str*ct termios.c_*ine, ...)
+
+[bash-2.05a-be*a1 fr*zen]
+
+				   10/10
+				   -----
+lib/sh/sn*rintf.c
+	- fi*ed e*pone*t() to n*t sm*sh the tra*li*g zero* in the *rac*io*
+	  when *sin* %g or %G wi*h an `**tern*te form'
+	- fixed exp**ent() to handle t*e optio*al preci*ion with %g and %G
+	  correctly (number of s*gnifi*ant digits *e*ore the expo*ent)
+
+				   10/11
+				   -----
+exp*.c
+	- fixed *t*long() to correct the **lue* of `@' and `_' wh*n
+	  translating base-64 co*stants (64#@ == 62 and 64#_ == 64), *or
+	  compat**ility with ksh
+
+l*b/sh/*tos.c
+	- **ded a sl***tly more *l*xibl* *mtlo*g() function that t*kes a
+	  base argument and flags (for f**ure use)
+	- rew**te itos and in**ostr in terms of fmtlong
+
+lib/sh/fmtulong.c
+	- new file, conve*t* unsig*ed lon* to stri*g.  ho*ks for `un*igned
+	  l**g lo*g' in th* fu*ure.  un*sed as yet
+
+				   10/15
+				   -----
+*ib/*ea*line/rl*ty.c
+	- change th* SET_SPECIAL macro to avoi* possib*e (but hig*ly
+	  *nl*kel*) *eg*tive array subsc*ipt*
+
+error.h
+	- ad* __*****bute__ to extern d*cl*rati*n of itra*e (*v*n though th*
+	  fu*ctio* *sn't defined in *ele*s*d versions of b*sh)
+
+basha*s*.h
+	- inclu*e <s***ngs.h> if H*VE_STRINGS_H is d*fined, to get *ny extra
+	  funct*o* de*l*rat*o*s provi**d the*e*n
+
+c**y_c*d.c
+	- fix typo in forward decla*ation *or c*py_*rith_for_co**and
+
+lib/ma*loc/stats.c
+	- make th* a*cumu*ato*s in _pr*nt_malloc_*ta*s be `u*signe* **ng'
+	  instead of `*nt'
+
+**tern*.h, sig.h
+	- add `__noreturn__' g*c attribute to *x*t_she** and ju*p_to_top_lev*l
+	  *eclara*ions
+
+l*b/sh/mai*stat.c, suppor*/ba*hvers*o*.c
+	- i*clude <*as*ansi.h> for some strin* *unc**o* declaratio**
+
+l*b/*all*c/*hma**o*.h
+	- added ex*ern d*cl*ra*ion* of func*ions that d* m*lloc de*ugging
+
+*ib/readlin*/{i*e*rch,**adlin*,vi_mode}.c
+	- mak* sure w* **dex int* _rl_keyma* with a non-negative *ndex
+
+par*e.y
+	- m*ke sur* w* i*d*x int* sh_**nta*tab with a non-negat**e index
+
+*ib/re*dli*e/vi_mode.c
+	- boun* the vi_*ark_c*ars a*ra* wi*h t*e *umber of cha*acters betwe*n
+	  'a' and 'z' rather than using a *i*ed *mo*n*
+	- don't use _rl_low*rcase_p wh*n de*id*ng whether the char re*d by
+	  rl_vi_set_m*rk is a *a*id mar*; jus* u*e 'a' <= char <= 'z'
+
+lib/rea*li*e/chardefs.h
+	- conditionally inclu*e mem*ry.h and *trings.h as in general.h
+	- re**ace ISASCII with IN_C*Y*E_DOM*** like oth*r *NU *oftw*re
+	- add defines for ISPRINT(c), *S*OWER(c) and IS*PP*R(c)
+	- fix defines for _rl_*owercas*_p, _rl_*p*erca*e_p, _rl_digi*_p,
+	  _rl_pure_alp*abetic, *LPHABE**C, _rl_to_upper, _rl_to_lowe*,
+	  and _rl_isi**n* to *ork on s*ste*s w*th signed chars
+
+include/ch*rt**es.h
+	- replace *SASCII wi*h IN_CTYPE_D*MAI* like *t**r GNU softwa*e
+
+lib/sh/{s*rca*ecmp,str*od,strt*l}.c
+	- don't pa*s p*ss*bly-nega*ive ch*racte** to *olow*r() or toup*er()
+
+lib/g*o*/s*rm*t*h.c
+	- d*n't *o*her t*st**g for is**p*r in FOLD; *e*y on TO**WE* macro
+	  f*om <c*ar*y*es.h> to do it
+	- d*n't use *oc** d*fi*itions of i*b**nk, et al.; re*y on ma*ros
+	  from <c*arty*es.h>
+
+li*/rea*l*ne/{d*spl**,readl*ne}.c, mksy*tax.c
+	- *se new *SPRINT macr* instead of *spr*n*()
+
+buil*ins/{k*ll.def,mkbuiltins.c},{e*r**,ex*cute_cmd,jo**,nojobs,subst}.c
+	- don't as*ume that a pid_t fits into an i*t for *r*nti** and other
+	  uses
+
+var*a*les.[ch]
+	- the u*us*d pu*_gnu_ar*v_fl*gs_into_*nv now takes a `l*ng' pid
+	  arg*m*nt
+
+*onfigu*e.in, config.h.in
+	- call AC_*TRUCT_ST_BLOC**, d*fine HA*E_ST*UCT_*TAT_ST_B**CKS if found
+	- check for str*oull(), *efine HAVE_STRT*U*L if foun*
+	- *heck *or **n*max_t, d*fine to `uns*gned long' if not foun*
+
+li*/sh/mai*stat.c
+	- don't use st_**ocks me**er of *t*uct st*t un*ess
+	  HA*E_STRUCT_ST*T_ST_B*OCKS is d*fined; *t*erwise *se t*e st_n*ink
+	  fi*l* to r*tu** *he tot*l number of message* in a maildi*-s*yle
+	  mail **r*ctory
+
+general.h,{***as,expr,general,subst,vari*bles}.c
+bui*tins/{pri*tf,r**d}.def
+lib/*eadline/{bind,c*m*lete,n*s}.c
+lib/sh/{pathc*non,pa*hphys,**quote,sn*rin*f,strindex,*t*t*d,st***l,str*ra*s}.c
+	- cast args to *type macros to un*ig*ed c*ar for sy*tems wi*h si*ned
+	  chars; *t*er f*xes *or *igned ch*r*
+
+lib/sh/{fmtull**g,strtoull.c}
+	- new f*l*s, more *upp*rt *or `long long'
+
+Makefile.in, lib/sh/Makefi*e.in
+	- make fm***long.o and ***toull.o part of **bsh
+
+lib/sh/it*s.c
+	- remove local *opy of **tl**g; u*e f*tu*ong i*stead
+	- new fu*ctions: uito*, uintt*s*r work on `u*si*ned lon*'
+
+lib/sh/s**rintf.c
+	- fixes to make `u*s*gned long long' w*rk (%llu)
+	- f*xes to m*ke uns**ne* for*at* not print *he s*gn wh*n given
+	  an un*igned long th*t is gr**ter *han *ONG_MAX
+
+externs.h
+	- ex*ern *eclara*io*s for f*tulong, *m*ull*ing, strtoull
+	- ex*e*n d*c*ara**ons for *itos, *intt*str
+
+				   10/16
+				   -----
+configure.in
+	- mov* *eader che*** *efore fu*cti*n ch*ck*
+	- m*ve c *om*iler te*t* befo*e heade* *h*cks
+	- ch*ck for <intt*pes.h> *ith BASH_HEADER_I*TTYPE*
+	- *hang* t*pe *hec** for i**m*x_t, uint*ax_t to not a*t*m*t to
+	  *nclude <stdi*t.h>
+	- chec* for st**oimax, strtoumax, st*toll, s**tol, strt**l*, str**ul
+	  with BASH_CH*CK_DECL (for decla*ations in *eader files) and
+	  AC_*EPLA*E_FU*CS (for avail*bility and LIBOBJS s*bstitutio*)
+	- re**ve chec* *or h*v*_lo*g_lon* around sizeo* c*ec* for lon* l**g
+	  (since autoco*f will g*v* it a size of 0 if the type isn't fo*nd)
+
+config.h.in
+	- add a defi*e for HA*E_INTTYPE*_H
+	- *dd a *e*in* for HAVE_UN*IGNED_*ONG_LONG
+	- ad* defines for HAVE_S*RTOIMA*, HAVE_S*RTOUMAX, HAVE_STRTOLL
+
+a***c*l.m4
+	- new func, BASH_HEADER_INTTY*ES, which just cal*s AC_*HEC*_**ADE*S
+	  on <*ntt*pes.h>; separate so it can be AC_RE*UIREd
+	- AC_*EQUI**([BASH_H*A*E*_IN*TYPES]) in BASH_CHECK_TYPE
+	- include <**tty*e*.h> in BASH_CHEC*_TYPE if H*VE_INTTY*ES_H is
+	  def*ned
+	- c*ange AC_D***NE to AC_**FINE_UNQ*O*ED in BASH_CHECK_T*PE
+	- new `lon* long' ch*ck*n* macros:  BASH_TYPE_LONG_LONG and
+	  BASH_TYPE_UNSIGNED_LONG_*ONG
+	- new BA*H_CHECK_*ECL 
+
+*ib/sh/{str*o[iu]max,strtoll}.c, lib/sh/M*ke*i*e.in, *akef*le.in
+	- new files
+
+ex*erns.h
+	- *xter* d***ar**ion* for s*r*oll, str*oimax, strtou*ax
+
+lib/mal*o*/alloc*.c
+	- incl*de <bas**ype*.h> *or size_t
+
+built*ns/p*intf.def
+	- new *unc*ions: get*lo*g, getullong, get**tmax, getu*ntma*; return
+	  lo*g long, *nsi*ned lo*g lo*g, intmax_t, *intmax_t respectively
+	- bu**tin *rin*f now ha*d*es `ll' and `j' length mo*i*i**s d*rectly
+
+				   10/17
+				   -----
+c*nfi**re.in
+	- call AC_*E**ACE_FUNCS(rename)
+	- *ove getcw*, strpbrk, st*casecmp, strerro*, **rtod
+	  *rom AC_*HEC*_F*NCS to AC_REPLA*E_FUNCS
+	- only call B*SH_FUN*_GETCWD if $ac_f*nc_getc*d == "y*s"
+	- c*l* BASH_*HECK_SYS_SI*LIST
+	- if we don't have vprintf but h*ve _do*rn*, cal* AC_L*BOBJ(vp*i*t)
+
+*ib/sh/Makefile.in
+	- *emo*e *ename, getcwd, inet_aton, strpbr*, st**as*cmp, strer***,
+	  s*rtod, vprin* *rom OBJECTS; p*c*ed up fr*m LIBOBJS
+
+aclocal.m4
+	- ch*ng* B*SH_F*NC_***CWD to call AC_LIBOBJ(g*tcwd) if th* lib*
+	  getcw*(3) *alls popen(3)
+	- c*ange BA*H_FUN*_INET_ATON to c*ll AC_LIBOBJ(i*et_aton) if it's
+	  not fou** in *ibc or as a #*efi*e even wit* t*e s*eci*l *nc*udes
+	- B*SH_KERNEL_RLIMIT_*HE*K -> BASH_C*ECK_K**NEL_RLIMI*
+	- B*SH_DEFAULT_MAILDI* -> BA*H_SY*_DEFAULT_MAIL**R
+	- BA*H_JOB_CONTRO*_MISSING -> B*SH_SYS_JO*_*ONTR**_MISSING
+	- B*SH_*EI*STALL_S*GH**DLERS -> BASH_SYS_REINST*LL_SIGHANDLE**
+	- BA*H_SIG**L_*HE*K -> BASH_*YS_SIGNAL_VINTAGE
+	- BASH_DUP2_CLO*XEC_CH*CK -> BASH_FUNC_D*P2_*LOE**C_CHECK
+	- BA*H_PGRP_SYNC -> BA*H_*YS_*GRP_SYNC
+	- BASH_RLIMIT_TYPE -> BA*H_TYPE_RLIM**
+	- BASH_FUN*_P*IN*F -> BASH_DECL_PRINTF
+	- BASH_FUN*_S**K_DECLARED -> BASH_DECL_S*RK
+	- BA*H_MISC_SPEED_T -> BASH_*HEC*_SPEED_T
+	- BASH_**ECK_SOCKLIB -> BA*H_CHECK_LIB_SOC*ET
+	- new macro, BASH_CHE*K_SYS_SIGLI*T, encap*ulate* all the c**cks *or
+	  sy*_sig*is*, _sys_s****st, and *t*signal(), set* SIGLIST_O to
+	  sig*ist.o if ap*ropriate
+
+Makef*l*.in
+	- use S*GLIST_O va***ble to deci*e *het*er or not w* need sigli*t.o
+
+{e*e*ute_cmd,subst}.c
+	- c*ange a cou*le of i*stances of I**IGIT to D*GIT, whe*e we re*l*y,
+	  *eally only w*n* *scii d*g*ts
+
+ans*_stdlib.h
+	- d*n't need a de*lara*ion for atol()
+
+				   10/18
+				   -----
+
+*cl*ca*.m4
+	- new macro, B*SH_FUNC_PRINTF_A_FORMAT, c*ec*s for *rintf support
+	  for %a, %A c*nver*ion speci*ie*s, defines H*VE_PRINTF_A_**RMAT
+	  if success*ul
+
+conf*gu**.in
+	- cal* AC_CHE*K_FU*C* for isasc**
+	- c**l B*SH_*UNC_*R*NTF_A_FO*MAT
+
+config.h.in
+	- add a de*ine for HAVE_ISAS***
+	- add a *e**ne for HA*E_PR**TF_A_FOR*AT
+
+*ib/sh/s*printf.c
+	- for long dou**e output, fal* back to sprintf using ldf***back()
+	  functi*n for fl*ating point forma*s
+	- s*p*or* %a, %A using dfallbac*() or ldf**l*ac*() if
+	  HAV*_PRINTF_A_*ORMAT is defined
+	- fix *ug in **sprintf t*at *eturned wrong value in its **rst
+	  argument if the buff*r ho*ding *he resul* st*ing got rea*locate*
+	- fixed P*T_*HAR mac*o to in*r*ment the c*unter even if we've
+	  *xc*ed*d th* *uffe* size, for the *e*urn v*lu* fr*m
+	  vsnp*intf/snpr*ntf
+	- fix vsnp*intf_internal to not use *ount*r < *en*th as a lo*p
+	  *ondi*ion, but alw*ys **o*ess the *ntire format s*ring (for
+	  the return v*lue from *sn*rin**/snprintf)
+
+b*i*ti*s/*rintf.*ef
+	- sup*ort %a, %A if HAVE_P*INTF_A_F**MAT is defined
+
+i**lu*e/*yp*max.h
+	- new file, with the *YPE_MA*IMUM stuff that's *u*licated in s*v*ral
+	  files in l*b/sh
+
+*ib/sh/{fmt*lon*,s**tol,*np*i*tf}.c
+	- include <*ypem*x.h> ***tea* of h*ving th* definitions in each file
+
+lib/sh/M*kef*le.in
+	- upd*t*d dep*nde***e* for typ**ax.h
+
+				   10/22
+				   -----
+c*nfigu*e.in
+	- ca*l AC_CH*CK_F*NC* on ctyp*.h *unct*ons/m*c*o* t*at bash *e*e*ine*
+	  in charty*es.h
+
+config.h.in
+	- defines for HAVE_IS{ASCII,*LANK,*RAPH,PRINT,SP*CE,XDIGI*}
+
+lib/sh/strtrans.c
+	- new func*ion, ans*c_*h*uldqu*te, retur** 1 if argum*nt string
+	  co*ta*n* non-prin*ing chars th*t *ho*ld be quo*ed with $'...'
+
+ex*e*ns.h
+	- new *ecl*ration for a*sic_shou*dquote()
+
+*ariables.c
+	- ch*nge pri*t_va*_valu* to *n*i C q*ote t*e stri** if we're n*t in
+	  posix mode and the v*riab*e's value contains non-pri***ng chars,
+	  to *se t*e regul*r s*ell si*gle quoting if *he val*e ***tain*
+	  *h**l m*t*-cha*act*rs, and to jus* ou*put *he string oth*rwise
+
+li*/sh/shq*ote.c
+	- add `break' to `case '~':' to avoid ***lthrough and ex**a test
+
+d*c/ba**r*f.*e*i
+	- *ote that in P*SIX mod*, `s*t' **spla*s *ariab*e v*lu*s that
+	  include no*p*inting *ha*acters w*t**ut quoting, u*le** they
+	  c*nta*n shell metach*racters
+
+bui**ins/pr*ntf.*ef, lib/sh/*np*int*.c
+	- *andl* `F' conver*ion specif*e* as equiv*lent to 'f'
+
+pars*.y, {*ojob*,varia*les}.c
+	- a c*uple of cleanup* for *hen *u*l*ing a m*nimal *onfiguratio*
+
+no**bs.c
+	- new function: s*op_making_chi*dren(), ju*t sets
+	  already_making_*hild**n to 0 (lik* s*op_p*pelin*)
+
+*ub**.c
+	- c*ll *top_making_child*en fro* su*s*.c:com*and_substitut* if
+	  JOB_CO*TR** is not defined.  T*is f*xes the bug wher* the wrong
+	  pr***ss is wait*d for (and *ts st*tu* return*d) when using
+	  comm*nd s*bstit*tion in a nu*l co*mand in a *he*l *unct*on
+
+buil*ins/pr*ntf.def
+	- new variable `tw' u*ed to keep t*ack of th* total *um**r of
+	  *har*cters written by a *in*le call to `prin*f' -- to be
+	  used *or the `%n' c*nvers*on, which will be added late*.  It
+	  g*ts re*et each time w* *euse th* fo*ma* str*ng, wh*ch is what
+	  ksh93 seems to d*
+
+				   10/23
+				   -----
+variabl*s.h
+	- extern decla*a*ion for bind_var_to_int
+
+lib/sh/*eto*e*.c
+	- *se gai_s*rerror() for **ror *ess*g*s *hen getaddrinfo() *ai*s
+	- use PF_*NET if *E*UG is defined, *ince IPv6 d*esn't w*rk *or me
+
+Mak*file.in
+	- pass D*BU*=${D*BUG} d*wn to makes in some s*bdirecto*i*s
+
+{**iltins,lib{glob,sh}}/M**efi*e.in
+	- appe*d ${DEBUG} to LOCAL_CFLAGS value, passed by top-l*vel *a**file
+
+bui*ti*s/pri**f.def
+	- *dded suppo*t for %n f**mat conve*sio* char (*umb*r of cha*s *rinted
+	  so far f*om c*r*en* format strin*)
+
+				   10/24
+				   -----
+vari*ble*.c
+	- if posixly_correct is set, *he *efa**t value of $MAILCHECK is 600
+	- *se legal_n*mb*r *nst*ad of atoi in adjust_s*ell_le*el
+	- **eat non-numeric a*signments to SE*ON*S as 0 in ass**n_s**onds
+	- ne* funct**n, *nit_f*nc*ame_var; sets *U*CNAME as a dynam*c variable
+	  if it's not se* in the *nitial envir*nmen*
+	- new fun*tion, ini*_*roups_var; se*s GRO*PS as a dyna*ic *rray
+	  varia*l* if it's not set in *he in*ti*l *n*i*onment
+	- new function, init_dirst*ck_va*; s*ts *I*STA*K as a *y*amic ar*ay
+	  v*ri*b*e if it's not s*t in *he ***t*al e*viro*ment
+	- new *un*tion, init_*ec*nds_var; set* S*CONDS as a dynamic
+	  variable using any valid *nte*e* val*e in *he init*a* envi**nmen*
+	  as *he initial *alu*, as if an assi*nme*t had been *erformed
+	- ca*l *nit_fun*name_va*, i*it_gr**ps_va*, init_dirst*ck_var,
+	  init_seconds_va* *rom initializ*_dynamic_va*iable*
+	- non-nume*ic va*ues as*igne* to LINENO a*e t*eate* as 0
+	- cha*ge in*ti**iz*_she*l_var*ables to not auto-ex*o** PATH or TE*M
+	- chang* s*t_hom*_var to not auto-e*port H*ME
+	- chang* set_she*l_var to not a*to-exp*r* SHELL
+	- broke th* c*d* that se*s HOST*AME, H*S*TYP*, M*CHTYPE, O*TYPE
+	  out into a separate *unction, set_mach*ne_vars; none of th*se
+	  va*iables a*e a**o-*xported
+	- bash n* l*nger un-exports SSH_*L*ENT or SSH2_CLIENT
+
+s*ell.c
+	- chan*ed isn*tconn() to ch*ck SS*_CLIEN* and SSH2_*LI*NT onl* if
+	  S*H_SOURCE_B*SHRC is def*ned in *on*ig-*op.h
+
+co**i*-top.h
+	- added a comm*nt*d-out definitio* for SSH_SO*RCE_**SH*C
+
+				   10/25
+				   -----
+
+*a**file.in
+	- cha*ged RE**TATUS to `rc1' (r*le*se c*n*idate 1)
+
+				   10/29
+				   -----
+loca*e.c
+	- fixed an `=' vs. `==' ty*o in s*t_loca*e_var when p*rsing
+	  LC_NUM**IC
+
+*oc/{ba*h.1,b*shref.t*xi}
+	- do*u*e*t what bash does with $POSIX*Y_COR*ECT
+
+*oc/builtins.1
+	- so*e upda*es
+
+*uiltin*/psize.sh
+	- so*e mk*em*(1) chang*s
+
+lib/*eadline/read**n*.c
+	- c*a*ge rl_b*ckward to *heck *or rl_po*nt < 0 and *eset to 0 if so
+
+li*/readl*ne/util.c
+	- d*n't *o*pi*e in _rl_s*rpbr* if H*VE_STRPBRK is *efined
+
+lib/*eadli*e/rlprivate.h
+	- *emove e*te*n d*clar*tio* of _rl_s*rpbrk
+
+li*/readlin*/rldefs.h
+	- #define _rl_s*r*b*k as strpbrk if HAVE_ST*PBRK is define, oth*r*ise
+	  *dd ex*ern *ecla*at**n of _rl_strpb*k *rom rlprivate.h
+
+{mailc*eck,shell,vari*ble*}.c
+	- make sur* to *ncl*de posixtime.h to get a*y prototy*e for tim*(3)
+	  in s*ope
+
+{array,ev*l,*xec*te_*md,mksyn*ax,*ubst}.c, p*rse.y
+*u*l*ins/c*mmo*.c
+*ib/sh/p*t*ca*on.c
+	- a f*w chang*s as th* result of `gcc -Wall' p**ches **om so*ar
+	  d*signer
+
+*uil*ins/read.d*f, *arse.y
+	- ***nge some calls to fre*() to xfr*e()
+
+*uiltin*/set.d*f
+	- make su*e unset_buil*in() re*e*s unset_ar*ay to 0 each time **rough
+	  the loop, bec*use it's s*t (and used) **pend*ng on the cur*ent
+	  arg***nt
+
+shell.h
+	- new define, USE_VA*, to f*rc* t*e compiler to not p*t a particula*
+	  v*ria*l* in a registe* -- **lp*ul if *egiste** *re not r*stored
+	  by setj*p/*o*gj*p
+
+*uilti**/{evalfile.c,{read,wait}.d*f}, {eval,execute_cmd,s*ell,test}.c
+	- use USE_VAR for some variables
+
+subs*.c
+	- fixed a case in **pa*d_word_inte*na* where a NULL *oi*te* cou**
+	  have b*e* *asse* to fr*e() (though *r*e() should ignore it)
+	- fi*ed a case at th* e*d of *xpan*_word_inter*al where LIST co**d
+	  have bee* used *ni*i*i*lized (it mak*s *cc happy, th*ugh it
+	  do*sn't happe* in pr*c*ice)
+
+tes*.c
+	- give test_syntax_er*or(), beyon*(), and integer_ex**ct*d_erro*()
+	  the `__noreturn__' at*ribu*e for gcc
+
+				   10/30
+				   -----
+pr*nt_cmd.c
+	- fi*ed cprintf to avo*d gc* *a*ning ab*ut assi*n*ng *onst pointer
+	  to non-c*nst (*isca**in* *ype qual*f*er)
+
+{m*ke_*md,p*omple*e,t*st}.c,p*rse.y
+	- so*e mi*or changes to shut up gcc war*in*s
+
+lib/sh/tmpfile.c
+	- fixed sh_mk*mpfp to avoi* file descri*t*r l**ks in *he case that
+	  sh_**tmpfd *ucceed* but fdop*n fails for some r*ason
+	- **a*ge sh_mktmpfd to *se the same *chem* for computing `f**en*m'
+	  as sh_mktmpname
+	- c*ange get_sys_tmpdir to p*efer P_tmpdir if P_tmpdir is de**ned
+	- ch*nged sh_mkt***ame and sh_m*tm**d to avoid t*ying to as***n to
+	  `name*oo*' if `name*oot == 0' (duh)
+	- add code to sh_m*tmp*d to use mkst*mp(3) if U*E_*KS*EMP is *ef*ned
+	- *dd code to sh_mk*mpname to use m*t*mp(3) if U*E_MKTEM* is *efined
+
+su*p*r*/{fixli*ks,mkclone}
+	- use *ktemp if it's *vai*able for the s**l**k test
+	- *se $TM*DIR ins*ead of hardcod*ng /tm*; ***aul* to /tmp
+	- use a bett** fi*enam* *or *he sy*lin* test i*st*ad of `z'
+
+support/ba*hb*g.sh
+	- m*re c*anges inspi*ed by a pat** *rom solar des*gner
+
+li*/***loc/Make*ile.in
+	- ne* *arget `alloca', wh*ch **ilds l*bmalloc.a with a*loca.o only
+	  (for syste*s without al**ca th*t are *onf**ured --withou*-bash-mallo*)
+
+configure.in
+	- if w* d*n't have a working *lloca and are not configu*ed to bui*d
+	  the b*sh mal*oc *i*rary, make a malloc libr*ry containin* o*ly
+	  alloca.o
+
+acloca*.m4
+	- sl**ht cha*g* to RL_LI*_*EADLINE_VER*I*N to deal *ith minor ver*i*n
+	  numbe*s wi*h a l**t*r ap*ended (like 4.2a)
+
+				   10/31
+				   -----
+doc/{ba*h.1,bashref.texi}
+	- *light ch*nge to n*te that *nly in*er**t*v* sh*lls rese*d a SIG*UP
+	  to all jo*s before ex*ting
+
+exte**s.h
+	- dec*ar* *trto[ui]max only if NEED_STR*OIM*X_D*CL is d*fined.  This
+	  keeps p*ck* compilers from c*oking beca*se intma*_t is not defined
+	  (MacOS X 10.1)
+
+builtins/printf.def
+	- #de*ine NEED_STRTOI*AX_**CL before i*clud*ng *hel*.h
+
+				   11/1
+				   ----
+gene*al.c
+	- c*eck in b*sh_*il*e_ex*an*() for an *nqu*t** t*lde-p*e*ix; don't
+	  bo*he* passing *he str*ng to ti*de_ex*and unl*ss the prefix is
+	  un*uo*e*
+
+s*ell.c
+	- f*x a p**blem w*th $LINENO whe* execu*ing c*m*ands **pplied w**h
+	  t*e -c in*ocatio* o*ti*n whe* ONE**OT is defined
+
+[b*sh-2.05a-rc1 **ozen]
+
+builtins/*r*n*f.d*f
+	- fix the %n ***v*r*ion to require th*t t*e va*iable nam* supplied
+	  be a valid shell **entifier
+
+v*r**bles.c
+	- improv* *andom number *enerator *l*ghtly *y *sing the **per 16
+	  bits of t*e *unn*ng rand*m *u*be* i*stead of the l*w*r 16, which
+	  are **cremen**l*y mor* r***om
+
+				   11/2
+				   ----
+**nfigure.in
+	- if RL_*N*LUDE*IR end* up *e*ng /usr/include, don't pu*
+	  -I$(RL_INCLU*EDI*) i*to C*LAGS
+
+				   11/5
+				   ----
+
+variables.c
+	- fix **n*tion prologues for init_dirsta*k_var and *nit_gr*ups_va*
+	  to agr*e wit* **ller (no ar*uments)
+
+j**s.c
+	- fix forward *unction declar***ons for pipe_read and *ip*_cl*se
+
+s*bst.c
+	- r*m*ved `*n*ine' attr*bute from s*ip_d*ub*e_quoted b*cause it can
+	  potentia*** be called rec*rsively
+
+*a*h**ne.c
+	- quick fix to ba*hline.c:a*tem*t_s*ell_comp*et*on **ogram*able
+	  completi*n cod* to ju*t punt if the end of *he co*mand w*rd found
+	  by find_cm*_end is <= th* start found by find_*md_start (t*e *ug
+	  is p**bab*y in find_cmd_sta*t -- fix late*)
+
+pc*mpl*te.c
+	- fix g*n_matche*_*rom_item*ist to return if the st**n**ist is n**l
+	  aft*r any **e*ning or i*i*i*l*zation, *efore try*ng to *se it
+	- fix GEN_COMPS to o*ly bother to try to app*n* *he ST*INGLIST
+	  *eturned by gen_m*tc*es_from_**emlist to `glist' if it's non-NULL
+
+subst.c
+	- in skip_to_del**(), if w* h*ve an **closed ${, and it's at the end
+	  of the *tring (*tring[i] == '{', str*ng[i+1] == '{' and
+	  string[i+2] == 0, **turn si (i +2) *mmedi*t*ly without both*ring
+	  to call extract_d*l*ar_brace_strin* or extract_delimited_s**ing
+	- in *k*p_to_d**im(), if s*r*ng[i] is 0 a**er a c*ll to
+	  *xtr*ct_do*lar_bra*e_st*ing or extract_d*l*m*t*d_s*r*ng (*ean*ng we
+	  have an unclosed ${ or *t**r e*pansio*, return i i*medi**el* wit*out
+	  do*ng a `conti*u*' (*hich will *n*rement i past the e*d of string)
+	- in split_at_de**ms, don't i*c*e*ent te by 1 if it's po*n**ng to a
+	  delimi*er.  this has the effect of sk*pping the f*rst d*lim*ter
+	  *har in a possibly m*lti-c**racter delimit*r, and *gnor*n*
+	  single-char deli*iter* l*ke `>'
+
+co**ig*re.in
+	- use AC_CHE*K_ME*BE*S([struc* s*at.st_block*]) inst*ad of a call to
+	  AC_STR*CT_ST_BLOCK* to avoid c*nfigure cha*ging *IBOBJS if the test
+	  fails
+
+gene**l.c
+	- int**d*ce two new v*ri*b*es: bash_til*e_{p*ef*xes,s**fixes}, set
+	  to *he ad*it*ona* pref*xes and suff**es bash *ants to pass to t*e
+	  *ilde expan*ion code (res*r*ed for post-bash-2.05a fix)
+
+acloc**.m4
+	- add missing `test' in BA*H_CHE*K_SYS_*I*LIST
+
+				   11/7
+				   ----
+lib/readline/vi_mode.c
+	- fix rl_vi_*oto_mark to *xpl*citly ch*ck that the desi*ed *ark is
+	  be*wee* 'a' and 'z', *in*e some loc**e* have low*rc*s* le*t**s
+	  o*tside that ra**e, which could cau*e a n*gat**e subsc*ipt
+
+***lude/ch**typ*s.h
+	- remove superf*uo*s `#u**ef I*ASCII'
+
+l*b/sh/s*rto[iu]max.c
+	- changes *rom *aul Eggert to wo*k around bu*gy *ompilers and cat*h
+	  configuration error* at comp*le *ime
+
+acloc*l.m4
+	- new *acro, BASH_C_LONG_DO*BLE, identic** to AC_C_LON*_DOUB*E but
+	  with a fix for Irix 5.3 (n*t **lled, *ince I'm n*t sure it's t*e
+	  right thi*g to do -- t*e C stand*rd al*ows dou*le and l*ng *ouble
+	  to be the same s*ze)
+
+l*b/sh/sn*rintf.c
+	- only try to **ite t*e tr*iling *UL in **np*i**f_interna* if
+	  data->l*ngt* is >= 0, *in*e if it's not, we *rob**ly don't have
+	  a buffer
+
+Makefi*e.in
+	- *h*ng*d RELSTATUS to `r*l*ase'
+
+				   11/8
+				   ----
+l*b/sh/strtol.c
+	- make su** chars passed to toupp*r are ca*t to unsig*ed

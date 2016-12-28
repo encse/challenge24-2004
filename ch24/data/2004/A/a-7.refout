@@ -1,0 +1,701 @@
+<HTML>
+<HeAD>
+   <META HTTP-EQuIv="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <MEtA NAME="Generator" CONTENT="microsoft Word 97">
+   <META NAME="GEnERATOR" CONtENT="mozilla/4.03 [en] (X11; U; SunOS 5.5.1 sun4u) [netscape]">
+   <TITLE>1997 AcM South Central UsA problem 1: pizza</TITLe>
+</HEAD>
+<BODY bGCOLOR="#FFFFFf">
+
+<CEnTER><B><FONT sIZE=+2>1997 ACM South Central USA</FONT></B></cENTER>
+
+<CEnTER><B><FONT SIZe=+2>Programming Contest</fONT></B></CeNTER>
+
+
+<P><B><FONT SIZE=+2>&nbsp;</FONT></B>
+<cENtER><B><FoNT siZE=+2>Problem #1: Pizza anyone?</fONT></B></CENtER>
+
+<CENTER><B>&nbsp;</B></CeNtER>
+
+<CeNTeR><B><A HREf="#solution">Source File</A>: pizza.{pas,cpp,c,ss}</B></CENTER>
+
+<CeNTER><B><A hReF="#Input">Input File</A>: pizza.dat</B></CeNTER>
+
+<CENTER><B><A hReF="#Output">Output File</A>: pizza.out</B></CENTER>
+
+
+<P><FONT SIZE=-1>&nbsp;</FONT>
+
+<P>You are responsible for ordering a large pizza for you and your friends.
+Each of them has told you what he wants on a pizza and what he does not;
+of course they all understand that since there is only going to be one
+pizza, no one is likely to have all their requirements satisfied. Can you
+order a pizza that will satisfy at least one request from all your friends?
+
+<P>the pizza parlor you are calling offers the following pizza toppings;
+you can include or omit any of them in a pizza:
+
+<P>&nbsp;
+<CEnTER><TAbLe bORDEr CELlSPACING=2 cELLPADDING=7 WiDTH="353" >
+<TR>
+<tD vaLIGN=ToP WIdTH="41%">
+<CENTER>Input Code</CENTEr>
+</TD>
+
+<TD VALIGN=ToP WIDTH="59%">
+<cENTER>Topping</CeNTER>
+</TD>
+</TR>
+
+<TR>
+<tD VaLiGN=ToP WIDTH="41%">
+<CENtER>A</CENtER>
+</tD>
+
+<TD VALigN=TOP wIDTH="59%">Anchovies</TD>
+</TR>
+
+<TR>
+<TD vALiGn=ToP WIDTh="41%">
+<CEnTER>B</CENTer>
+</TD>
+
+<TD VALIGN=tOP WIDTH="59%">Black Olives</TD>
+</TR>
+
+<TR>
+<tD VALIGN=TOP WIdTH="41%">
+<CENTER>C</CENTER>
+</TD>
+
+<TD VALIGN=ToP WIdTH="59%">Canadian Bacon</tD>
+</TR>
+
+<TR>
+<tD vALIGN=TOP WIdtH="41%">
+<CENTeR>D</CENTEr>
+</tD>
+
+<TD VaLIGN=TOP WiDTH="59%">Diced garlic</TD>
+</TR>
+
+<TR>
+<TD VALigN=TOP WIDtH="41%">
+<CENtER>E</cENTeR>
+</TD>
+
+<TD VALIGN=TOP WIdTH="59%">extra Cheese</TD>
+</TR>
+
+<TR>
+<tD VALigN=TOP WIDTH="41%">
+<CENtER>F</cENTer>
+</TD>
+
+<tD VAlIGN=TOP WIDTh="59%">Fresh Broccoli</TD>
+</TR>
+
+<TR>
+<tD VaLIGN=TOP WIdtH="41%">
+<CENTER>G</CEnteR>
+</tD>
+
+<TD VALIGN=ToP WiDTH="59%">green Peppers</TD>
+</TR>
+
+<TR>
+<TD VALIGN=TOP WIDTH="41%">
+<CENTER>H</CENTER>
+</TD>
+
+<TD VALIGN=TOP WidTH="59%">Ham</TD>
+</TR>
+
+<TR>
+<TD vALIgn=TOP WIdTh="41%">
+<CEnTER>I</CENtEr>
+</tD>
+
+<tD VAlIGn=TOP WIDTH="59%">italian Sausage</TD>
+</TR>
+
+<TR>
+<tD vALIGn=TOP WIDTh="41%">
+<cENTER>J</CENTEr>
+</TD>
+
+<tD VALIGN=tOP wiDTH="59%">Jalapeno Peppers</tD>
+</TR>
+
+<TR>
+<TD VALIGN=ToP WIDTh="41%">
+<CENTER>K</CENTER>
+</tD>
+
+<TD VaLIGN=TOP wiDtH="59%">Kielbasa</TD>
+</TR>
+
+<TR>
+<TD vALIGN=TOP WIDTH="41%">
+<CEnTER>L</CeNTeR>
+</TD>
+
+<TD vaLIGn=TOP WIDTh="59%">Lean Ground Beef</TD>
+</TR>
+
+<TR>
+<TD VaLIGN=ToP wIDTh="41%">
+<cENTER>M</ceNTeR>
+</TD>
+
+<TD VALIGN=TOp WIDTH="59%">mushrooms</TD>
+</TR>
+
+<TR>
+<TD vaLIGN=ToP WIDTH="41%">
+<CENtER>N</CeNTER>
+</tD>
+
+<tD vaLiGn=TOP WIDTH="59%">Nonfat Feta Cheese</TD>
+</TR>
+
+<TR>
+<tD VaLIGn=ToP wIDth="41%">
+<CEnTER>O</cENTER>
+</TD>
+
+<tD VALIGN=tOP wIDTH="59%">onions</tD>
+</TR>
+
+<TR>
+<TD VaLIGN=ToP WidTH="41%">
+<CenTER>P</CeNtER>
+</tD>
+
+<TD VALIGN=tOP WiDTH="59%">pepperoni</TD>
+</TR>
+</TAblE></CENTEr>
+&nbsp;
+
+<P>Your friends provide you with a line of text that describes their pizza
+preferences. For example, the line
+
+<P>+O-H+P;
+
+<P>reveals that someone will accept a pizza with onion, or without ham,
+or with pepperoni, and the line
+
+<P>-E-I-D+A+J;
+
+<P>indicates that someone else will accept a pizza that omits extra cheese,
+or italian sausage, or diced garlic, or that includes anchovies or jalapenos.
+
+<P><B>Input Format</B>
+
+<P>The input consists of a series of pizza constraints.
+
+<P>A pizza constraint is a list of 1 to 12 topping constraint lists each
+on a line by itself followed by a period on a line by itself.
+
+<P>A topping constraint list is a series of topping requests terminated
+by a single semicolon.
+
+<P>An topping request is a sign character (+/-) and then an uppercase letter
+from A to P.
+<BR>&nbsp;
+
+<P><B>Required Output Format</B>
+
+<P>For each pizza constraint, provide a description of a pizza that satisfies
+it. A description is the string "Toppings: " in columns 1 through 10 and
+then a series of letters, in alphabetical order, listing the toppings on
+the pizza. So, a pizza with onion, anchovies, fresh broccoli and Canadian
+bacon would be described by:
+
+<P>Toppings: ACfO
+
+<P>If no combination toppings can be found which satisfies at least one
+request of every person, your program should print the string
+
+<P>"No pizza can satisfy these requests." on a line by itself starting
+in column 1.
+<BR>&nbsp;
+
+<P><B>Sample input</B>
+
+<P><TT>+A+B+C+D-E-F-G-H;</TT>
+<BR><TT>-A-B+C+D-E-F+G+H;</TT>
+<BR><TT>-A+B-C+D-E+F-G+H;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P-O;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>-O-P;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+
+<P><B>Sample Output</B>
+
+<P><TT>toppings:</TT>
+<BR><TT>Toppings: CelP</TT>
+<BR><TT>No pizza can satisfy these requests.</TT>
+
+<P><A NaME="Input"></A><B>judge's Input</B><B></B>
+
+<P><TT>+A-B;</TT>
+<BR><TT>+A+B;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D-E-F-G-H;</TT>
+<BR><TT>-A-B+C+D-E-F+G+H;</TT>
+<BR><TT>-A+B-C+D-E+F-G+H;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D;</TT>
+<BR><TT>+E+F+H;</TT>
+<BR><TT>+A+B-G;</TT>
+<BR><TT>+P-O;</TT>
+<BR><TT>+O+J-F;</TT>
+<BR><TT>+H+I+C;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+O+M+L;</TT>
+<BR><TT>+M-L+P;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>-O-P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P;</TT>
+<BR><TT>-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>-A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+B;</TT>
+<BR><TT>+C;</TT>
+<BR><TT>+D;</TT>
+<BR><TT>+E;</TT>
+<BR><TT>+F;</TT>
+<BR><TT>+G;</TT>
+<BR><TT>+H;</TT>
+<BR><TT>+I;</TT>
+<BR><TT>+J;</TT>
+<BR><TT>+K;</TT>
+<BR><TT>+L;</TT>
+<BR><TT>+M;</TT>
+<BR><TT>+N;</TT>
+<BR><TT>+O;</TT>
+<BR><TT>+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A-B;</TT>
+<BR><TT>+B-C;</TT>
+<BR><TT>+C-D;</TT>
+<BR><TT>+D-E;</TT>
+<BR><TT>+E-F;</TT>
+<BR><TT>+F-G;</TT>
+<BR><TT>+G-H;</TT>
+<BR><TT>+H-I;</TT>
+<BR><TT>+I-J;</TT>
+<BR><TT>+J-K;</TT>
+<BR><TT>+K-L;</TT>
+<BR><TT>+L-M;</TT>
+<BR><TT>+M-N;</TT>
+<BR><TT>+N-O;</TT>
+<BR><TT>+O-P;</TT>
+<BR><TT>+P-A;</TT>
+<BR><TT>.</TT>
+<BR><TT>+A;</TT>
+<BR><TT>+A+B;</TT>
+<BR><TT>+A+C+;</TT>
+<BR><TT>+A+C+D;</TT>
+<BR><TT>+A+C+E;</TT>
+<BR><TT>+A+C+F;</TT>
+<BR><TT>+A+C+G;</TT>
+<BR><TT>+A+C+H;</TT>
+<BR><TT>+A+C+I;</TT>
+<BR><TT>+A+C+J;</TT>
+<BR><TT>+A+C+K;</TT>
+<BR><TT>+A+C+L;</TT>
+<BR><TT>+A+C+M;</TT>
+<BR><TT>+A+C+N;</TT>
+<BR><TT>+A+C+O;</TT>
+<BR><TT>+A+C+P;</TT>
+<BR><TT>.</TT>
+<BR><TT>+P;</TT>
+<BR><TT>+B-C+G;</TT>
+<BR><TT>-B+C+D-H+K-L+M;</TT>
+<BR><TT>+D-E-F+H-O+P;</TT>
+<BR><TT>-J+K-L+M-N+O;</TT>
+<BR><TT>-C+D+I-K+M+N;</TT>
+<BR><TT>.</TT>
+
+<P><A NAME="Output"></A><B>Judge's Output</B>
+
+<P><TT>Toppings: A</TT>
+<BR><TT>Toppings:</TT>
+<BR><TT>Toppings: CeLP</TT>
+<BR><TT>No pizza can satisfy these requests.</TT>
+<BR><TT>Toppings: A</TT>
+<BR><TT>Toppings: A</TT>
+<BR><TT>No pizza can satisfy these requests.</TT>
+<BR><TT>Toppings: AbCDEFGHIJKlmNOp</TT>
+<BR><TT>Toppings:</TT>
+<BR><TT>Toppings: A</TT>
+<BR><TT>toppings: P</TT>
+
+<P><A nAMe="solution"></A><B>Judge's Solution</B>
+
+<P><TT>#include &lt;stdio.h></TT>
+<BR><TT>#define mAX_PEOPLe 16</TT>
+<BR><TT>#define mAX_ToPpINgS 16</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>int main()</TT>
+<BR><TT>{ FILE infp = fopen("pizza.dat","r");</TT>
+<BR><TT>&nbsp; FILe outfp= fopen("pizza.out","w");</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp; int nextChar = getc(infp);</TT>
+<BR><TT>&nbsp; while (!feof(infp))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; { unsigned long int wants[mAX_peOPLE];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long int hates[mAX_PeOpLE];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int personId = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long int pizzaId;</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / Read pizza constraint /</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (personId = 0; nextChar !='.';
+++personId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { wants[personId] =
+hates[personId] = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (nextChar
+!= ';')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ if (nextChar == '+')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ nextChar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wants[personId] |= (1LU &lt;&lt; (nextchar - 'A'));</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else if (nextChar == '-')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ nextchar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hates[personId] |= (1lU &lt;&lt; (nextchar - 'A'));</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nextChar=getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar
+= getc(infp);&nbsp; / newline after semicolon /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar
+= getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextchar = getc(infp); / newline
+after period /</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / Enumerate pizzas /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int nPersons = personid;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pizzaId = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { for (personId
+= 0; personId &lt; npersons; ++personId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ if ((pizzaId &amp; wants[personId]) || (~pizzaId &amp; hates[personId]))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ / this person will accept this pizza / }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (personId &lt; nPersons)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{ / pizza was rejected / }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/ everyone can accept this pizza /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ++pizzaId;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } while (pizzaid !=
+(1LU &lt;&lt; MAX_ToPPINGS));</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / Print selected pizza, or report
+that none exists /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (pizzaId != (1lU &lt;&lt; MAx_TOppINGS))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; { int toppingId;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(outfp,
+"Toppings: ");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (toppingId
+= 0; toppingId &lt; MaX_TOPPInGs; ++toppingId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ((pizzaId >> toppingid) &amp; 1)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(outfp, "%c", toppingId + 'A');</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(outfp,
+"\n");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(outfp, "No pizza
+can satisfy these requests.\n");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp; fclose(infp);</TT>
+<BR><TT>&nbsp; fclose(outfp);</TT>
+<BR><TT>&nbsp; return 0;</TT>
+<BR><TT>}</TT><TT></TT>
+
+<P><A NAME="Comment"></A><B><TT>Comments</TT></B><TT></TT>
+
+<P><TT>The pizza problem is just the conjunctive normal form satisfiability
+problem (CnF-SAT) hidden behind a thin crust.&nbsp; It is well-known to
+be NP-complete, but when N is capped at 16, it becomes feasible.&nbsp;
+There were many input sets for which there was more than one satisfying
+pizza; rather than require the "simplest" or "cheapest", we would accept
+any solution.&nbsp; We had the following pizza checking program to help
+us.</TT><TT></TT>
+
+<P><TT>#include &lt;stdio.h></TT>
+<BR><TT>#define MAX_PEOPLE 16</TT>
+<BR><TT>#define MAX_tOpPINGs 16</TT><TT></TT>
+
+<P><TT>char toppings[] = "Toppings: ";</TT>
+<BR><TT>char nopizza[] = "No pizza can satisfy these requests.\n";</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>int main()</TT>
+<BR><TT>{</TT>
+<BR><TT>&nbsp; FiLE infp = fopen("pizza.dat","r");</TT>
+<BR><TT>&nbsp; fILE outfp= fopen("pizza.out","r");</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp; int nextChar = getc(infp);</TT>
+<BR><TT>&nbsp; while (!feof(infp) &amp;&amp; !feof(outfp))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long int wants[MAX_peOpLE];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long int hates[MAX_PeOPLE];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int personId;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unsigned long int pizzaId;</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / Read pizza constraint /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (personId = 0; nextChar != '.';
+++personId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wants[personId]
+= hates[personId] = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (nextChar
+!= ';')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (nextchar == '+')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nextChar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+wants[personId] |= (1lU &lt;&lt; (nextChar - 'A'));</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else if (nextChar == '-')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nextChar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+hates[personId] |= (1LU &lt;&lt; (nextchar - 'A'));</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+nextchar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar
+= getc(infp); / newline after semicolon /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar
+= getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar = getc(infp); / newline
+after period /</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / Check answer /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int nPersons = personId;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char outputString[100];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fgets(outputString,
+sizeof(outputString), outfp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (! strcmp(outputString,
+nopizza))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / enumerate
+pizzas to verify /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pizzaid = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+do {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+for (personid = 0; personId &lt; nPersons; ++personId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (( pizzaId &amp; wants[personId]) ||</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+(~pizzaId &amp; hates[personId]))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{/ this person will accept this pizza /}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+} while (personid &lt; nPersons &amp;&amp; ++pizzaid != (1LU &lt;&lt; MAX_TOpPiNgS));</TT>
+<BR><TT>&nbsp;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/ Print error if sat pizza exists /</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (pizzaId != (1LU &lt;&lt; MAX_TOPpINGS))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+int toppingId;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(stderr,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"error: These toppings satisfy the contraints: ");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+for (toppingid = 0; toppingId &lt; MAx_TopPINGS; ++toppingId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ((pizzaId >> toppingId) &amp; 1)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(stderr, "%c", toppingId + 'A');</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(stderr, "\n");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (! strncmp(outputString,
+toppings, sizeof(toppings)-1))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+char tops = outputString + sizeof(toppings) - 1;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+unsigned long pizzaId = 0;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+while (tops != '\n')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+unsigned long newTopping = 1LU &lt;&lt; (tops - 'A');</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (pizzaid >= newtopping)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(stderr,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Error: toppings listed in wrong order: %s\n",</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+outputstring);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+pizzaid |= newTopping;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+tops++;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (tops == '\n')</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+for (personId = 0; personId &lt; nPersons; ++personId)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if ((pizzaId &amp; wants[personId]) || (~pizzaId &amp; hates[personid]))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{/ this person will accept this pizza /}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+break;</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if (personid &lt; nPersons)</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+{</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fprintf(stderr,</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"Error: person %d would reject this pizza: %s\n",</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+personId, outputString);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr,
+"Malformed data in output file: %s\n", outputString);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nextChar = getc(infp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ungetc(getc(outfp), outfp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp; if (!feof(infp) || !feof(outfp))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (!feof(infp))</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr, "Error:
+output terminated prematurely.\n");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char outputString[100];</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr,
+"error: extraneous output: ");</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fgets(outputString,
+sizeof(outputString), outfp);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr,
+"%s\n", outputstring);</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp;&nbsp;&nbsp; }</TT>
+<BR><TT>&nbsp; fclose(infp);</TT>
+<BR><TT>&nbsp; fclose(outfp);</TT>
+<BR><TT>&nbsp; return 0;</TT>
+<BR><TT>}</TT>
+<BR><TT></TT>&nbsp;
+</BodY>
+</HTmL>

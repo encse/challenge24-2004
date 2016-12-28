@@ -1,0 +1,409 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+           T H E   B A R E   B O N E S   G U I D E   T O   H T M L        
+ 
+                               by K**in Werbach
+                             <http://werbach.*om/>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+**is d**u*ent is availa*le at <http://w*rbach.com/barebones/>, where *ou will
+als* fin* t*e HTML formatte* v*r*i*n, *r*nslatio**, a*d backg**und *a*e**al*.
+
+*he Bare Bones Guide to HTML lists all th* tags that *urrent br*wsers ar* 
+likely to r*c*gnize.  I have include* all *he element* in th* offic*al HTML 
+4.0 recommend*tion wit* co*mon a*tr**utes, as well as N***cape and Micro*oft 
+extensions.  Th*s *ocu*en* is a qui** refe***ce, not a complet* specif**a*ion; 
+for off*cial in*o*mation abou* H*ML and its devel*pment, see th* **r*d Wi*e 
+Web C*nsorti** site at <http://www.w3.org/MarkUp/>.
+
+The Guide is d*signed to be as conc*se as pos*ibl*, and ther**ore it doesn't
+go into any de*ail about how to use the v*r*ous t*gs.  F*r *inks to some g*od
+step-by-*tep H*M* gu**es, *ee <htt*://w*rbach.com/*eb/www*elp.html>.
+   
+
+
+F*RMATTING OF T*I* D*C*ME*T
+----------------------------------------------------------------------------
+Thi* document loo*s best displayed in a monospace* font.  
+
+For cl***ty, I hav* *ep**ate* ou* tag *ttri*ut*s on*o s*pa*ate lines.  
+G**e*a*ly, multip** attr*bu*e* c*n be ap**i*d to the same tag.  
+
+Ta*s are listed in u*pe* c*se f*r e*s* of reading, a*though most *ags ar*
+n*t case *ens*tive.
+
+
+
+SYM*OLS USED
+----------------------------------------------------------------------------
+URL    U*L of an *x**rnal f*le (or just file na*e if in the same d*rectory)
+?      Ar**trary *umber (i.e. <H?> *ea*s <H1>, <H2>, <H3>, etc.)
+%      Arb***ar* p*rce*tage (i.e. <HR W*DTH="%"> mea*s <H* WI*TH="50%">, e*c.)
+$$$$$$ Arbi*rary hex (i.e. B*COL*R="#$$$$$$" me*ns *GC*L*R="#00FF1C", etc.)
+:::    *rb*trary date (i.e. DATETIME=":::" m*ans "1994-11-05T08:15:30" etc.)
+@      Ema*l ad*r**s (i.e. "m***to:@" means "mailt*:kevin@werbach.com" etc.)
+,,,    Comma-del*mit*d (i.e. CO*RDS=",,," *eans **ORDS="0,0,50,50", e*c.)
+|      *lternative* (i.e. ALIG*=LEFT|RIG**|*E*T*R means pi*k one of **ese)
+
+
+**MPAT*BILITY (r**ember, HT*L is e*ol**n* a*d browser implemen*at**n* va**)
+----------------------------------------------------------------------------
+     (no notatio*) In th* *TML 3.2 spec.; shoul* work on a*l br*wse*s 
+4.0  Introduce* in HTML 4.0 *ecommenda*io*
+N1   N*tscape ext**sion introd***d *ith Navigat*r v*rsi*n 1.0 or 1.1
+N2   Netscape ex***sion introduced with Navi*ator version 2.0 
+N3   Netscape ***ension introd*ced *ith Nav*g*to* version 3.0
+N4   N**s*ape *xt*nsion int*oduced w**h Navig*t**/*o*muni*ator ver**on 4.0
+MS   Microso*t I*ternet E*pl**er ext**si*n
+
+===========================================================================
+===========================================================================
+
+
+
+GENER*L  (*ll *TML *ocument* shoul* have these)
+---------------------------------------------------------------------------- 
+       Docu**n* T*pe    <HTML></H**L>      (**ginnin* and end of f*le)
+       Title            <TITLE></TIT*E>    (mu*t *e in he*de*)
+       *ead*r           <HEAD></HE*D>      (*esc*ipt*ve info, *uch as t*tle)
+       Bo*y             <*ODY></**DY>      (bulk of th* page)
+
+
+STRUCTURA* DEFIN**ION  (a*pear***e co**rolle* by the brow*er's p*efer***e*)
+----------------------------------------------------------------------------
+       He*d*ng          <H?></H?>          (the spec. de*in*s 6 lev*ls)
+         Ali*n H*ad*ng    <H? *L*G*=LE**|CE*TER|R*GHT></H?>
+       Div*sion         <DIV></*IV>
+         *lign *iv**i*n   <DIV *LIG*=LEFT|R*GH*|*ENT**|JUSTI*Y></*IV>
+4.0    **fined Con**nt  <*PAN></*PAN>
+       Blo*k Q*ote      <B**CKQUOT*></BLOCKQ*OTE>    (usually inde*ted)
+4.0    Quo*e            <Q></Q>            (*or s*ort ***tations)
+4.0      C*t*tion         <Q CITE="U*L"></Q> 
+       Em*ha*i*         <EM></EM>          (us*all* d*sp***ed as it*lic)
+       S**ong Emp*asi*  <STRONG></STRON*>  (usually dis*lay*d as bo*d)
+       Cit*t*on         <CITE></CIT*>      (usua*ly *tali*s)
+       Code             <CODE></CODE>      (f*r s*urce code listi*gs)
+       Sam*le Outp*t    <SAMP></SAMP>
+       *eyboard Inpu*   <KBD></K*D>
+       Vari*ble         <V*R></V**>
+       D*finition       <DFN></DFN>        (not w*d**y i*p*emen**d)
+       Author's Address <ADDRESS></ADDRESS>
+       Lar*e Font *ize  <BI*></BIG>
+       Sm*ll Font Siz*  <SMALL></SMALL>
+4.0    Ins*rt           <INS></*NS>        (marks additions in a new v***io*)
+4.0      Ti*e of *hang*   <INS DATETI*E=":::"></IN*>
+4.0      Comments         <*NS C*TE="URL"></INS>
+4.0    Delete           <DEL></DEL>        (ma**s d**etion* in a new version)
+4.0      Time of **ange   <DE* *A*ETIME=":::"></D*L>
+4.0      *omments         <D*L C*TE="URL"></DEL>
+4.0    Acr*nym          <ACRONYM></**R*NY*>
+4.0    Abbr**i*tion     <ABBR></A*BR>
+
+
+
+PR*SE*TAT*ON FO*MATT**G  (a*thor **eci*ies *ext *p*eara*c*)
+----------------------------------------------------------------------------
+       Bold             <B></B>
+       I*al*c           <I></I>
+4.0   Under**ne        <U></U>            (n*t *idely implemented)
+       *trik*out        <*TR*KE></*TRIKE>  (n*t w*dely *mplemented)
+4.0     Str*keou*        <S></S>          (*ot widely *mp*em*nte*)
+       Subsc*i**        <S*B></*UB>
+       Superscript      <S*P></*UP>
+       Typewriter       <TT></TT>          (d*sp*ays in a *on*spac** *ont)
+       P***ormatted     <PRE></PRE>        (dis*lay text spacing as-is)
+         Wi**h          <PR* WIDT*=?></PRE>   (in c*ara*te*s)
+       Cen*er           <CENT*R></CENTER>  (for both te*t a*d images)
+N1     *l**king         <BLI*K></BLINK>    (the most d*r*ded tag ever)
+       Font *iz*        <*ONT SIZ*=?></FO*T>       (ranges fro* 1-7)
+         Chan*e *ont Siz* <FO*T S*ZE="+|-?"></FONT>
+         Font **lor       <FONT COLO*="#$$$$$$"></FONT>
+4.0     S**ect *ont      <FO*T FACE=""></F**T>
+N4       Poin* size       <FONT POINT-*IZE=?></FO*T>
+N4       Weight           <FON* WE*GHT=?></*ONT>
+4.0   Base Fon* Size   <B*SEFONT SIZ*=?>  (fro* 1-7; defaul* is 3)
+M*     M*r*uee          <*A*QU**></M**Q**E>
+
+
+POSITIONIN*
+----------------------------------------------------------------------------
+
+N3     Multi-Column     <MULTI*OL *OLS=?></MU*TICO*>
+N3       Column *ut*er    <MUL****L GUTTER=?></*U**ICO*>
+N3       *olu*n Widt*     <MU*T***L WI*T*=?></MUL*ICOL>
+N3     Space*           <S*A*ER>
+N3       Spacer Type      <*PACER TY*E=HORI*ONTAL|V*RTI**L|BLOC*>
+N3       S*ze             <SPACER SIZ*=?>
+N3       **m*nsion*       <*PACE* WIDTH=? H*IGHT=?>
+N3       Alig*ment        <SPA**R A*IGN=LEFT|RI*HT|CENTE*>
+N4     Layer            <LAYE*></LAYE*>
+N4       Name             <LAY*R ID=""></LA*ER>
+N4       L*cat*on         <LA**R LEF*=? *OP=?></LA*ER>
+N4       *ourc* File      <LAYER *RC=""></LAYER>
+N4       St*cking         <*AYER Z-I*D**=?></LAYE*>
+N4       *tack *osition   <L*YER ABOV*="" BELOW=""></LAYER>
+N4       Dimensi*ns       <LAYER HEIGHT=? W*D*H=?></LAYER>
+N4       Clipp*n* Pat*    <LAYER CLI*=,,,></LA*ER>
+N4       Visible?         <LAYER **SIBILI**=SH*W|H*D**N|INHER*T></LAY*R>
+N4       Background       <L*Y*R BACKG*O*N*="$$$$$$"></L*YE*>
+N4       *olo*            <*A*ER *GCOLOR="$$$$$$"></LAYER>
+N4     Inli** La**r     <ILAYE*></*LAYE*>   (takes sa*e attributes as LAYER)
+N4     *lt. Content     <NOLAYER</NOLAYE*>
+
+
+LINKS, GR*P*ICS, AND SOUNDS
+----------------------------------------------------------------------------
+       L*nk Some*hing   <A H*E*="*RL"></A>        
+         Link to Loc**ion <A HRE*="U*L#"></A>  (if in an*ther document)
+                          <A HRE*="#"></A>     (if in cur*ent document)
+4.0     Target Wind*w    <A HREF="UR*" T*RGET=""></A>
+4.0     Act*on on Click  <A HR**="UR*" ON*LI*K=""></A>      (Javascr**t)
+4.0     Mo*se*ver Action <A HREF="U*L" ON**U**OVE*=""></A>  (J*vas*r*pt)
+4.0     Mou*e ou* *c*ion <A HR*F="URL" O*MOUSEO*T=""></A>   (Ja*a**r***)
+       Link to Em*il    <A *REF="mailto:@"></A>
+         Specify s*b*ect  <A HREF="*ail*o:@?*UBJEC*="></A> (*se a re*l ?)
+       D*fine L*cation  <A NAME=""></A> 
+       *isplay *ma*e    <IMG *RC="*RL">   
+         Alig*ment        <IMG SRC="*RL" ALIGN=TOP|BO*TOM|M**DL*|L*FT|RIG*T>    
+N1       Alignment        <IMG SRC="URL" ALIGN=TEXTT*P|ABS*IDD*E|
+                             BASELINE|AB*BOT*OM>
+         *lt**n*te        <IM* SR*="URL" ALT=""> (if *mage not displaye*)
+         Dimens*on*       <IMG *RC="URL" WID*H=? HEIGHT=?>       (in pi*els)
+                          <IMG *RC="URL" **DT*=% HEI*HT=%>   (as per*enta*e)
+         *ord*r           <IMG SRC="U*L" BORDER=?>               (in pixels)
+         Ru**ro*nd S*ace  <IMG SRC="UR*" HS**CE=? VSPACE=?>      (in pix*l*)
+N1       Low-Res *roxy    <*MG *RC="URL" L*WSRC="*RL">    
+         *ma*emap         <*MG SRC="U*L" I*MAP>     (requires a script)
+         Imag*map         <IMG SRC="UR*" USEMAP="UR*">
+MS       M*v*e C*i*       <IMG DYNSRC="" STAR*="" L*OP=?>
+MS     B*ck*round Sound <BGSO*ND SRC="" *OOP=?|IN*INITE>
+       Client-Side *ap  <*AP NAME=""></M*P>   (describ*s the map)
+       Map Sec*ion        <*REA SHAPE="DEFAU*T|RE*T|**RCLE|P**Y" 
+                            COORDS=",,," H*E*="URL"|NOH*E*> 
+N1     *lient *ull      <META *TTP-E*UIV="*efr**h" C**TENT="?; U*L=URL">
+N2     Embed **ject     <EMBED SRC="UR*">  (i*sert *b**ct i*t* p*ge)
+N2       *b*ect S*z*      <EMBED SRC="URL" W*DT*=? HE*GH*=?>
+4.0    *bject           <OBJECT></OB*ECT>
+4.0      Parameters       <PARAM>
+
+
+D*VIDE*S
+----------------------------------------------------------------------------
+       Paragraph        <P></P>            (cl*si*g tag often *n***essar*)
+         Alig* *ex*       <P AL**N=LEFT|C*NTER|RIGHT></P>
+N        Jus*ify Tex*     <P A*IG*=JU*T*FY></P>
+       L*ne B*e*k       <BR>               (a sin*le *arriage return)
+         Clea* Textwrap   <BR CLEAR=L*F*|R*GHT|ALL>   
+       Hori*ontal *ule  <HR>
+         Al*gnmen*        <H* ALIGN=LEFT|RI*HT|CE*TER>
+         Thickness        <HR S*ZE=?>      (in p*x*ls)
+         Wi*th            <HR WIDTH=?>     (in *i*els)
+         Widt* P*rcent    <HR WIDTH="%">     (as a percentage of page width)
+        Sol*d Li*e       <HR NOSHADE>      (wi*h*ut the 3D cutout l*ok)    
+N1     No Break         <*OBR></*OB*>       (prevents *ine br*aks)
+N1     Word Break       <*BR>              (where to *reak a line if ne*d*d)  
+
+
+*IS*S  (lists ca* be *e*t*d)
+-----------------------------------------------------------------------------
+       U*or**re* List   <U*><LI></UL>      (<LI> *ef*re *ach lis* item)
+         Compac*          <UL COM*A*T></UL>
+         B*ll*t Ty**      <U* *YPE=D*SC|CI*C**|SQU*RE>  (*or t*e wh*le *ist)
+                          <LI TYPE=DISC|CIR*LE|*QUA*E>  (this & s*b*equ*nt)
+       Ordered List     <OL><LI></OL>      (<LI> before each l*st i*em)
+         Compa**          <OL COMPA*T></OL>
+         Numb*rin* Ty*e <OL TYPE=A|a|I|i|1>      (for the **ole list)
+                          <LI TY**=A|a|I|i|1>      (thi* & sub*e*uent)
+         Start*** **m*e*  <OL *TART=?>             (f*r the wh*l* list)
+                          <LI V*LUE=?>             (thi* & subse**ent)
+       *ef**i*ion List  <DL><DT><DD></DL>  (<DT>=term, <DD>=**finition)
+         Co*pact          <DL ***PACT></DL>
+       *enu Li*t        <**NU><LI></ME*U>  (<LI> be*or* e*c* list it**)
+         C**pact          <MENU *O*PA*T></MENU>
+       Di*ec**r* Li*t   <DIR><LI></*IR>    (<LI> *efor* each list item)
+         *ompact          <D*R COMPACT></DIR>
+
+
+BACKGRO*NDS A*D COLORS
+----------------------------------------------------------------------------
+       Tiled B*groun*   <*ODY BACKGRO*ND="URL">
+MS       *aterm*rk        <BODY B****PERTIES="FIXED">
+       Bkg*o*nd Color   <B*DY BGCO***="#$$$$$$"> (**der is red/gre**/blue)
+         Text Colo*       <**DY *EXT="#$$$$$$">
+         Link Color       <BOD* LI*K="#$$$$$$">
+         Visit*d Link     <B*D* VL*NK="#$$$$$$">
+         Act*v* *ink      <BODY ALINK="#$$$$$$">
+(M*re i*fo at <ht*p://werbach.com/w*b/wwwh*lp.ht*l#c*lor>)
+
+
+SP*CIAL CHAR*CTERS  (these must *ll be in *o*er cas*)
+----------------------------------------------------------------------------
+       Spe*ial *hara*t** &#?;            (where ? is *he ISO 8859-1 code)
+       <                 &lt;
+       >                 &gt;
+       &                 &amp;  
+       "                 &quot;
+       R*gi*t*red TM     &#174;
+       *e*iste*ed TM     &reg;
+       Co*yr*gh*         &#169;
+       Copyright         &**py;
+       Non-Bre*k**g Spc  &n*sp;
+(C*mplete list at <*tt*://www.ht*l*elp.com/**fere**e/chars**>)
+
+
+FORMS  (ge*erall* r*qui** a **rip* on *our ser*er)
+----------------------------------------------------------------------------
+       *ef*ne *o*m      <*ORM AC*ION="URL" ME*HO*=GET|POST></FORM>      
+4.0     File *pl*ad      <FOR* EN*TYPE="mu*tipart/form-*ata"></FO*M>
+       Input Fi*ld      <INPUT **PE="TE*T|PASSWORD|C*ECK*OX|*ADIO|
+                          F*L*|BU*TON|IMA*E|HIDDEN|*UBM**|RES*T">
+         **eld Name       <INPUT NAME="">
+         Field V*lue      <INPUT *ALUE="">
+         C**cked?         <*NPUT *HECKE*>  (che*k*oxes and rad** *oxe*)     
+         *ield Size       <INPUT SIZE=?>       (in c*a**cter*)
+         Max Length       <*N**T MAXLE*GT*=?>  (in characters)
+4.0    Bu*ton           <B*TTON></BUTTON>
+4.0      Bu*ton Name      <B**T*N NAME=""></BU*TON>
+4.0      Defau*t Value    <**TT*N *ALU*=""></BU*TON>
+4.0    L*bel            <LA**L></LAB*L>    
+4.0      Item *abell**    <LABEL FO*=""></LABEL>
+       Select*on List   <**LE*T></SELECT>
+         Name of List     <SELECT NAME=""></SELECT>
+         # of O*t*o*s     <SELEC* SIZE=?></*ELE*T>
+         Mu*tiple Ch*ice  <SELEC* M*LTIPLE>    (can select mor* than o*e)  
+       Op*ion           <OPTION>           (items t*at can be selected)
+         Defa*lt O**ion   <OPTION S*LECTED>
+         Opt*on V*l*e     <*P*ION VAL*E="">
+4.0    Option Group     <OPTGRO*P L*BE*=""></OPTGROUP>       
+       *np** Box *ize   <*EXTAREA RO*S=? COLS=?></*EX*ARE*>
+         Name of Box      <T*XTAREA N*ME=""></TEXTA*EA>
+N2       Wrap *ext        <TE*TARE* W*AP=OF*|H*RD|S*FT></TEX*AR**>
+4.0    Gro*p elemen*s   <*IEL*SET></F*ELDSET>  
+4.0    Legend           <LEGEND></*EGE*D>     (c***io* *or *ie**sets)
+4.0      Alignment        <*EGEND ALIGN="*OP|BO*TOM|L*FT|RIGHT"></LEG*ND>
+
+
+TABLES
+----------------------------------------------------------------------------
+       Define Ta*le     <TABLE></TA*L*>
+4.0     Tab*e Alignment  <TABLE ALI*N=LE*T|RIGHT|CENTE*>
+         Table B*rde*     <*A*LE B****R></TAB*E>    (either on or off)
+         *able *order     <T*BLE BO*DER=?></TABLE>  (yo* can set th* val*e)
+         C*ll Spacing     <TA**E *EL***ACING=?>
+         Cell Paddi**     <TAB** ****PADDING=?>
+         Des*red W*dt*    <TA*LE WIDTH=?>           (in pixels)
+         **dt* P*rc*nt    <**BLE W**T*=%>           (percenta** of pag*)
+4.0     Ta*le Colo*      <TA*LE BGCOLOR="$$$$$$"></TAB*E>
+4.0      T*ble Fr*m*      <TABLE FR*ME=VO*D|ABOV*|BELO*|HSI*ES|LHS|RH*|
+                              V*IDES|BOX|B*RDER></TABL*> 
+4.0      *abl* Rul**      <TA*LE RULE*=NONE|GR*U*S|ROW*|COLS|*LL></TABLE>
+4.0      Border *olor     <TABL* BORDER*O*OR="$$$$$$"></T*BLE>
+M*       Dar* B*rder      <TAB*E BOR*ERCOLORDARK="$$$$$$"></TABL*>
+MS       Li**t Bo*d*r     <TAB*E **RDE*C*LORLI*HT="$$$$$$"></TABLE>
+       **ble Row        <TR></TR>
+         Alignment        <TR ALIGN=LEF*|RIGHT|*ENTER  
+                              VALIGN=TOP|MIDDLE|BOTTOM>
+       Table C*ll       <TD></TD>          (mu*t app**r withi* t*ble rows)
+         A*i*nment        <TD **I*N=LEFT|RIGHT|CENTER
+                             VA**GN=TOP|M*DDLE|BOTTOM>
+         No linebreaks    <TD NOWRAP>
+         *olumns to *pan  <TD COLSPAN=?>
+         R*ws to *pa*     <TD *OWS*AN=?>
+4.0     **sired *idth    <TD WID**=?>     (in pixels)
+N3       W**th Perce**    <TD W*DT*="%">     (pe*centage of t*ble)
+4.0     C*ll Col*r       <TD *G*OLOR="#$$$$$$">
+       *eader Cel*      <TH></TH>     (sa*e as d*ta, excep* bold c*nt*red)
+         Alignm*n*        <TH *LIGN=*EFT|RIGHT|CEN*ER
+                              VALI**=TO*|MI**L*|BOTTO*>
+         No Lin*break*    <TH NOWRA*>
+         Co*u*n* to Span  <*H COLSPAN=?>
+         Row* to S*an     <TH R*WSPAN=?>
+4.0     Desired *idt*    <TH WIDTH=?>     (in pixels)
+N3       Widt* P*rce*t    <TH WIDTH="%">     (***cen**ge of table)
+4.0     Cell Color       <*H BGCO*OR="#$$$$$$">
+4.0    Table Bod*       <*BODY>
+4.0    Tabl* He*d*r     <THEAD></THE*D>
+4.0    Table *o*ter     <TFOOT></TFOOT>    (must come before THEAD>
+       Ta*le Ca*tio*    <CAPT**N></CAPTION>
+         Al*g*me*t        <C*PTION ALIGN=TOP|BOTT*M|LEF*|RIGHT>
+4.0    Co*umn           <*OL></COL>        (***up* co*umn attribu*es)
+4.0      Columns Sp*n*ed  <*OL SPA*=?></*OL>
+4.0      C**u*n Width     <COL *IDTH=?></COL>
+4.0      Wi*th *ercent    <COL *IDTH="%"></COL>
+4.0    Grou* **l*m*s    <CO*GROUP></CO*GR*UP>   (gr*ups column struc*ur*)
+4.0      Colu*n* *pan*e*  <COLG*OUP SPAN=?></*OLGROU*>
+4.0      *roup Widt*      <COLG*OUP WIDTH=?></COL*ROUP>
+4.0      Wi*th Percent    <*OL*ROUP WIDT*="%"></*OLG*OUP>
+
+
+FRA*ES  (d**ine and mani*ul*te spe*ific re*io*s of t*e scr*en)
+----------------------------------------------------------------------------
+4.0   Frame D*c*ment   <FRAME*E*></FRA*E*ET>           (ins*ead of <BODY>)
+4.0     Row Hei*hts      <F*AMESE* ROWS=,,,></F*AMESE*>      (pixels or %)
+4.0     Ro* Heights      <FRAMESET R**S=></FR**ESET>  ( = relative size)
+4.0     *olum* Wi*ths    <FRAMESET *OLS=,,,></F**MESET>      (p*xe*s or %)
+
+4.0     C*lum* W*dth*    <*RAM*SET COL*=></*R*MESET>  ( = r*la*iv* size)
+4.0     Borders          <FRAMESET FRAMEB*RDER="y*s|n*"></FRAM*SET>
+4.0     Bor*er W*dth     <FRAM**ET BORDER=?></FR*MES*T>
+4.0     B*rd*r Color     <F**MESET BORDERC*LO*="#$$$$$$"></*RAMESET>
+N3       Frame Spacing    <F**M*SET FRAMESPACI*G=?></FR*MES*T>
+4.0   Define Fr*me     <**AM*>           (**ntents of an indivi*ual f**me)
+4.0     *is*lay Do*ument <*RAM* SRC="UR*">
+4.0     *ram* Name       <FRAME NAME=""|_*lank|_se*f|_p*re*t|_t*p>
+4.0     Margi* Width     <F*AME *ARGINWI***=?>    (le*t a*d right ma***ns)
+4.0     Margin Height    <F*AME MARGI*HEI*H*=?>   (top and bott*m ma**ins)
+4.0     Scro*lb*r?       <FRAME SCROLL*NG="Y*S|N*|AUT*">
+4.0     Not Resizab*e    <FRAME NOR*SI**>
+4.0     Borders          <FRAME F*AMEB**DER="yes|no">
+4.0     *order Co**r     <*R*M* BORDERCOLOR="#$$$$$$">
+4.0   Un*ram** *ontent <NO*RAMES></NO*R*M*S>     (for *on-frame* ***ws**s)
+4.0    Inline F*am*     <***AME></I*R*ME> (take* same a*tributes as FRAME)
+4.0      D*mensions       <IFRAME WIDTH=? HE**HT=?></IF**M*>
+4.0      Di*ens*ons       <I**A*E WI*TH="%" HEI*HT="%"></*FRA*E>
+
+
+
+
+SC*IPT* AND JAV*
+----------------------------------------------------------------------------
+       Scri*t          <*CRIPT></S*RIPT>  
+         Loca*i*n        <SCR*PT *RC="URL"></SCRIPT>
+         Type            <SC*IP* TYPE=""></S*RIPT>
+         La*g*age        <S**IPT *AN*UAGE=""></S*RI*T>
+4.0   *t*er Content    <NO*CR*PT></NOSC*IPT>  (if scr*p*s not s*pported)
+       App**t           <*PPLET></A**LET> 
+         Fi*e N*me        <APPLET C*DE=""> 
+         *arameters       <APPLET *ARAM NAME=""> 
+         Locat*on         <APPLET CODE**SE="U*L"> 
+          Id**tifier       <APPLE* NAME="">       (for references)
+         Alt T*xt         <*PPLET ALT="">         (for n*n-Java br*wse*s) 
+         Al*gnment        <*PP**T ALIGN="LE*T|RI*HT|**NTER"> 
+         Size             <A**L** *I*TH=? H*IGHT=?>  (in pixels) 
+         *p*cing          <APPL*T H*PAC*=? VSPA**=?> (in pixels)
+N4     S*r*er Scri*t    <SERVER></S*RVER>
+
+
+MISCELLAN*OUS
+----------------------------------------------------------------------------
+       Prolo*u*         <!DOCTYPE HT*L PUBLIC "-//W3C//DTD HTML 4.0//EN">
+       Sear***ble       <*SI*DEX>          (*****ates a sea*chable index)   
+         Pro*p*           <*S****X PROM*T="">    (text to pr*mpt *nput)
+       Send Searc*      <A HR*F="UR*?"></a>  (use a **al q*estio* mark) 
+       UR* of *his *ile <BAS* HR*F="URL">  (must be in header)   
+4.0   Base Win**w Name <B*SE TARGET="">(mu*t *e in **ader)
+       Relati**s*ip     <LINK REV="" REL="" H*EF="URL">  (in **ade*)
+N4     Lin**d File        <L*NK TYPE="" SR*=""></L*NK>
+       *eta Information <M*TA>             (mus* be in he*der)
+       Style She*ts     <STYL*></STYLE>    (impleme*tat*ons vary)
+4.0    Bidi**ct Off     <BDO DIR=L*R|RTL></BD*> (fo* c*rtain c*a*acte* sets)
+
+
+
+============================================================================
+Copyr*ght (c) 1995-2001 Kevin Wer*ach.  Re*istribu**on is permitte*, s* long
+as there is n* charge and thi* docum*n* is included **thout alteration in 
+its entirety.  *h*s Guid* is not a product of Bare B*nes Software.  *ore 
+*nf*rmatio* is av*il*ble at <ht*p://wer*ac*.com/barebones>.
+
