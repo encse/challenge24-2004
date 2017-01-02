@@ -9,9 +9,9 @@ it could have been originally.
 
 ## Input
 Each test case consists of two input files: the garbled message and the dictionary (the text file containing
-the message has extension ’.in’, while the extension of the dictionary file is ’.dict’). In the message some 
-of the characters are replaced by the character ’*’, meaning that the character was received in- correctly 
-(the character ’*’ does not appear in the original message). For some weird reason, the errors appeared only 
+the message has extension ’.in’, while the extension of the dictionary file is `.dict`). In the message some 
+of the characters are replaced by the character ’\*’, meaning that the character was received in- correctly 
+(the character ’\*’ does not appear in the original message). For some weird reason, the errors appeared only 
 when the letters ’a’-’z’, ’A’-’Z’ were transmitted, the other characters were always received correctly.
 
 The dictionary contains all the words that appear in the original message (it can contain words that do not 
@@ -24,11 +24,11 @@ For example, if the word ’holodeck’ is present in the dictionary, then the m
 
 ## Output
 For each test case, you have to output the original version of the message. For each word in the input that 
-contains the character ’*’, you have to guess what the word in the original message was, and replace the missing
-characters with the correct letters. Always use lower case letters when replacing a ’*’ (but leave the other 
+contains the character ’\*’, you have to guess what the word in the original message was, and replace the missing
+characters with the correct letters. Always use lower case letters when replacing a ’\*’ (but leave the other 
 characters of the word as they appear in the message). It can be assumed that the problem is unambiguous: 
 for each word in the message, there is only one correct possibility in the dictionary. Other than replacing
-the characters ’*’ with the correct letters, do not modify the text in any way. In particular, the end of line 
+the characters ’\*’ with the correct letters, do not modify the text in any way. In particular, the end of line 
 characters should appear in the output exactly as in the input.
 
 ## Sample Input
