@@ -13,7 +13,7 @@ is to determine how many shows can be held.
 ## Input
 Each input file begins with two numbers *n (1 ≤ n ≤ 1000)*, the number of cities, and *m (1 ≤ m ≤ 1000)*,
 the number of wizards. This is followed by *n + m* lines, each containing two coordinates (in km). The first
-*n* of these lines describe the position of the cities, the next m lines describe the position of the towers 
+*n* of these lines describe the position of the cities, the next *m* lines describe the position of the towers 
 of the wizards. The coordinates are not necessarily integer.
 
 ## Output
